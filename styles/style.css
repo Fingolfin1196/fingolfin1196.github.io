@@ -15,28 +15,77 @@ nav.navigation {
 nav.navigation ul {
     list-style: none;
     text-align: center;
+    z-index: 3;
 }
 
 nav.navigation ul li {
     display: inline-block;
+    position: relative;
 }
 
 nav.navigation ul li a {
     display: block;
-    padding: 3px 6px;
-    color: #575c7d;
-    font-size: 22px;
+    padding: 12px 24px;
+    color: #616161;
+    text-shadow: 1px 1px 1px #fff;
     text-decoration: none;
-    font-weight: bold;
+    background: #f5f5f5;
+    -webkit-transition: color 0.2s linear, background 0.2s linear;
+    -moz-transition: color 0.2s linear, background 0.2s linear;
+    -o-transition: color 0.2s linear, background 0.2s linear;
+    transition: color 0.2s linear, background 0.2s linear;
 }
 
 nav.navigation ul li a:hover {
-    background: #ccc;
-    color: #fff;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    padding: 3px 6px;
-    margin: 0;
+    background: #f8f8f8;
+    color: #282828;
+}
+
+nav.navigation ul li:hover>a {
+    background: #fcfcfc;
+}
+
+nav.navigation ul li:hover>ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+nav.navigation ul ul, nav.navigation ul ul li ul {
+    z-index: 2;
+    list-style: none;
+    padding: 0;
+    visibility: hidden;
+    position: absolute;
+    background: #f8f8f8;
+    box-shadow: 0px 3px 3px #ccc;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s linear, visibility 0.2s linear;
+    -moz-transition: opacity 0.2s linear, visibility 0.2s linear;
+    -o-transition: opacity 0.2s linear, visibility 0.2s linear;
+    transition: opacity 0.2s linear, visibility 0.2s linear;
+}
+
+nav.navigation ul ul ul {
+    z-index: 1;
+    top: 0;
+    left: 100%;
+}
+
+nav.navigation ul ul li {
+    clear: both;
+    width: 100%;
+    border: 0 none;
+    border-bottom: 1px solid #c9c9c9;
+}
+
+nav.navigation ul ul li a {
+    background: none;
+    padding: 7px 15px;
+    color: #616161;
+    text-shadow: 1px 1px 0px #fff;
     text-decoration: none;
+    display: inline-block;
+    border: 0 none;
+    clear: both;
+    width: 128px;
 }
