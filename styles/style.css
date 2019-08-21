@@ -8,6 +8,7 @@ body {
 }
 
 nav.navigation {
+    text-align: center;
     display: block;
     margin-bottom: 10px;
 }
@@ -19,6 +20,7 @@ nav.navigation ul {
 }
 
 nav.navigation ul li {
+    text-align: center;
     display: inline-block;
 }
 
