@@ -26,10 +26,8 @@ nav.navigation ul li {
 nav.navigation ul li a {
     display: block;
     padding: 12px 24px;
-    color: #616161;
-    text-shadow: 1px 1px 1px #fff;
+    text-shadow: 0px 1px 2px #888;
     text-decoration: none;
-    background: #f5f5f5;
     -webkit-transition: color 0.2s linear, background 0.2s linear;
     -moz-transition: color 0.2s linear, background 0.2s linear;
     -o-transition: color 0.2s linear, background 0.2s linear;
@@ -37,12 +35,12 @@ nav.navigation ul li a {
 }
 
 nav.navigation ul li a:hover {
-    background: #f8f8f8;
-    color: #282828;
+    background: #eee;
+    color: #111;
 }
 
 nav.navigation ul li:hover>a {
-    background: #fcfcfc;
+    background: #eee;
 }
 
 nav.navigation ul li:hover>ul {
