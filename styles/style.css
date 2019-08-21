@@ -8,25 +8,21 @@ body {
 }
 
 nav.navigation {
-    text-align: center;
     display: block;
     margin-bottom: 10px;
 }
 
 nav.navigation ul {
     list-style: none;
-    font-size: 14px;
     text-align: center;
 }
 
 nav.navigation ul li {
-    text-align: center;
     display: inline-block;
 }
 
 nav.navigation ul li a {
     display: block;
-    float: left;
     padding: 3px 6px;
     color: #575c7d;
     font-size: 22px;
