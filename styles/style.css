@@ -29,12 +29,12 @@ nav.navigation ul li a {
     color: #000;
     display: block;
     padding: 8px 8px;
-    text-shadow: 0px 1px 2px #888;
+    /** text-shadow: 0px 1px 2px #888; */
     text-decoration: none;
-    -webkit-transition: color 0.2s linear, background 0.2s linear;
-    -moz-transition: color 0.2s linear, background 0.2s linear;
-    -o-transition: color 0.2s linear, background 0.2s linear;
-    transition: color 0.2s linear, background 0.2s linear;
+    -webkit-transition: color 0.1s linear, background 0.1s linear;
+    -moz-transition: color 0.1s linear, background 0.1s linear;
+    -o-transition: color 0.1s linear, background 0.1s linear;
+    transition: color 0.1s linear, background 0.1s linear;
 }
 
 nav.navigation ul li a:hover {
@@ -60,10 +60,10 @@ nav.navigation ul ul, nav.navigation ul ul li ul {
     background: #fff;
     box-shadow: 0px 2px 4px #0004;
     opacity: 0;
-    -webkit-transition: opacity 0.2s linear, visibility 0.2s linear;
-    -moz-transition: opacity 0.2s linear, visibility 0.2s linear;
-    -o-transition: opacity 0.2s linear, visibility 0.2s linear;
-    transition: opacity 0.2s linear, visibility 0.2s linear;
+    -webkit-transition: opacity 0.1s linear, visibility 0.1s linear;
+    -moz-transition: opacity 0.1s linear, visibility 0.1s linear;
+    -o-transition: opacity 0.1s linear, visibility 0.1s linear;
+    transition: opacity 0.1s linear, visibility 0.1s linear;
 }
 
 nav.navigation ul ul ul {
@@ -76,17 +76,17 @@ nav.navigation ul ul li {
     clear: both;
     width: 100%;
     border: 0 none;
-    border-bottom: 1px solid #888;
+    border-bottom: 1px solid #bbb;
 }
 
 nav.navigation ul ul li a {
     background: none;
-    padding: 7px 15px;
+    padding: 8px 8px;
     color: #000;
-    text-shadow: 0px 1px 2px #fff;
+    /** text-shadow: 0px 1px 2px #fff; */
     text-decoration: none;
     display: inline-block;
     border: 0 none;
     clear: both;
-    width: 128px;
+    width: 80pt;
 }
