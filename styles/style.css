@@ -1,8 +1,11 @@
 @import url("fonts/fonts.css");
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap&subset=latin-ext');
+html {
+    -webkit-text-size-adjust: none;
+}
+
 body {
     font-family: Lato, sans-serif;
-    font-size: 12pt;
 }
 
 h1 {
