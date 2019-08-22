@@ -4,7 +4,7 @@ body {
     font-family: Lato, sans-serif;
 }
 
-#header h1 {
+h1 {
     font-family: 'YsabeauOffice', sans-serif;
     text-align: center;
 }
@@ -22,6 +22,8 @@ nav.navigation {
 
 nav.navigation ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
     text-align: center;
     z-index: 3;
 }
