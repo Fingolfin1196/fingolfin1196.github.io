@@ -9,8 +9,14 @@ body {
     text-align: center;
 }
 
+div.headerwrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 nav.navigation {
-    display: block;
+    display: inline-block;
     margin-bottom: 10px;
 }
 
@@ -34,7 +40,7 @@ nav.navigation ul li a {
     -moz-transition: color 0.1s linear, background 0.1s linear;
     -o-transition: color 0.1s linear, background 0.1s linear;
     transition: color 0.1s linear, background 0.1s linear;
-    width: 12ch;
+    width: 14ch;
 }
 
 nav.navigation ul li a:hover {
