@@ -57,8 +57,8 @@ nav.navigation ul ul, nav.navigation ul ul li ul {
     padding: 0;
     visibility: hidden;
     position: absolute;
-    background: #f8f8f8;
-    box-shadow: 0px 3px 3px #ccc;
+    background: #fff;
+    box-shadow: 0px 2px 4px #0004;
     opacity: 0;
     -webkit-transition: opacity 0.2s linear, visibility 0.2s linear;
     -moz-transition: opacity 0.2s linear, visibility 0.2s linear;
@@ -76,14 +76,14 @@ nav.navigation ul ul li {
     clear: both;
     width: 100%;
     border: 0 none;
-    border-bottom: 1px solid #c9c9c9;
+    border-bottom: 1px solid #888;
 }
 
 nav.navigation ul ul li a {
     background: none;
     padding: 7px 15px;
-    color: #616161;
-    text-shadow: 1px 1px 0px #fff;
+    color: #000;
+    text-shadow: 0px 1px 2px #fff;
     text-decoration: none;
     display: inline-block;
     border: 0 none;
