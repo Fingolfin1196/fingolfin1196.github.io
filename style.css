@@ -139,7 +139,7 @@ div.iconheader .ico img {
     filter: invert(31%) sepia(96%) saturate(435%) hue-rotate(88deg) brightness(94%) contrast(90%);
 }
 
-div.iconheader div.nfo {
+div.iconheader div.iconinfo {
     opacity: 0;
     max-width: 0;
     font-style: normal;
@@ -152,7 +152,7 @@ div.iconheader div.nfo {
     vertical-align: middle;
 }
 
-div.iconheader div.icontext:hover div.nfo {
+div.iconheader div.icontext:hover div.iconinfo {
     opacity: 1;
     padding-right: 1em;
     max-width: 15ch;
