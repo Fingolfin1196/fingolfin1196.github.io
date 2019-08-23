@@ -6,6 +6,9 @@ html {
 
 body {
     font: Lato, sans-serif 12pt;
+    background-color: #cda;
+    margin: 0;
+    border: 0;
 }
 
 h1 {
@@ -89,17 +92,19 @@ div.iconheader {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    background-color: #173;
+    padding: 0 1ch;
 }
 
 div.iconheader>div {
-    margin: 1ch 1ch 4ch 1ch;
+    margin: 0 .5ch;
 }
 
 div.iconheader div {
     overflow: hidden;
     padding: .5ch;
-    background: #ccc;
+    background: #cda;
+    color: #173;
     white-space: nowrap;
     display: inline-block;
     border-radius: 3ch;
@@ -107,6 +112,7 @@ div.iconheader div {
 
 div.iconheader div.title {
     background: none;
+    color: #cda;
     vertical-align: center;
 }
 
@@ -130,6 +136,7 @@ div.iconheader .ico img {
     padding: .5ch 1px .5ch 0;
     width: 1.5em;
     vertical-align: middle;
+    filter: invert(31%) sepia(96%) saturate(435%) hue-rotate(88deg) brightness(94%) contrast(90%);
 }
 
 div.iconheader div.nfo {
