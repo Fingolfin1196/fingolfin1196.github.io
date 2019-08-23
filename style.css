@@ -95,7 +95,7 @@ div.iconheader {
     align-items: center;
     background: linear-gradient(#444, #222);
     color: #fff;
-    padding: 0 1ch;
+    padding: 1ch 1ch;
     box-shadow: 0 0px 16px #000;
 }
 
