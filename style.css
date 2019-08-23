@@ -1,3 +1,4 @@
+@import url("Fonts/BonaNova/BonaNova.css");
 @import url("Fonts/Ysabeau/Ysabeau.css");
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&subset=latin-ext');
 html {
@@ -6,14 +7,14 @@ html {
 
 body {
     background-color: #fff;
-    font-family: 'Lato', sans-serif;
-    font-size: 12pt;
+    font-family: 'BonaNova', serif;
+    font-size: 14pt;
     margin: 0;
     border: 0;
 }
 
 h1 {
-    font-family: 'YsabeauOffice', sans-serif;
+    font-family: 'Ysabeau', sans-serif;
     text-align: center;
 }
 
@@ -89,11 +90,10 @@ nav.navigation ul ul ul {
 }
 
 div.iconheader {
-    font: bold 16pt 'YsabeauOffice', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(#444, #222);
+    background: linear-gradient(#333, #222);
     color: #fff;
     padding: 1ch 1ch;
     box-shadow: 0 0px 16px #000;
@@ -104,11 +104,11 @@ div.iconheader>div {
 }
 
 div.iconheader div {
-    background-color: #fff;
-    border-radius: 3ch;
+    background: linear-gradient(#eee, #fff);
+    border-radius: 2ch;
     display: inline-block;
     overflow: hidden;
-    padding: .5ch;
+    padding: 0;
     white-space: nowrap;
 }
 
@@ -125,27 +125,28 @@ div.iconheader div.emptli {
 
 div.iconheader div.icontext {
     color: #000;
-    padding-right: 0;
 }
 
 div.iconheader .ico {
     vertical-align: middle;
-    padding: .5ch;
+    padding: .5ch 0 .5ch .5ch;
 }
 
 div.iconheader .ico img {
     height: 1.5em;
-    padding: .5ch 1px .5ch 0;
+    padding: .5ch 0;
     width: 1.5em;
     vertical-align: middle;
     filter: invert(12%);
 }
 
 div.iconheader div.iconinfo {
-    opacity: 0;
-    max-width: 0;
-    font-style: normal;
+    background: none;
+    border-radius: 0;
     display: inline-block;
+    font: italic 14pt 'BonaNova', serif;
+    max-width: 0;
+    opacity: 0;
     padding: 0;
     -webkit-transition: max-width 1s ease-out, opacity 1s ease-out, padding-right 1s ease-out;
     -moz-transition: max-width 1s ease-out, opacity 1s ease-out, padding-right 1s ease-out;
@@ -155,9 +156,9 @@ div.iconheader div.iconinfo {
 }
 
 div.iconheader div.icontext:hover div.iconinfo {
-    opacity: 1;
-    padding-right: 1em;
     max-width: 15ch;
+    opacity: 1;
+    padding-right: .5em;
     -webkit-transition: max-width 1s ease-out, opacity 1s ease-out, padding-right .1s ease-out;
     -moz-transition: max-width 1s ease-out, opacity 1s ease-out, padding-right .1s ease-out;
     -o-transition: max-width 1s ease-out, opacity 1s ease-out, padding-right .1s ease-out;
@@ -165,7 +166,5 @@ div.iconheader div.icontext:hover div.iconinfo {
 }
 
 div.maintext {
-    font-family: 'Lato', sans-serif;
-    font-size: 12pt;
     padding: 2ch;
 }
