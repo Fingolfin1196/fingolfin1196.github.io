@@ -145,21 +145,21 @@ div.iconheader div.nfo {
     font-style: normal;
     display: inline-block;
     padding: 0;
-    -webkit-transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
-    -moz-transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
-    -o-transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
-    transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
+    -webkit-transition: max-width 1s ease-out, opacity 1s ease-out, padding-right 1s ease-out;
+    -moz-transition: max-width 1s ease-out, opacity 1s ease-out, padding-right 1s ease-out;
+    -o-transition: max-width 1s ease-out, opacity 1s ease-out, padding-right 1s ease-out;
+    transition: max-width 1s ease-out, opacity 1s ease-out, padding-right 1s ease-out;
     vertical-align: middle;
 }
 
 div.iconheader div.icontext:hover div.nfo {
     opacity: 1;
     padding-right: 1em;
-    max-width: 20ch;
-    -webkit-transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
-    -moz-transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
-    -o-transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
-    transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
+    max-width: 15ch;
+    -webkit-transition: max-width 1s ease-out, opacity 1s ease-out, padding-right .1s ease-out;
+    -moz-transition: max-width 1s ease-out, opacity 1s ease-out, padding-right .1s ease-out;
+    -o-transition: max-width 1s ease-out, opacity 1s ease-out, padding-right .1s ease-out;
+    transition: max-width 1s ease-out, opacity 1s ease-out, padding-right .1s ease-out;
 }
 
 div.maintext {
