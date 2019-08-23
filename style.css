@@ -161,3 +161,7 @@ div.iconheader div.icontext:hover div.nfo {
     -o-transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
     transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
 }
+
+div.maintext {
+    padding: 2ch;
+}
