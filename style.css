@@ -1,5 +1,5 @@
-@import url("fonts/fonts.css");
-@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap&subset=latin-ext');
+@import url("Fonts/Ysabeau/Ysabeau.css");
+@import url("Fonts/Lato/Lato.css");
 html {
     -webkit-text-size-adjust: none;
 }
@@ -145,10 +145,10 @@ div.iconheader div.nfo {
     font-style: normal;
     display: inline-block;
     padding: 0;
-    -webkit-transition: 1s;
-    -moz-transition: 1s;
-    -o-transition: 1s;
-    transition: 1s;
+    -webkit-transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
+    -moz-transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
+    -o-transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
+    transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
     vertical-align: middle;
 }
 
@@ -156,8 +156,8 @@ div.iconheader div.icontext:hover div.nfo {
     opacity: 1;
     padding-right: 1em;
     max-width: 20ch;
-    -webkit-transition: 1s;
-    -moz-transition: 1s;
-    -o-transition: 1s;
-    transition: 1s;
+    -webkit-transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
+    -moz-transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
+    -o-transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
+    transition: max-width 1s linear, opacity 1s linear, padding-right 1s linear;
 }
