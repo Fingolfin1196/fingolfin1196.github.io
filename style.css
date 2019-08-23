@@ -164,5 +164,7 @@ div.iconheader div.icontext:hover div.iconinfo {
 }
 
 div.maintext {
+    font-family: Lato, sans-serif;
+    font-size: 12pt;
     padding: 2ch;
 }
