@@ -89,15 +89,14 @@ div.iconheader {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
-ul.ed {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+div.iconheader>div {
+    margin: 1ch 1ch 4ch 1ch;
 }
 
-ul.ed li {
+div.iconheader div {
     overflow: hidden;
     padding: .5ch;
     background: #ccc;
@@ -106,40 +105,52 @@ ul.ed li {
     border-radius: 3ch;
 }
 
-ul.ed li.emptli {
-    padding: 0;
-    margin: 0;
+div.iconheader div.title {
+    background: none;
+    vertical-align: center;
 }
 
-ul.ed li.sm {
+div.iconheader div.emptli {
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+div.iconheader div.icontext {
     padding-right: 0;
 }
 
-ul.ed .ico {
+div.iconheader .ico {
     vertical-align: middle;
     padding: .5ch;
 }
 
-ul.ed .ico img {
+div.iconheader .ico img {
     height: 1.5em;
     padding: .5ch 1px .5ch 0;
     width: 1.5em;
     vertical-align: middle;
 }
 
-ul.ed div.nfo {
+div.iconheader div.nfo {
     opacity: 0;
     max-width: 0;
     font-style: normal;
     display: inline-block;
     padding: 0;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
     transition: 1s;
     vertical-align: middle;
 }
 
-li:hover div.nfo {
+div.iconheader div.icontext:hover div.nfo {
     opacity: 1;
     padding-right: 1em;
     max-width: 20ch;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
     transition: 1s;
 }
