@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    font-family: Lato, sans-serif;
+    font: Lato, sans-serif 12pt;
 }
 
 h1 {
@@ -82,4 +82,64 @@ nav.navigation ul ul ul {
     left: 100%;
     top: 0;
     z-index: 1;
+}
+
+div.iconheader {
+    font: bold 16pt 'YsabeauOffice', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.ed {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.ed li {
+    overflow: hidden;
+    padding: .5ch;
+    background: #ccc;
+    white-space: nowrap;
+    display: inline-block;
+    border-radius: 3ch;
+}
+
+ul.ed li.emptli {
+    padding: 0;
+    margin: 0;
+}
+
+ul.ed li.sm {
+    padding-right: 0;
+}
+
+ul.ed .ico {
+    vertical-align: middle;
+    padding: .5ch;
+}
+
+ul.ed .ico img {
+    height: 1.5em;
+    padding: .5ch 1px .5ch 0;
+    width: 1.5em;
+    vertical-align: middle;
+}
+
+ul.ed div.nfo {
+    opacity: 0;
+    max-width: 0;
+    font-style: normal;
+    display: inline-block;
+    padding: 0;
+    transition: 1s;
+    vertical-align: middle;
+}
+
+li:hover div.nfo {
+    opacity: 1;
+    padding-right: 1em;
+    max-width: 20ch;
+    transition: 1s;
 }
