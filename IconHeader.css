@@ -1,0 +1,74 @@
+div.iconheader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#333, #222);
+    color: #fff;
+    padding: 1ch 1ch;
+    box-shadow: 0 0px 16px #000;
+}
+
+div.iconheader>div {
+    margin: 0 .5ch;
+}
+
+div.iconheader div {
+    background: linear-gradient(#eee, #fff);
+    border-radius: 2ch;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0;
+    white-space: nowrap;
+}
+
+div.iconheader div.title {
+    background: none;
+    vertical-align: center;
+}
+
+div.iconheader div.emptli {
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+div.iconheader div.icontext {
+    color: #000;
+}
+
+div.iconheader .ico {
+    vertical-align: middle;
+    padding: .5ch 0 .5ch .5ch;
+}
+
+div.iconheader .ico img {
+    height: 1.5em;
+    padding: .5ch 0;
+    width: 1.5em;
+    vertical-align: middle;
+    filter: invert(12%);
+}
+
+div.iconheader div.iconinfo {
+    background: none;
+    border-radius: 0;
+    font: italic 14pt 'BonaNova', serif;
+    max-width: 0;
+    opacity: 0;
+    padding: 0;
+    -webkit-transition: max-width .4s ease-out, opacity .4s ease-out, padding-right .2s ease-out;
+    -moz-transition: max-width .4s ease-out, opacity .4s ease-out, padding-right .2s ease-out;
+    -o-transition: max-width .4s ease-out, opacity .4s ease-out, padding-right .2s ease-out;
+    transition: max-width .4s ease-out, opacity .4s ease-out, padding-right .2s ease-out;
+    vertical-align: middle;
+}
+
+div.iconheader div.icontext:hover div.iconinfo {
+    max-width: 15ch;
+    opacity: 1;
+    padding-right: .5em;
+    -webkit-transition: max-width .5s ease-out, opacity .5s ease-out, padding-right .1s ease-out;
+    -moz-transition: max-width .5s ease-out, opacity .5s ease-out, padding-right .1s ease-out;
+    -o-transition: max-width .5s ease-out, opacity .5s ease-out, padding-right .1s ease-out;
+    transition: max-width .5s ease-out, opacity .5s ease-out, padding-right .1s ease-out;
+}

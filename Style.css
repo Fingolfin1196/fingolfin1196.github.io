@@ -1,0 +1,111 @@
+@import url("Fonts/BonaNova/BonaNova.css");
+@import url("Fonts/Ysabeau/Ysabeau.css");
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,700,700i&subset=greek,greek-ext,latin-ext');
+@import url("IconHeader.css");
+html {
+    -webkit-text-size-adjust: none;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'EB Garamond', serif;
+    font-size: 14pt;
+    margin: 0;
+    border: 0;
+}
+
+h1 {
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+
+nav.HeaderNavigation {
+    align-items: center;
+    background-color: aquamarine;
+    display: flex;
+    padding: 0 2ch;
+    white-space: nowrap;
+}
+
+nav.HeaderNavigation div.HeaderSpace {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+}
+
+nav.HeaderNavigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    z-index: 3;
+}
+
+nav.HeaderNavigation ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav.HeaderNavigation ul li a {
+    color: #000;
+    display: block;
+    font-style: italic;
+    padding: 1ch;
+    text-decoration: none;
+    -webkit-transition: color 0.1s linear, background 0.1s linear;
+    -moz-transition: color 0.1s linear, background 0.1s linear;
+    -o-transition: color 0.1s linear, background 0.1s linear;
+    transition: color 0.1s linear, background 0.1s linear;
+}
+
+nav.HeaderNavigation ul li a:hover {
+    background: #eee;
+    color: #111;
+}
+
+nav.HeaderNavigation ul li:hover>a {
+    background: #eee;
+}
+
+nav.HeaderNavigation ul li:hover>ul {
+    opacity: 1;
+    visibility: visible;
+}
+
+nav.HeaderNavigation ul ul, nav.HeaderNavigation ul ul ul {
+    background: #fff;
+    box-shadow: 0px 1px 2px #0004;
+    display: initial;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    -webkit-transition: opacity 0.1s linear, visibility 0.1s linear;
+    -moz-transition: opacity 0.1s linear, visibility 0.1s linear;
+    -o-transition: opacity 0.1s linear, visibility 0.1s linear;
+    transition: opacity 0.1s linear, visibility 0.1s linear;
+    visibility: hidden;
+    z-index: 2;
+}
+
+nav.HeaderNavigation ul ul li {
+    display: unset;
+}
+
+nav.HeaderNavigation ul ul {
+    background-color: darksalmon;
+    left: 0;
+    min-width: 100%;
+}
+
+nav.HeaderNavigation ul ul ul {
+    background-color: aquamarine;
+    transform: translateX(50%);
+    top: 0;
+    z-index: 1;
+}
+
+div.maintext {
+    padding: 2ch;
+}
