@@ -1,8 +1,12 @@
-/* @import url("Fonts/BonaNova/BonaNova.css"); */
-/* @import url("Fonts/Ysabeau/Ysabeau.css"); */
-/* @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&subset=latin-ext'); */
 @import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i,600,600i,700,700i&subset=greek,greek-ext,latin-ext');
+/* @import url("Fonts/Ysabeau/Ysabeau.css"); */
+
+/* @import url("Fonts/BonaNova/BonaNova.css"); */
+
+/* @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&subset=latin-ext'); */
+
 /* @import url("IconHeader.css"); */
+
 html {
     -webkit-text-size-adjust: none;
 }
@@ -18,15 +22,17 @@ body {
 h1 {
     font-style: italic;
     font-weight: 600;
+    padding: 0 8pt;
     text-align: center;
 }
 
-a.HeaderGroup {
-    font-weight: 600;
-}
-
-a.HeaderTitle {
-    font-variant: small-caps;
+header.Header::after {
+    border-bottom: 1px solid #eee;
+    content: "";
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: calc(100% - 32pt);
 }
 
 nav.HeaderNavigation {
@@ -59,7 +65,7 @@ nav.HeaderNavigation ul li a {
     color: #000;
     display: block;
     font-style: italic;
-    padding: 1ch;
+    padding: 8pt;
     text-decoration: none;
     -webkit-transition: color 0.1s linear, background 0.1s linear;
     -moz-transition: color 0.1s linear, background 0.1s linear;
@@ -110,6 +116,14 @@ nav.HeaderNavigation ul ul ul {
     z-index: 1;
 }
 
+a.HeaderGroup {
+    font-weight: 600;
+}
+
+a.HeaderTitle {
+    font-variant: small-caps;
+}
+
 div.maintext {
-    padding: 2ch;
+    padding: 16pt;
 }
