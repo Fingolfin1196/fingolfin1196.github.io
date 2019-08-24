@@ -1,8 +1,8 @@
-@import url("Fonts/BonaNova/BonaNova.css");
-@import url("Fonts/Ysabeau/Ysabeau.css");
-@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&subset=latin-ext');
+/* @import url("Fonts/BonaNova/BonaNova.css"); */
+/* @import url("Fonts/Ysabeau/Ysabeau.css"); */
+/* @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&subset=latin-ext'); */
 @import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i,600,600i,700,700i&subset=greek,greek-ext,latin-ext');
-@import url("IconHeader.css");
+/* @import url("IconHeader.css"); */
 html {
     -webkit-text-size-adjust: none;
 }
