@@ -1,7 +1,7 @@
 @import url("Fonts/BonaNova/BonaNova.css");
 @import url("Fonts/Ysabeau/Ysabeau.css");
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&subset=latin-ext');
-@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,700,700i&subset=greek,greek-ext,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i,600,600i,700,700i&subset=greek,greek-ext,latin-ext');
 @import url("IconHeader.css");
 html {
     -webkit-text-size-adjust: none;
@@ -17,13 +17,20 @@ body {
 
 h1 {
     font-style: italic;
-    font-weight: normal;
+    font-weight: 600;
     text-align: center;
+}
+
+a.HeaderGroup {
+    font-weight: 600;
+}
+
+a.HeaderTitle {
+    font-variant: small-caps;
 }
 
 nav.HeaderNavigation {
     align-items: center;
-    background-color: aquamarine;
     display: flex;
     padding: 0 2ch;
     white-space: nowrap;
@@ -77,7 +84,6 @@ nav.HeaderNavigation ul li:hover>ul {
 nav.HeaderNavigation ul ul, nav.HeaderNavigation ul ul ul {
     background: #fff;
     box-shadow: 0px 1px 2px #0004;
-    display: initial;
     opacity: 0;
     padding: 0;
     position: absolute;
@@ -89,20 +95,18 @@ nav.HeaderNavigation ul ul, nav.HeaderNavigation ul ul ul {
     z-index: 2;
 }
 
-nav.HeaderNavigation ul ul li {
+nav.HeaderNavigation ul ul ul li {
     display: unset;
 }
 
 nav.HeaderNavigation ul ul {
-    background-color: darksalmon;
-    left: 0;
     min-width: 100%;
 }
 
 nav.HeaderNavigation ul ul ul {
-    background-color: aquamarine;
-    transform: translateX(50%);
-    top: 0;
+    left: 0;
+    min-width: 100%;
+    top: 100%;
     z-index: 1;
 }
 
