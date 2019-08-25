@@ -96,14 +96,14 @@
             Before trying to find a good optimality condition, it makes sense to formulate this problem formally:<br>
             Let $W, H \in \mathbb{N}$ be the height and width of the monitor and $T \in \mathbb{N}$ the minimum number
             of tiles that our grid needs to contain.
-            A solution to the tiling problem is then a pair $\tau &#x2254 \left\langle w, h \right\rangle \in
+            A solution to the tiling problem is then a pair $\tau &coloneq; \left\langle w, h \right\rangle \in
             \mathbb{N}^2$ for which
             $w \cdot h \geq T$ holds.
             This, however, can be simplified by noting that the minimum value of one of these variables can be
             calculated
             trivially from that of the other:
             If, for instance, the value for $h$ is fixed, the lowest value for $w$ that fulfils the aforementioned
-            condition is $w &#x2254 \left\lceil \frac{T}{h} \right\rceil$, since the following holds:
+            condition is $w &coloneq; \left\lceil \frac{T}{h} \right\rceil$, since the following holds:
 
             $$
             w \cdot h
@@ -137,7 +137,7 @@
         </div>
 
         <div class="par">
-            Having considered these things, the problem can be formulated as follows, where $w &#x2254 \left\lceil
+            Having considered these things, the problem can be formulated as follows, where $w &coloneq; \left\lceil
             \frac{T}{h} \right\rceil$ is used as a shorthand:
             <div class="par center">
                 Find an $h \in \mathbb{N}$ such that $\min \left\{\frac{H}{h}, \frac{W}{w}\right\}$ is maximised.
@@ -155,7 +155,7 @@
             wasting processor time because of laziness is something I cannot get behind.
             To actually calculate the solution, we first need to consider that $\frac{H}{h}$ is monotonically decreasing
             and $\frac{W}{w}$ monotonically increasing.
-            If $h$ is relaxed to a real number $h_R$ (and setting $w_R &#x2254 \left\lceil
+            If $h$ is relaxed to a real number $h_R$ (and setting $w_R &coloneq; \left\lceil
             \frac{T}{h_R} \right\rceil$), an optimal solution thus lies at
             the intersection of the function graphs, i.e. at the solution of the equation $\frac{H}{h_R} =
             \frac{W}{w_R}$.
@@ -175,7 +175,8 @@
             = \frac{W}{\left\lceil \frac{T}{h_R} \right\rceil}
             \leq \frac{W\cdot h_R}{T}
             \Longleftrightarrow h_R
-            \geq \sqrt{\frac{H \cdot T}{W}}\\
+            \geq \sqrt{\frac{H \cdot T}{W}}
+            &eqcolon; h_r^-\\
 
             \frac{H}{h_R}
             = \frac{W}{w_R}
@@ -184,9 +185,11 @@
             = \frac{W \cdot h_R}{T + h_R}
             \Longleftrightarrow \left( W \cdot h_R - H \right) h_R
             &lt; H \cdot T
-            \Longleftrightarrow h
+            \Longleftrightarrow h_R
             &lt; \frac{H}{2W} + \sqrt{\frac{H^2}{2 W^2} + \frac{HT}{W}}
+            &eqcolon; h_r^+
             $$
+            Thus, only the interval $\left[h_r^-,h_r^+\right]$ needs to be checked to find the optimal $h_R$ (and, by rounding, $h$).
         </div>
     </div>
 
