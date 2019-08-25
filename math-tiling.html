@@ -168,15 +168,16 @@
             contains $h_R$ within the ceiling function, which makes solving the equation for $h$ harder.
             However, since for all $\lambda \in \mathbb{R}_+$ the inequalities $\lambda \leq \left\lceil
             \lambda \right\rceil &lt; \lambda + 1$ hold <div class="italic">per definitionem</div>, the following to
-            inequalities can be formulated, where the second is the solution of a quadratic equation where only the larger of the solution makes sense:
+            inequalities can be formulated, where the second is the solution of a quadratic equation where only the
+            larger of the solution makes sense:
             $$
             \frac{H}{h_R}
             = \frac{W}{w_R}
             = \frac{W}{\left\lceil \frac{T}{h_R} \right\rceil}
             \leq \frac{W\cdot h_R}{T}
             \Longleftrightarrow h_R
-            \geq \sqrt{\frac{H \cdot T}{W}}
-            &eqcolon; h_r^-\\
+            \geq \sqrt{\frac{H T}{W}}
+            &eqcolon; h_r^- \\
 
             \frac{H}{h_R}
             = \frac{W}{w_R}
@@ -186,10 +187,27 @@
             \Longleftrightarrow \left( W \cdot h_R - H \right) h_R
             &lt; H \cdot T
             \Longleftrightarrow h_R
-            &lt; \frac{H}{2W} + \sqrt{\frac{H^2}{2 W^2} + \frac{HT}{W}}
+            &lt; \frac{H}{2 W} + \sqrt{\frac{H^2}{4 W^2} + \frac{H T}{W}}
             &eqcolon; h_r^+
             $$
-            Thus, only the interval $\left[h_r^-,h_r^+\right]$ needs to be checked to find the optimal $h_R$ (and, by rounding, $h$).
+            Thus $h_R \in \left[h_r^-,h_r^+\right)$ holds and, through rounding, $h \in \left\{ \left\lfloor h_r^-
+            \right\rfloor, \dots, \left\lceil h_r^+ - 1 \right\rceil \right\}$.
+            This would already be a smaller set to iterate through, but we can further simplify this by considering
+            $h_r^+ - h_r^-$, where the subadditivity of the square root — that is, $\sqrt{a + b} \leq \sqrt{a} +
+            \sqrt{b}$ for $a, b \in &Ropf;_+$ — is used:
+            $$
+            h_r^+
+            = \frac{H}{2W} + \sqrt{\frac{H^2}{2 W^2} + \frac{HT}{W}}
+            \leq \frac{H}{2W} + \sqrt{\frac{H^2}{2 W^2}} + \sqrt{\frac{HT}{W}}
+            = \frac{H}{W} + \sqrt{\frac{HT}{W}} \\
+            h_r^+ - h_r^-
+            \leq \frac{H}{W} + \sqrt{\frac{HT}{W}} - \sqrt{\frac{H T}{W}}
+            = \frac{H}{W}
+            $$
+            Thus, if $\frac{H}{W} \leq 1$, the relation $h_r^+ - h_r^- \leq 1 \Longleftrightarrow h_r^+ \leq h_r^- + 1$
+            holds, which means that set $h \in \left\{ \left\lfloor h_r^- \right\rfloor, \dots, \left\lceil h_r^- + 1 -
+            1 \right\rceil \right\} = \left\{ \left\lfloor h_r^- \right\rfloor,\left\lceil h_r^- \right\rceil \right\}$,
+            which is a superset of the previously defined set.
         </div>
     </div>
 
