@@ -26,6 +26,12 @@ h1 {
     text-align: center;
 }
 
+h1 a {
+    color: inherit;
+    font: inherit;
+    text-decoration: inherit;
+}
+
 header.Header::after {
     border-bottom: 1px solid #eee;
     content: "";
@@ -122,6 +128,11 @@ a.HeaderGroup {
 
 a.HeaderTitle {
     font-variant: small-caps;
+}
+
+div.italic {
+    display: inline;
+    font-style: italic;
 }
 
 div.maintext {
