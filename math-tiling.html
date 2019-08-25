@@ -205,9 +205,25 @@
             = \frac{H}{W}
             $$
             Thus, if $\frac{H}{W} \leq 1$, the relation $h_r^+ - h_r^- \leq 1 \Longleftrightarrow h_r^+ \leq h_r^- + 1$
-            holds, which means that set $h \in \left\{ \left\lfloor h_r^- \right\rfloor, \dots, \left\lceil h_r^- + 1 -
+            holds, which means that $h \in \left\{ \left\lfloor h_r^- \right\rfloor, \dots, \left\lceil h_r^- + 1 -
             1 \right\rceil \right\} = \left\{ \left\lfloor h_r^- \right\rfloor,\left\lceil h_r^- \right\rceil \right\}$,
             which is a superset of the previously defined set.
+            This works for displays that are horizontally oriented, but the solution for vertically oriented displays is
+            simple: swap $H$ and $W$ as well as $h$ and $w$ in the previous discussion, which yields the analogous
+            solution set for $w$.
+        </div>
+        <div class=par>
+            In conclusion, it is quite easy to find the optimal number of rows $h$ and columns $w$ when tiling a monitor
+            with width $W$ and height $H$ displaying a given number of windows $T$: If $H > W$, check both $h \in
+            \left\{ \sqrt{\frac{H T}{W}}, \sqrt{\frac{H T}{W}} + 1 \right\}$ with $w = \left\lceil \frac{T}{h}
+            \right\rceil$ for which one has the larger value $\min \left\{\frac{H}{h}, \frac{W}{w}\right\}$,
+            otherwise check both $w \in \left\{ \sqrt{\frac{W T}{H}}, \sqrt{\frac{W T}{H}} + 1 \right\}$ with $h =
+            \left\lceil \frac{T}{w} \right\rceil$ for which one has the larger value $\min \left\{\frac{H}{h},
+            \frac{W}{w}\right\}$.
+            The complexity of this operation is constant and the calculations are, apart from the single square root, all very basic.
+        </div>
+        <div class="par">
+            On the whole, I hope you have found this as interesting as I have — a small math problem with a nice solution and some real-life applications.
         </div>
     </div>
 
