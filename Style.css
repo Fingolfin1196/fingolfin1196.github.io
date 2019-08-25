@@ -138,3 +138,16 @@ div.italic {
 div.maintext {
     padding: 16pt;
 }
+
+div.FooterWrapper::before {
+    border-top: 1px solid #eee;
+    content: "";
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: calc(100% - 32pt);
+}
+div.Footer {
+    font-style: italic;
+    padding: 16pt;
+}

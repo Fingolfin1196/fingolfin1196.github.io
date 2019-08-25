@@ -7,9 +7,7 @@
     <meta name="description" content="My Homepage">
     <meta name="author" content="Kurt Böhm">
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
-    <link rel="stylesheet" href="Style.css" />
-    <link rel="stylesheet" media="only screen and (max-width: 40em)" href="mobile.css" />
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_SVG' async></script>
+    {{styles-and-scripts}}
 </head>
 
 <body>
@@ -20,10 +18,6 @@
 
         Hello, this is my homepage! It’s still in the works, so hopefully it works!<br>
 
-        Let \(a, b, c \in \mathbb{R}\). If \(a \neq 0\) and \(b^2 > 4ac\), there are two solutions to the equation
-        \(ax^2 + bx + c = 0\):
-        $$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$$
-
         <!-- This page uses <a href="https://github.com/CatharsisFonts/Ysabeau">Ysabeau</a> for the title and
         <a href="http://www.latofonts.com/">Lato</a> for the text, two great fonts that
         are licensed under the <a href="http://scripts.sil.org/OFL">SIL Open Font License</a>.-->
@@ -32,8 +26,7 @@
         <a href="http://scripts.sil.org/OFL">SIL Open Font License</a>) and
         <a href="http://bonanova.wtf/">Bona Nova</a> for the text (the license for which can be found
         <a href="Fonts/BonaNova/Licences.pdf">here</a>). -->
-
-        This page uses the excellent <a href="https://github.com/octaviopardo/EBGaramond12">EB Garamond</a>
-        (licensed under the <a href="http://scripts.sil.org/OFL">SIL Open Font License</a>) as its main font.
     </div>
+
+    {{footer}}
 </body>

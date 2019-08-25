@@ -1,0 +1,18 @@
+    <link rel="stylesheet" href="Style.css" />
+    <link rel="stylesheet" media="only screen and (max-width: 40em)" href="mobile.css" />
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            extensions: ["tex2jax.js", "MathMenu.js", "MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
+            jax: ["input/TeX", "output/SVG", "output/PreviewHTML"],
+            SVG: { font: "Gyre-Pagella" },
+            tex2jax: {
+                inlineMath: [['$','$']],
+                displayMath: [['$$','$$']],
+                processEscapes: true
+            },
+            TeX: {
+                extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]
+            }
+        });
+        </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_SVG' async></script>

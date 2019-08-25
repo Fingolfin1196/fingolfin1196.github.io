@@ -9,8 +9,22 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <link rel="stylesheet" href="Style.css" />
     <link rel="stylesheet" media="only screen and (max-width: 40em)" href="mobile.css" />
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_SVG' async></script>
-</head>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            extensions: ["tex2jax.js", "MathMenu.js", "MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
+            jax: ["input/TeX", "output/SVG", "output/PreviewHTML"],
+            SVG: { font: "Gyre-Pagella" },
+            tex2jax: {
+                inlineMath: [['$','$']],
+                displayMath: [['$$','$$']],
+                processEscapes: true
+            },
+            TeX: {
+                extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]
+            }
+        });
+        </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_SVG' async></script></head>
 
 <body>
     <header class="Header">
@@ -71,13 +85,37 @@
     </div>
     -->
     <div class="maintext">
-        Here is an interesting small math problem with a basis in real life that I spent some time thinking about a few days ago: How can I divide the are of my monitor into a grid <div class="italic">optimally</div>?<br>
+        <div class="par">
+            Here is an interesting small math problem with a basis in real life that I spent some time thinking about a
+            few days ago:
+            How can I divide my monitor into a grid containing a user-defined number of tiles <div class="italic">
+                optimally</div>?
+        </div>
 
-        Let \(a, b, c \in \mathbb{R}\). If \(a \neq 0\) and \(b^2 > 4ac\), there are two solutions to the equation
-        \(ax^2 + bx + c = 0\):
-        $$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$$
+        Before trying to find a good optimality condition, it makes sense to formulate this problem formally:<br>
+        Let $W, H \in \mathbb{N}$ be the height and width of the monitor and $T \in \mathbb{N}$ the minimum number
+        of tiles that our grid needs to contain.
+        A solution to the tiling problem is then a pair $\left\langle w, h \right\rangle \in \mathbb{N}^2$ for which
+        $w \cdot h \geq T$ holds.
+        This, however, can be simplified by noting that the minimum value of one of these variables can be calculated
+        trivially from that of the other:
+        If, for instance, the value for $h$ is fixed, the lowest value for $w$ that fulfils the aforementioned
+        condition is $w &#x2254 \left\lceil \frac{T}{h} \right\rceil$, since the following holds:
 
-        This page uses the excellent <a href="https://github.com/octaviopardo/EBGaramond12">EB Garamond</a>
-        (licensed under the <a href="http://scripts.sil.org/OFL">SIL Open Font License</a>) as its main font.
+        $$
+        w \cdot h
+        = \left\lceil \frac{T}{h} \right\rceil \cdot h
+        \geq \frac{T}{h} \cdot h
+        = T
+        $$
+
+        Since $\left\lceil \frac{T}{h} \right\rceil$ is the smallest integer for which this inequality holds, it suffices to consider either $h$ or $w$ (just swap $h$ and $w$ above) as the variable and calculate the other as above.
+    </div>
+
+    <div class="FooterWrapper">
+        <div class="Footer">
+            This page uses the excellent <a href="https://github.com/octaviopardo/EBGaramond12">EB Garamond</a>
+            (licensed under the <a href="http://scripts.sil.org/OFL">SIL Open Font License</a>) as its main font.
+        </div>
     </div>
 </body>
