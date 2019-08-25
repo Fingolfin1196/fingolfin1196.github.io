@@ -130,13 +130,29 @@ a.HeaderTitle {
     font-variant: small-caps;
 }
 
+div.maintext {
+    padding: 16pt;
+}
+
 div.italic {
     display: inline;
     font-style: italic;
 }
 
-div.maintext {
-    padding: 16pt;
+div.center {
+    text-align: center;
+}
+
+div.par {
+    padding: 4pt 0;
+}
+
+div.first {
+    padding: 0 0 4pt 0;
+}
+
+div.last {
+    padding: 4pt 0 0 0;
 }
 
 div.FooterWrapper::before {
@@ -147,7 +163,9 @@ div.FooterWrapper::before {
     padding: 0;
     width: calc(100% - 32pt);
 }
+
 div.Footer {
     font-style: italic;
     padding: 16pt;
+    text-align: center;
 }
