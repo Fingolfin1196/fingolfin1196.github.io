@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/SVG/fonts/Asana-Math/Alphabets/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ MathJax.OutputJax['SVG'].FONTDATA.FONTS['AsanaMathJax_Alphabets'] = {
   family: 'AsanaMathJax_Alphabets',
   id: 'ASANAMATHALPHABETS',
   0x20: [0,0,249,0,0,''],
+  0xA0: [0,0,333,0,0,''],
   0x384: [685,-476,374,134,241,'134 482l46 196l12 7l43 -16l6 -13l-91 -180'],
   0x385: [685,-476,332,-6,339,'106 482l46 196l12 7l43 -16l6 -13l-91 -180zM-6 635c0 23 18 45 46 45c21 0 44 -17 44 -45s-22 -46 -44 -46c-25 0 -46 20 -46 46zM249 635c0 26 20 45 45 45c24 0 45 -19 45 -45c0 -25 -21 -46 -45 -46c-22 0 -45 17 -45 46'],
   0x386: [700,3,777,15,756,'135 497l45 196l12 7l44 -16l6 -13l-91 -180zM408 700l242 -568c35 -81 46 -98 72 -102l34 -3v-30c-108 3 -108 3 -127 3c-16 0 -16 0 -139 -3v30l47 3c25 2 41 9 41 20c0 9 -4 22 -21 64l-46 115h-288l-28 -67c-21 -50 -35 -93 -35 -106c0 -16 13 -23 48 -26l37 -3v-30 c-108 3 -108 3 -121 3c-16 0 -16 0 -109 -3v30l37 3c22 2 42 20 54 49l231 526l39 95h32zM240 269h253l-126 298'],

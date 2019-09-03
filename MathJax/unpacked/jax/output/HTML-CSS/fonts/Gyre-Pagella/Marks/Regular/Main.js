@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Gyre-Pagella/Marks/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['GyrePagellaMathJax_Marks'] = {
   0x332: [-60,108,0,-416,-83],
   0x333: [-60,216,0,-416,-83],
   0x33F: [754,-598,0,-416,-83],
+  0x34D: [-74,314,0,-479,-21],
   0x2000: [0,0,500,0,0],
   0x2001: [0,0,1000,0,0],
   0x2007: [0,0,500,0,0],

@@ -4,7 +4,7 @@
  *  
  *  Initializes the HTML-CSS OutputJax to use the Latin-Modern fonts
 
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 
 (function (HTMLCSS,MML,AJAX) {
 
-  var VERSION = "2.7.6";
+    var VERSION = "2.3";
 
   var ALPHABETS = "LatinModernMathJax_Alphabets",
       ARROWS = "LatinModernMathJax_Arrows",
@@ -143,7 +143,7 @@
              offsetA: 0x1D670,
              offsetN: 0x1D7F6
           },
-          "-Latin-Modern-variant": {fonts: [VARIANTS,MAIN,NORMAL,MONOSPACE,LATIN,ALPHABETS,MARKS,ARROWS,OPERATORS,SYMBOLS,SHAPES,MISC,NONUNICODE,SIZE1]},
+        "-Latin-Modern-variant": {fonts: [VARIANTS,MAIN,NORMAL,MONOSPACE,LATIN,ALPHABETS,MARKS,ARROWS,OPERATORS,SYMBOLS,SHAPES,MISC,NONUNICODE,SIZE1]},
           "-tex-caligraphic": {fonts: [MAIN,NORMAL,MONOSPACE,LATIN,ALPHABETS,MARKS,ARROWS,OPERATORS,SYMBOLS,SHAPES,MISC,VARIANTS,NONUNICODE,SIZE1], italic: true},
           "-tex-oldstyle": {fonts: [MAIN,NORMAL,MONOSPACE,LATIN,ALPHABETS,MARKS,ARROWS,OPERATORS,SYMBOLS,SHAPES,MISC,VARIANTS,NONUNICODE,SIZE1]},
           "-tex-caligraphic-bold": {fonts: [MAIN,NORMAL,MONOSPACE,LATIN,ALPHABETS,MARKS,ARROWS,OPERATORS,SYMBOLS,SHAPES,MISC,VARIANTS,NONUNICODE,SIZE1], italic: true, bold: true},
@@ -157,41 +157,41 @@
         {name: "alpha", low: 0x61, high: 0x7A, offset: "A", add: 26},
         {name: "Alpha", low: 0x41, high: 0x5A, offset: "A"},
         {name: "number", low: 0x30, high: 0x39, offset: "N"},
+        {name: "greek-non-unicode", low: 0x03B1, high: 0x03C9, offset: "G", add: 25},
         {name: "greek", low: 0x03B1, high: 0x03C9, offset: "G", add: 26},
         {name: "Greek", low: 0x0391, high: 0x03F6, offset: "G",
            remap: {0x03F5: 52, 0x03D1: 53, 0x03F0: 54, 0x03D5: 55, 0x03F1: 56, 0x03D6: 57, 0x03F4: 17}}
       ],
 
-      RULECHAR: 0x2212,
+      RULECHAR: 0x0305,
 
       REMAP: {
-        0xA: 0x20,
+        0x203E: 0x0305,
+        0xFE37: 0x23DE,
+        0xFE38: 0x23DF,
+        0x02B9: 0x2032,
+        0x03D2: 0x03A5,
+        0x25B4: 0x25B2,
+        0x25B5: 0x25B3,
+        0x25B8: 0x25B6,
+        0x25BE: 0x25BC,
+        0x25BF: 0x25BD,
         0x25C2: 0x25C0,
         0x3008: 0x27E8,
         0x3009: 0x27E9,
         0x2758: 0x2223,
-        0x25B8: 0x25B6,
-        0x03D2: 0x03A5,
-        0x25B4: 0x25B2,
-        0x25B5: 0x25B3,
-        0xFE37: 0x23DE,
-        0xFE38: 0x23DF,
-        0x02B9: 0x2032,
         0x25FB: 0x25A1,
-        0x25FC: 0x25A0,
-        0x25BE: 0x25BC,
-        0x203E: 0x0305,
-        0x25BF: 0x25BD
+        0x25FC: 0x25A0
       },
 
       REMAPACCENT: {
-        "\u007E": "\u0303",
-        "\u2192": "\u20D7",
-        "\u0060": "\u0300",
-        "\u005E": "\u0302",
-        "\u00B4": "\u0301",
-        "\u2032": "\u0301",
-        "\u2035": "\u0300"
+        "→": "⃗",
+        "′": "́",
+        "~": "̃",
+        "‵": "̀",
+        "^": "̂",
+        "`": "̀",
+        "´": "́"
       },
 
       REMAPACCENTUNDER: {
@@ -210,7 +210,7 @@
           HW: [[0.996,MAIN], [1.094,SIZE1], [1.194,SIZE2], [1.444,SIZE3], [1.792,SIZE4], [2.092,SIZE5], [2.392,SIZE6], [2.990,SIZE7]],
           stretch: {bot:[0x23A0,SYMBOLS], ext:[0x239F,SYMBOLS], top:[0x239E,SYMBOLS]}
         },
-        0x2D: {alias: 0x2212, dir: H},
+        0x2D: {alias: 0x305, dir: H},
         0x2F:
         {
           dir: V,
@@ -262,7 +262,7 @@
         0x7E: {alias: 0x303, dir: H},
         0xAF: {alias: 0x332, dir: H},
         0x2C6: {alias: 0x302, dir: H},
-        0x2C9: {alias: 0x2212, dir: H},
+        0x2C9: {alias: 0x305, dir: H},
         0x2DC: {alias: 0x303, dir: H},
         0x302:
         {
@@ -278,7 +278,7 @@
         {
           dir: H,
           HW: [[0.392,MARKS], [0.568,SIZE1]],
-          stretch: {left:[0xE0FB,SIZE7], rep:[0xE0FC,SIZE7], right:[0xE0FD,SIZE7]}
+          stretch: {left:[0xE0FE,SIZE7], rep:[0xE0FF,SIZE7], right:[0xE100,SIZE7]}
         },
         0x306: EXTRAH,
         0x30C:
@@ -296,19 +296,25 @@
         {
           dir: H,
           HW: [[0.392,MARKS], [0.568,SIZE1]],
-          stretch: {left:[0xE0F5,SIZE7], rep:[0xE0F6,SIZE7], right:[0xE0F7,SIZE7]}
+          stretch: {left:[0xE0F8,SIZE7], rep:[0xE0F9,SIZE7], right:[0xE0FA,SIZE7]}
         },
         0x333: EXTRAH,
         0x33F: EXTRAH,
-        0x2015: {alias: 0x2212, dir: H},
+        0x34D:
+        {
+          dir: H,
+          HW: [[0.470,MARKS], [0.603,SIZE1]],
+          stretch: {left:[0xE023,SIZE7], rep:[0xE024,SIZE7], right:[0xE025,SIZE7]}
+        },
+        0x2015: {alias: 0x305, dir: H},
         0x2016:
         {
           dir: V,
           HW: [[1.000,MAIN], [1.202,SIZE1], [1.444,SIZE2], [1.734,SIZE3], [2.084,SIZE4], [2.502,SIZE5], [3.004,SIZE6], [3.606,SIZE7]],
-          stretch: {bot:[0xE12A,SIZE7], ext:[0xE12B,SIZE7], top:[0xE12C,SIZE7]}
+          stretch: {bot:[0xE12D,SIZE7], ext:[0xE12E,SIZE7], top:[0xE12F,SIZE7]}
         },
-        0x2017: {alias: 0x2212, dir: H},
-        0x203E: {alias: 0x2212, dir: H},
+        0x2017: {alias: 0x305, dir: H},
+        0x203E: {alias: 0x305, dir: H},
         0x2044:
         {
           dir: V,
@@ -328,37 +334,37 @@
         {
           dir: H,
           HW: [[0.885,MAIN], [1.351,SIZE1]],
-          stretch: {left:[0xE023,SIZE7], rep:[0xE024,SIZE7], right:[0xE025,SIZE7]}
+          stretch: {left:[0xE026,SIZE7], rep:[0xE027,SIZE7], right:[0xE028,SIZE7]}
         },
         0x2191:
         {
           dir: V,
           HW: [[0.882,MAIN], [1.348,SIZE1]],
-          stretch: {bot:[0xE029,SIZE7], ext:[0xE02A,SIZE7], top:[0xE02B,SIZE7]}
+          stretch: {bot:[0xE02C,SIZE7], ext:[0xE02D,SIZE7], top:[0xE02E,SIZE7]}
         },
         0x2192:
         {
           dir: H,
           HW: [[0.885,MAIN], [1.351,SIZE1]],
-          stretch: {left:[0xE026,SIZE7], rep:[0xE027,SIZE7], right:[0xE028,SIZE7]}
+          stretch: {left:[0xE029,SIZE7], rep:[0xE02A,SIZE7], right:[0xE02B,SIZE7]}
         },
         0x2193:
         {
           dir: V,
           HW: [[0.882,MAIN], [1.348,SIZE1]],
-          stretch: {bot:[0xE02C,SIZE7], ext:[0xE02D,SIZE7], top:[0xE02E,SIZE7]}
+          stretch: {bot:[0xE02F,SIZE7], ext:[0xE030,SIZE7], top:[0xE031,SIZE7]}
         },
         0x2194:
         {
           dir: H,
           HW: [[0.884,MAIN], [1.330,SIZE1]],
-          stretch: {left:[0xE037,SIZE7], rep:[0xE038,SIZE7], right:[0xE039,SIZE7]}
+          stretch: {left:[0xE03A,SIZE7], rep:[0xE03B,SIZE7], right:[0xE03C,SIZE7]}
         },
         0x2195:
         {
           dir: V,
           HW: [[1.014,MAIN], [1.014,SIZE1]],
-          stretch: {bot:[0xE03A,SIZE7], ext:[0xE03B,SIZE7], top:[0xE03C,SIZE7]}
+          stretch: {bot:[0xE03D,SIZE7], ext:[0xE03E,SIZE7], top:[0xE03F,SIZE7]}
         },
         0x2196: EXTRAV,
         0x2197: EXTRAV,
@@ -376,14 +382,14 @@
         {
           dir: H,
           HW: [[0.865,ARROWS], [1.331,SIZE1]],
-          stretch: {left:[0xE053,SIZE7], rep:[0xE054,SIZE7], right:[0xE055,SIZE7]}
+          stretch: {left:[0xE056,SIZE7], rep:[0xE057,SIZE7], right:[0xE058,SIZE7]}
         },
         0x21A5: EXTRAV,
         0x21A6:
         {
           dir: H,
           HW: [[0.865,MAIN], [1.331,SIZE1]],
-          stretch: {left:[0xE056,SIZE7], rep:[0xE057,SIZE7], right:[0xE058,SIZE7]}
+          stretch: {left:[0xE059,SIZE7], rep:[0xE05A,SIZE7], right:[0xE05B,SIZE7]}
         },
         0x21A7: EXTRAV,
         0x21A9: EXTRAH,
@@ -422,37 +428,37 @@
         {
           dir: H,
           HW: [[0.879,MAIN], [1.345,SIZE1]],
-          stretch: {left:[0xE0A7,SIZE7], rep:[0xE0A8,SIZE7], right:[0xE0A9,SIZE7]}
+          stretch: {left:[0xE0AA,SIZE7], rep:[0xE0AB,SIZE7], right:[0xE0AC,SIZE7]}
         },
         0x21D1:
         {
           dir: V,
           HW: [[0.879,MAIN], [1.345,SIZE1]],
-          stretch: {bot:[0xE0AD,SIZE7], ext:[0xE0AE,SIZE7], top:[0xE0AF,SIZE7]}
+          stretch: {bot:[0xE0B0,SIZE7], ext:[0xE0B1,SIZE7], top:[0xE0B2,SIZE7]}
         },
         0x21D2:
         {
           dir: H,
           HW: [[0.879,MAIN], [1.345,SIZE1]],
-          stretch: {left:[0xE0AA,SIZE7], rep:[0xE0AB,SIZE7], right:[0xE0AC,SIZE7]}
+          stretch: {left:[0xE0AD,SIZE7], rep:[0xE0AE,SIZE7], right:[0xE0AF,SIZE7]}
         },
         0x21D3:
         {
           dir: V,
           HW: [[0.879,MAIN], [1.345,SIZE1]],
-          stretch: {bot:[0xE0B0,SIZE7], ext:[0xE0B1,SIZE7], top:[0xE0B2,SIZE7]}
+          stretch: {bot:[0xE0B3,SIZE7], ext:[0xE0B4,SIZE7], top:[0xE0B5,SIZE7]}
         },
         0x21D4:
         {
           dir: H,
           HW: [[0.956,MAIN], [1.422,SIZE1]],
-          stretch: {left:[0xE0B3,SIZE7], rep:[0xE0B4,SIZE7], right:[0xE0B5,SIZE7]}
+          stretch: {left:[0xE0B6,SIZE7], rep:[0xE0B7,SIZE7], right:[0xE0B8,SIZE7]}
         },
         0x21D5:
         {
           dir: V,
           HW: [[0.956,MAIN], [1.422,SIZE1]],
-          stretch: {bot:[0xE0B6,SIZE7], ext:[0xE0B7,SIZE7], top:[0xE0B8,SIZE7]}
+          stretch: {bot:[0xE0B9,SIZE7], ext:[0xE0BA,SIZE7], top:[0xE0BB,SIZE7]}
         },
         0x21D6: EXTRAV,
         0x21D7: EXTRAV,
@@ -475,15 +481,15 @@
         0x2212:
         {
           dir: H,
-          HW: [],
-          stretch: {rep:[0x2212,MAIN,0,0,0,-.31,-.31]}
+          HW: [[0.666,MAIN]],
+          stretch: {left:[0xE12A,SIZE7], rep:[0xE12B,SIZE7], right:[0xE12C,SIZE7]}
         },
         0x2215: {alias: 0x2044, dir: V},
         0x221A:
         {
           dir: V,
           HW: [[1.000,MAIN], [1.200,SIZE1], [1.800,SIZE2], [2.400,SIZE3], [3.000,SIZE4]],
-          stretch: {bot:[0x23B7,SYMBOLS], ext:[0xE133,SIZE7], top:[0xE134,SIZE7]}
+          stretch: {bot:[0x23B7,SYMBOLS], ext:[0xE136,SIZE7], top:[0xE137,SIZE7]}
         },
         0x2223:
         {
@@ -495,7 +501,7 @@
         {
           dir: V,
           HW: [[1.000,MAIN], [1.202,SIZE1], [1.444,SIZE2], [1.734,SIZE3], [2.084,SIZE4], [2.502,SIZE5], [3.004,SIZE6], [3.606,SIZE7]],
-          stretch: {bot:[0xE12A,SIZE7], ext:[0xE12B,SIZE7], top:[0xE12C,SIZE7]}
+          stretch: {bot:[0xE12D,SIZE7], ext:[0xE12E,SIZE7], top:[0xE12F,SIZE7]}
         },
         0x222B: EXTRAV,
         0x222C: EXTRAV,
@@ -540,9 +546,9 @@
           HW: [[1.000,MAIN], [1.100,SIZE1], [1.200,SIZE2], [1.450,SIZE3], [1.800,SIZE4], [2.100,SIZE5], [2.400,SIZE6], [3.000,SIZE7]],
           stretch: {bot:[0x23A6,SYMBOLS], ext:[0x23A5,SYMBOLS]}
         },
-        0x2312: {alias: 0x23DC, dir:H},
-        0x2322: {alias: 0x23DC, dir:H},
-        0x2323: {alias: 0x23DD, dir:H},
+        0x2312: {alias: 0x23DC, dir: H},
+        0x2322: {alias: 0x23DC, dir: H},
+        0x2323: {alias: 0x23DD, dir: H},
         0x2329:
         {
           dir: V,
@@ -559,7 +565,7 @@
           HW: [[0.748,SYMBOLS]],
           stretch: {ext:[0x23AA,SYMBOLS]}
         },
-        0x23AF: {alias: 0x2212, dir: H},
+        0x23AF: {alias: 0x305, dir: H},
         0x23B0:
         {
           dir: V,
@@ -586,17 +592,17 @@
         {
           dir: H,
           HW: [[0.492,MAIN], [0.993,SIZE1], [1.494,SIZE2], [1.996,SIZE3], [2.498,SIZE4], [3.000,SIZE5], [3.502,SIZE6], [4.006,SIZE7]],
-          stretch: {left:[0xE10D,SIZE7], rep:[0xE10E,SIZE7], mid:[0xE10F,SIZE7], right:[0xE110,SIZE7]}
+          stretch: {left:[0xE110,SIZE7], rep:[0xE111,SIZE7], mid:[0xE112,SIZE7], right:[0xE113,SIZE7]}
         },
         0x23DF:
         {
           dir: H,
           HW: [[0.492,MAIN], [0.993,SIZE1], [1.494,SIZE2], [1.996,SIZE3], [2.498,SIZE4], [3.000,SIZE5], [3.502,SIZE6], [4.006,SIZE7]],
-          stretch: {left:[0xE111,SIZE7], rep:[0xE112,SIZE7], mid:[0xE113,SIZE7], right:[0xE114,SIZE7]}
+          stretch: {left:[0xE114,SIZE7], rep:[0xE115,SIZE7], mid:[0xE116,SIZE7], right:[0xE117,SIZE7]}
         },
         0x23E0: EXTRAH,
         0x23E1: EXTRAH,
-        0x2500: {alias: 0x2212, dir: H},
+        0x2500: {alias: 0x305, dir: H},
         0x27A1: EXTRAH,
         0x27E6: EXTRAV,
         0x27E7: EXTRAV,
@@ -616,13 +622,13 @@
         {
           dir: V,
           HW: [[1.024,MAIN], [1.126,SIZE1], [1.228,SIZE2], [1.482,SIZE3], [1.836,SIZE4], [2.140,SIZE5], [2.444,SIZE6], [3.052,SIZE7]],
-          stretch: {bot:[0xE101,SIZE7], ext:[0xE102,SIZE7], top:[0xE103,SIZE7]}
+          stretch: {bot:[0xE104,SIZE7], ext:[0xE105,SIZE7], top:[0xE106,SIZE7]}
         },
         0x27EF:
         {
           dir: V,
           HW: [[1.024,MAIN], [1.126,SIZE1], [1.228,SIZE2], [1.482,SIZE3], [1.836,SIZE4], [2.140,SIZE5], [2.444,SIZE6], [3.052,SIZE7]],
-          stretch: {bot:[0xE104,SIZE7], ext:[0xE105,SIZE7], top:[0xE106,SIZE7]}
+          stretch: {bot:[0xE107,SIZE7], ext:[0xE108,SIZE7], top:[0xE109,SIZE7]}
         },
         0x27F5: {alias: 0x2190, dir: H},
         0x27F6: {alias: 0x2192, dir: H},
@@ -638,13 +644,13 @@
         {
           dir: H,
           HW: [[0.879,ARROWS], [1.325,SIZE1]],
-          stretch: {left:[0xE0C5,SIZE7], rep:[0xE0C6,SIZE7], right:[0xE0C7,SIZE7]}
+          stretch: {left:[0xE0C8,SIZE7], rep:[0xE0C9,SIZE7], right:[0xE0CA,SIZE7]}
         },
         0x2907:
         {
           dir: H,
           HW: [[0.879,ARROWS], [1.325,SIZE1]],
-          stretch: {left:[0xE0C8,SIZE7], rep:[0xE0C9,SIZE7], right:[0xE0CA,SIZE7]}
+          stretch: {left:[0xE0CB,SIZE7], rep:[0xE0CC,SIZE7], right:[0xE0CD,SIZE7]}
         },
         0x2A00: EXTRAV,
         0x2A01: EXTRAV,
@@ -670,10 +676,6 @@
       }
 
     }
-  });
-  MathJax.Hub.Register.LoadHook(HTMLCSS.fontDir+"/Main/Regular/Main.js",function () {
-    HTMLCSS.FONTDATA.FONTS[MAIN][0x2212][0] = HTMLCSS.FONTDATA.FONTS[MAIN][0x002B][0]; // - needs height and depth of +
-    HTMLCSS.FONTDATA.FONTS[MAIN][0x2212][1] = HTMLCSS.FONTDATA.FONTS[MAIN][0x002B][1]; // - needs height and depth of +
   });
   MathJax.Hub.Register.LoadHook(HTMLCSS.fontDir+"/Size7/Regular/Main.js",function () {
     var u;

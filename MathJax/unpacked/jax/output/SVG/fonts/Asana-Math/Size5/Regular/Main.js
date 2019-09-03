@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/SVG/fonts/Asana-Math/Size5/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ MathJax.OutputJax['SVG'].FONTDATA.FONTS['AsanaMathJax_Size5'] = {
   id: 'ASANAMATHSIZE5',
   0x20: [0,0,249,0,0,''],
   0x7C: [1673,1039,288,85,203,'203 -1039h-118v2712h118v-2712'],
+  0xA0: [0,0,333,0,0,''],
   0x302: [783,-627,3026,0,3026,'3026 627l-1514 93l-1512 -93v47l1512 109l1514 -109v-47'],
   0x303: [772,-642,2797,0,2797,'2797 772c-106 -99 -576 -130 -895 -130c-339 0 -939 67 -1221 67c-207 0 -551 -10 -618 -67h-63c106 99 576 130 895 130c333 0 929 -67 1211 -67c207 0 561 10 630 67h61'],
   0x30C: [792,-627,2940,0,2940,'2940 792v-47l-1472 -118l-1468 118v47l1470 -101'],

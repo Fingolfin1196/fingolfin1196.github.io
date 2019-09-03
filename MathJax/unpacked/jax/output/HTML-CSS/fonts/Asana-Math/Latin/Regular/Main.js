@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Asana-Math/Latin/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,8 +20,9 @@
 MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['AsanaMathJax_Latin'] = {
   directory: 'Latin/Regular',
   family: 'AsanaMathJax_Latin',
-  testString: '\u00A1\u00A2\u00A4\u00A6\u00A9\u00AA\u00AB\u00B2\u00B3\u00B6\u00B8\u00B9\u00BA\u00BB\u00BC',
+  testString: '\u00A0\u00A1\u00A2\u00A4\u00A6\u00A9\u00AA\u00AB\u00B2\u00B3\u00B6\u00B8\u00B9\u00BA\u00BB',
   0x20: [0,0,249,0,0],
+  0xA0: [0,0,333,0,0],
   0xA1: [469,225,277,81,197],
   0xA2: [562,101,499,61,448],
   0xA4: [531,-96,499,30,470],

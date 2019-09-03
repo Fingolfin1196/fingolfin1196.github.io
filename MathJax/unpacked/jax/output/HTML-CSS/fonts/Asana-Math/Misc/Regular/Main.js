@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Asana-Math/Misc/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,8 +20,9 @@
 MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['AsanaMathJax_Misc'] = {
   directory: 'Misc/Regular',
   family: 'AsanaMathJax_Misc',
-  testString: '\u2070\u2071\u2074\u2075\u2076\u2077\u2078\u2079\u207A\u207B\u207C\u207D\u207E\u207F\u2080',
+  testString: '\u00A0\u2070\u2071\u2074\u2075\u2076\u2077\u2078\u2079\u207A\u207B\u207C\u207D\u207E\u207F',
   0x20: [0,0,249,0,0],
+  0xA0: [0,0,333,0,0],
   0x2070: [696,-271,300,14,286],
   0x2071: [685,-271,209,27,183],
   0x2074: [690,-271,299,2,296],
@@ -57,6 +58,9 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['AsanaMathJax_Misc'] = {
   0x2093: [11,273,359,31,329],
   0x2094: [22,271,323,30,294],
   0x20AC: [683,0,721,0,689],
+  0x2150: [698,6,800,3,785],
+  0x2151: [692,7,750,15,730],
+  0x2152: [692,0,1028,15,1008],
   0x2153: [692,3,750,15,735],
   0x2154: [689,3,781,15,766],
   0x2155: [692,7,766,15,751],
@@ -102,8 +106,16 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['AsanaMathJax_Misc'] = {
   0x217D: [469,20,443,26,413],
   0x217E: [726,12,610,35,579],
   0x217F: [469,3,882,16,869],
+  0x2184: [497,20,443,25,413],
+  0x2186: [692,3,463,37,426],
+  0x2187: [692,3,715,55,660],
+  0x2188: [695,3,1046,68,980],
+  0x2189: [690,3,776,52,761],
+  0x218A: [689,3,499,16,468],
+  0x218B: [689,20,499,15,462],
   0x2731: [669,-148,601,55,546],
-  0x2736: [572,0,592,45,547]
+  0x2736: [572,0,592,45,547],
+  0x27A1: [554,12,1013,64,950]
 };
 
 MathJax.Callback.Queue(

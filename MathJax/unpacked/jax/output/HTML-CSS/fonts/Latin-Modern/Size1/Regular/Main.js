@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Latin-Modern/Size1/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['LatinModernMathJax_Size1'] = {
   0x332: [-103,143,568,0,568],
   0x333: [-103,293,568,0,568],
   0x33F: [820,-630,568,0,568],
+  0x34D: [-91,281,715,56,659],
   0x2016: [851,351,354,56,298],
   0x2044: [905,405,617,56,561],
   0x20D0: [711,-601,667,56,611],

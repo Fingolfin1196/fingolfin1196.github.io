@@ -3,7 +3,8 @@
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
             extensions: ["tex2jax.js", "MathMenu.js", "MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
-            jax: ["input/TeX", "output/SVG", "output/PreviewHTML"],
+            "HTML-CSS": { fonts: ["Garamond", "Gyre-Pagella"] },
+            jax: ["input/TeX", "output/HTML-CSS", "output/PreviewHTML"],
             SVG: { font: "Gyre-Pagella" },
             tex2jax: {
                 inlineMath: [['$','$']],

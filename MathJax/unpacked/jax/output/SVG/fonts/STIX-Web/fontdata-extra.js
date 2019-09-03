@@ -4,7 +4,7 @@
  *  
  *  Adds extra stretchy characters to the STIX-Web fonts
 
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,12 +20,11 @@
  */
 
 (function (SVG) {
-  var VERSION = "2.7.6";
+  var VERSION = "2.3";
 
   var DELIMITERS = SVG.FONTDATA.DELIMITERS;
 
   var H = "H", V = "V";
-  var ARROWREP = [0x2212,MAIN,0,0,0,-.26,-.26];
 
   var ALPHABETSBOLDITALIC = "STIXMathJax_Alphabets-bold-italic",
       ALPHABETSBOLD = "STIXMathJax_Alphabets-bold",
@@ -163,7 +162,7 @@
       {
         dir: H,
         HW: [[786,MAIN]],
-        stretch: {left:[0x219E,MAIN], rep:ARROWREP}
+        stretch: {left:[0x219E,MAIN], rep:[0x2212,MAIN]}
       },
       0x219F:
       {
@@ -175,7 +174,7 @@
       {
         dir: H,
         HW: [[786,MAIN]],
-        stretch: {right:[0x21A0,MAIN], rep:ARROWREP}
+        stretch: {right:[0x21A0,MAIN], rep:[0x2212,MAIN]}
       },
       0x21A1:
       {
@@ -217,13 +216,13 @@
       {
         dir: H,
         HW: [[786,MAIN]],
-        stretch: {left:[0x2190,MAIN], rep:ARROWREP, right:[0xE0B5,ARROWS]}
+        stretch: {left:[0x2190,MAIN], rep:[0x2212,MAIN], right:[0xE0B5,ARROWS]}
       },
       0x21AA:
       {
         dir: H,
         HW: [[786,MAIN]],
-        stretch: {left:[0xE0B4,ARROWS], rep:ARROWREP, right:[0x2192,MAIN]}
+        stretch: {left:[0xE0B4,ARROWS], rep:[0x2212,MAIN], right:[0x2192,MAIN]}
       },
       0x21B0:
       {
@@ -295,7 +294,7 @@
       {
         dir: H,
         HW: [[847,MAIN]],
-        stretch: {right:[0x21C1,MAIN], rep:ARROWREP}
+        stretch: {right:[0x21C1,MAIN], rep:[0x2212,MAIN]}
       },
       0x21C2:
       {
@@ -361,31 +360,31 @@
       {
         dir: H,
         HW: [[806,ARROWS]],
-        stretch: {left:[0x21E4,ARROWS], rep:ARROWREP}
+        stretch: {left:[0x21E4,ARROWS], rep:[0x2212,MAIN]}
       },
       0x21E5:
       {
         dir: H,
         HW: [[806,ARROWS]],
-        stretch: {right:[0x21E5,ARROWS], rep:ARROWREP}
+        stretch: {right:[0x21E5,ARROWS], rep:[0x2212,MAIN]}
       },
       0x21FD:
       {
         dir: H,
         HW: [[806,ARROWS]],
-        stretch: {left:[0x21FD,ARROWS], rep:ARROWREP}
+        stretch: {left:[0x21FD,ARROWS], rep:[0x2212,MAIN]}
       },
       0x21FE:
       {
         dir: H,
         HW: [[806,ARROWS]],
-        stretch: {right:[0x21FE,ARROWS], rep:ARROWREP}
+        stretch: {right:[0x21FE,ARROWS], rep:[0x2212,MAIN]}
       },
       0x21FF:
       {
         dir: H,
         HW: [[886,ARROWS]],
-        stretch: {left:[0x21FD,ARROWS], rep:ARROWREP, right:[0x21FE,ARROWS]}
+        stretch: {left:[0x21FD,ARROWS], rep:[0x2212,MAIN], right:[0x21FE,ARROWS]}
       },
       0x220F:
       {
@@ -416,9 +415,9 @@
       },
       0x222B:
       {
-        dir: V,
+        dir: H,
         HW: [[607,MAIN], [979,SIZE1]],
-        stretch: {top:[0xE03C,SIZE5], ext:[0xE03D,SIZE5], bot:[0xE03E,SIZE5]}
+        stretch: {top:[0xE03A,SIZE5], rep:[0xE03B,SIZE5], bot:[0xE03C,SIZE5]}
       },
       0x222C:
       {
@@ -610,7 +609,7 @@
       {
         dir: H,
         HW: [[850,ARROWS]],
-        stretch: {left:[0x21BC,MAIN], rep:ARROWREP, right:[0x21C0,MAIN]}
+        stretch: {left:[0x21BC,MAIN], rep:[0x2212,MAIN], right:[0x21C0,MAIN]}
       },
       0x294F:
       {
@@ -622,7 +621,7 @@
       {
         dir: H,
         HW: [[850,ARROWS]],
-        stretch: {left:[0x21BD,MAIN], rep:ARROWREP, right:[0x21C1,MAIN]}
+        stretch: {left:[0x21BD,MAIN], rep:[0x2212,MAIN], right:[0x21C1,MAIN]}
       },
       0x2951:
       {
@@ -634,13 +633,13 @@
       {
         dir: H,
         HW: [[816,ARROWS]],
-        stretch: {left:[0x2952,ARROWS], rep:ARROWREP}
+        stretch: {left:[0x2952,ARROWS], rep:[0x2212,MAIN]}
       },
       0x2953:
       {
         dir: H,
         HW: [[816,ARROWS]],
-        stretch: {right:[0x2953,ARROWS], rep:ARROWREP}
+        stretch: {right:[0x2953,ARROWS], rep:[0x2212,MAIN]}
       },
       0x2954:
       {
@@ -658,13 +657,13 @@
       {
         dir: H,
         HW: [[816,ARROWS]],
-        stretch: {left:[0x2956,ARROWS], rep:ARROWREP}
+        stretch: {left:[0x2956,ARROWS], rep:[0x2212,MAIN]}
       },
       0x2957:
       {
         dir: H,
         HW: [[816,ARROWS]],
-        stretch: {right:[0x2957,ARROWS], rep:ARROWREP}
+        stretch: {right:[0x2957,ARROWS], rep:[0x2212,MAIN]}
       },
       0x2958:
       {
@@ -682,13 +681,13 @@
       {
         dir: H,
         HW: [[816,ARROWS]],
-        stretch: {left:[0x21BC,MAIN], rep:ARROWREP, right:[0x22A3,MAINBOLD,0.000,0.100,0.600]}
+        stretch: {left:[0x21BC,MAIN], rep:[0x2212,MAIN], right:[0x22A3,MAINBOLD,0.000,0.100,0.600]}
       },
       0x295B:
       {
         dir: H,
         HW: [[816,ARROWS]],
-        stretch: {left:[0xE0B6,ARROWS], rep:ARROWREP, right:[0x21C0,MAIN]}
+        stretch: {left:[0xE0B6,ARROWS], rep:[0x2212,MAIN], right:[0x21C0,MAIN]}
       },
       0x295C:
       {
@@ -706,13 +705,13 @@
       {
         dir: H,
         HW: [[816,ARROWS]],
-        stretch: {left:[0x21BD,MAIN], rep:ARROWREP, right:[0x22A3,MAINBOLD,0.000,0.100,0.600]}
+        stretch: {left:[0x21BD,MAIN], rep:[0x2212,MAIN], right:[0x22A3,MAINBOLD,0.000,0.100,0.600]}
       },
       0x295F:
       {
         dir: H,
         HW: [[816,ARROWS]],
-        stretch: {left:[0xE0B6,ARROWS], rep:ARROWREP, right:[0x21C1,MAIN]}
+        stretch: {left:[0xE0B6,ARROWS], rep:[0x2212,MAIN], right:[0x21C1,MAIN]}
       },
       0x2960:
       {

@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Latin-Modern/Marks/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['LatinModernMathJax_Marks'] = {
   0x332: [-103,143,0,-460,-68],
   0x333: [-103,293,0,-460,-68],
   0x33F: [820,-630,0,-460,-68],
+  0x34D: [-91,281,0,-499,-29],
   0x2000: [0,0,500,0,0],
   0x2001: [0,0,1000,0,0],
   0x2007: [0,0,500,0,0],

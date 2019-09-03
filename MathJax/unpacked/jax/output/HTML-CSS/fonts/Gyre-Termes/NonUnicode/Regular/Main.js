@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Gyre-Termes/NonUnicode/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -1420,7 +1420,7 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['GyreTermesMathJax_NonUnicode'] = {
   0xE572: [844,344,1516,80,1436],
   0xE573: [844,344,750,80,710],
   0xE574: [844,344,750,80,710],
-  0xE575: [844,344,739,80,699],
+  0xE575: [844,344,713,80,673],
   0xE576: [844,344,713,80,673],
   0xE577: [959,459,708,80,628],
   0xE578: [959,459,1116,80,1036],
@@ -1431,7 +1431,7 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['GyreTermesMathJax_NonUnicode'] = {
   0xE57D: [959,459,1574,80,1494],
   0xE57E: [959,459,774,80,734],
   0xE57F: [959,459,774,80,734],
-  0xE580: [959,459,759,80,719],
+  0xE580: [959,459,736,80,696],
   0xE581: [959,459,736,80,696],
   0xE582: [1097,597,730,80,650],
   0xE583: [1097,597,1155,80,1075],
@@ -1442,7 +1442,7 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['GyreTermesMathJax_NonUnicode'] = {
   0xE588: [1097,597,1632,80,1552],
   0xE589: [1097,597,797,80,757],
   0xE58A: [1097,597,797,80,757],
-  0xE58B: [1097,597,779,80,739],
+  0xE58B: [1097,597,759,80,719],
   0xE58C: [1097,597,759,80,719],
   0xE58D: [1462,962,776,80,696],
   0xE58E: [1462,962,1235,80,1155],
@@ -1453,7 +1453,7 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['GyreTermesMathJax_NonUnicode'] = {
   0xE593: [1462,962,1750,80,1670],
   0xE594: [1462,962,846,80,806],
   0xE595: [1462,962,846,80,806],
-  0xE596: [1462,962,821,80,781],
+  0xE596: [1462,962,807,80,767],
   0xE597: [1462,962,807,80,767],
   0xE598: [1701,1201,800,80,720],
   0xE599: [1701,1201,1275,80,1195],
@@ -1464,7 +1464,7 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['GyreTermesMathJax_NonUnicode'] = {
   0xE59E: [1701,1201,1808,80,1728],
   0xE59F: [1701,1201,871,80,831],
   0xE5A0: [1701,1201,871,80,831],
-  0xE5A1: [1701,1201,842,80,802],
+  0xE5A1: [1701,1201,832,80,792],
   0xE5A2: [1701,1201,832,80,792],
   0xE5A3: [1161,0,2225,80,1891],
   0xE5A4: [580,0,2225,334,1891],

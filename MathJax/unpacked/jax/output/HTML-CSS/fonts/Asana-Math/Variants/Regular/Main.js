@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Asana-Math/Variants/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,8 +20,9 @@
 MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['AsanaMathJax_Variants'] = {
   directory: 'Variants/Regular',
   family: 'AsanaMathJax_Variants',
-  testString: '\uE200\uE201\uE202\uE203\uE204\uE205\uE206\uE207\uE208\uE209\uE20A\uE20B\uE20C\uE20D\uE20E',
+  testString: '\u00A0\uE200\uE201\uE202\uE203\uE204\uE205\uE206\uE207\uE208\uE209\uE20A\uE20B\uE20C\uE20D',
   0x20: [0,0,249,0,0],
+  0xA0: [0,0,333,0,0],
   0xE200: [475,20,499,20,471],
   0xE201: [483,2,499,63,426],
   0xE202: [474,2,499,20,465],

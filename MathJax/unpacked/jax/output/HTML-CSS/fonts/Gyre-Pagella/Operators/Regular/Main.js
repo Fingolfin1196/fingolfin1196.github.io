@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Gyre-Pagella/Operators/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -37,8 +37,8 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['GyrePagellaMathJax_Operators'] = {
   0x222F: [796,296,1002,80,922],
   0x2230: [796,296,1320,80,1240],
   0x2231: [796,296,726,80,686],
-  0x2232: [796,296,747,80,707],
-  0x2233: [796,296,689,80,649],
+  0x2232: [796,296,694,80,654],
+  0x2233: [796,296,713,80,673],
   0x2236: [468,-32,280,80,200],
   0x2237: [468,-32,596,80,516],
   0x2238: [520,-220,760,80,680],

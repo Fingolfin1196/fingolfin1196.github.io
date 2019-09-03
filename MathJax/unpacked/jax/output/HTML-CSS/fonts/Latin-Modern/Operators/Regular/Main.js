@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Latin-Modern/Operators/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['LatinModernMathJax_Operators'] = {
   0x20: [0,0,332,0,0],
   0xA0: [0,0,332,0,0],
   0x2206: [716,0,833,47,785],
-  0x220A: [443,-57,498,56,442],
+  0x220A: [447,-54,547,56,491],
   0x220C: [730,230,667,80,587],
   0x220E: [554,0,666,56,610],
   0x220F: [750,250,944,56,887],
@@ -37,7 +37,7 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['LatinModernMathJax_Operators'] = {
   0x222F: [805,306,1035,56,979],
   0x2230: [805,306,1405,56,1349],
   0x2231: [805,306,695,56,667],
-  0x2232: [805,306,700,56,672],
+  0x2232: [805,306,682,56,644],
   0x2233: [805,306,682,56,644],
   0x2236: [422,-78,278,86,192],
   0x2237: [422,-78,516,86,430],

@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Gyre-Termes/Main/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -231,7 +231,7 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['GyreTermesMathJax_Main'] = {
   0x2035: [780,-450,321,60,261],
   0x2044: [650,150,466,80,386],
   0x2057: [780,-450,921,60,861],
-  0x20D7: [710,-534,0,-443,-57],
+  0x20D7: [710,-534,0,-411,-89],
   0x210F: [683,9,500,19,478],
   0x2111: [659,22,634,79,554],
   0x2113: [676,14,433,40,393],
@@ -269,8 +269,8 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['GyreTermesMathJax_Main'] = {
   0x21B1: [598,98,540,80,460],
   0x21B6: [535,-241,799,80,719],
   0x21B7: [535,-241,799,80,719],
-  0x21BA: [547,3,726,80,646],
-  0x21BB: [547,3,726,79,646],
+  0x21BA: [547,3,726,79,646],
+  0x21BB: [547,3,726,80,646],
   0x21BC: [430,-224,840,80,760],
   0x21BD: [276,-70,840,80,760],
   0x21BE: [590,90,366,80,286],
@@ -309,7 +309,7 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['GyreTermesMathJax_Main'] = {
   0x2208: [500,0,678,80,598],
   0x2209: [650,150,678,80,598],
   0x220B: [500,0,678,80,598],
-  0x220D: [425,-75,528,80,448],
+  0x220D: [435,-65,548,80,468],
   0x2212: [276,-224,660,80,580],
   0x2213: [622,0,660,80,580],
   0x2214: [697,0,660,80,580],

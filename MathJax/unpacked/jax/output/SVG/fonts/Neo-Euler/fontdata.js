@@ -4,7 +4,7 @@
  *  
  *  Initializes the SVG OutputJax to use the Neo-Euler fonts
 
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 
 (function (SVG,MML,AJAX,HUB) {
 
-  var VERSION = "2.7.6";
+    var VERSION = "2.3";
 
   var ALPHABETS = "NeoEulerMathJax_Alphabets",
       ARROWS = "NeoEulerMathJax_Arrows",
@@ -143,46 +143,46 @@
         {name: "alpha", low: 0x61, high: 0x7A, offset: "A", add: 26},
         {name: "Alpha", low: 0x41, high: 0x5A, offset: "A"},
         {name: "number", low: 0x30, high: 0x39, offset: "N"},
+        {name: "greek-non-unicode", low: 0x03B1, high: 0x03C9, offset: "G", add: 25},
         {name: "greek", low: 0x03B1, high: 0x03C9, offset: "G", add: 26},
         {name: "Greek", low: 0x0391, high: 0x03F6, offset: "G",
            remap: {0x03F5: 52, 0x03D1: 53, 0x03F0: 54, 0x03D5: 55, 0x03F1: 56, 0x03D6: 57, 0x03F4: 17}}
       ],
 
-      RULECHAR: 0x2212,
+      RULECHAR: 0x00AF,
 
       REMAP: {
-        0xA: 0x20,
-        0x20F0: 0x002A,
-        0x2022: 0x2219,
-        0x22E3: "\u2292\u0338",
-        0x22E2: "\u2291\u0338",
-        0x3008: 0x27E8,
+        0x203E: 0x00AF,
         0x02C9: 0x00AF,
-        0x2017: 0x005F,
-        0x20EC: 0x21C1,
-        0x20ED: 0x21BD,
-        0x2A2F: 0x00D7,
         0x20D0: 0x21BC,
         0x20D1: 0x21C0,
-        0x03D2: 0x03A5,
-        0x2014: 0x00AF,
-        0x2015: 0x00AF,
-        0x3009: 0x27E9,
+        0x20EC: 0x21C1,
+        0x20ED: 0x21BD,
+        0x20F0: 0x002A,
         0xFE37: 0x23DE,
         0xFE38: 0x23DF,
         0x02B9: 0x2032,
+        0x03D2: 0x03A5,
+        0x2015: 0x00AF,
+        0x2014: 0x00AF,
+        0x2017: 0x005F,
+        0x2022: 0x2219,
+        0x3008: 0x27E8,
+        0x3009: 0x27E9,
         0x2758: 0x2223,
-        0x203E: 0x00AF
+        0x2A2F: 0x00D7,
+        0x22E2: "⋢",
+        0x22E3: "⋣"
       },
 
       REMAPACCENT: {
-        "\u007E": "\u0303",
-        "\u2192": "\u20D7",
-        "\u0060": "\u0300",
-        "\u005E": "\u0302",
-        "\u00B4": "\u0301",
-        "\u2032": "\u0301",
-        "\u2035": "\u0300"
+        "→": "⃗",
+        "′": "́",
+        "~": "̃",
+        "‵": "̀",
+        "^": "̂",
+        "`": "̀",
+        "´": "́"
       },
 
       REMAPACCENTUNDER: {
@@ -339,11 +339,7 @@
         0x220F: EXTRAV,
         0x2210: EXTRAV,
         0x2211: EXTRAV,
-        0x2212: {
-          dir: H,
-          HW: [],
-          stretch: {rep:[0x2212,MAIN,0,0,0,-.31,-.31]}
-        },
+        0x2212: {alias: 0xAF, dir: H},
         0x2215:
         {
           dir: V,
@@ -403,9 +399,9 @@
           HW: [[980,MAIN], [1199,SIZE1], [1799,SIZE2], [1961,SIZE2,1.090], [2399,SIZE3], [2999,SIZE4]],
           stretch: {bot:[0x23A6,SYMBOLS], ext:[0x23A5,SYMBOLS]}
         },
-        0x2312: {alias: 0x23DC, dir:H},
-        0x2322: {alias: 0x23DC, dir:H},
-        0x2323: {alias: 0x23DD, dir:H},
+        0x2312: {alias: 0x23DC, dir: H},
+        0x2322: {alias: 0x23DC, dir: H},
+        0x2323: {alias: 0x23DD, dir: H},
         0x2329:
         {
           dir: V,
@@ -487,10 +483,6 @@
       }
 
     }
-  });
-  MathJax.Hub.Register.LoadHook(SVG.fontDir+"/Main/Regular/Main.js",function () {
-    SVG.FONTDATA.FONTS[MAIN][0x2212][0] = SVG.FONTDATA.FONTS[MAIN][0x002B][0]; // - needs height and depth of +
-    SVG.FONTDATA.FONTS[MAIN][0x2212][1] = SVG.FONTDATA.FONTS[MAIN][0x002B][1]; // - needs height and depth of +
   });
   MathJax.Hub.Register.LoadHook(SVG.fontDir+"/Size5/Regular/Main.js",function () {
     var u;

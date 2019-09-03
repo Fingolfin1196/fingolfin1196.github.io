@@ -4,7 +4,7 @@
  *  
  *  Initializes the HTML-CSS OutputJax to use the STIX-Web fonts
 
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 
 (function (HTMLCSS,MML,AJAX) {
 
-  var VERSION = "2.7.6";
+    var VERSION = "2.3";
 
   var ALPHABETSBOLDITALIC = "STIXMathJax_Alphabets-bold-italic",
       ALPHABETSBOLD = "STIXMathJax_Alphabets-bold",
@@ -80,7 +80,6 @@
       VARIANTS = "STIXMathJax_Variants";
 
   var H = "H", V = "V", EXTRAH = {load:"extra", dir:H}, EXTRAV = {load:"extra", dir:V};
-  var ARROWREP = [0x2212,MAIN,0,0,0,-.26,-.26];
 
   HTMLCSS.Augment({
     FONTDATA: {
@@ -152,29 +151,11 @@
       },
 
       VARIANT: {
-          "normal": {
-            fonts: [MAIN,MONOSPACE,LATIN,ALPHABETS,MARKS,ARROWS,OPERATORS,SYMBOLS,SHAPES,MISC,VARIANTS,SIZE1],
-            remap: {0x007C: [0x007C, "-STIX-Web-variant"]}
-          },
-          "bold": {
-            fonts: [MAINBOLD,NORMALBOLD,FRAKTURBOLD,DOUBLESTRUCKBOLD,SANSSERIFBOLD,LATINBOLD,ALPHABETSBOLD,MARKSBOLD,ARROWSBOLD,OPERATORSBOLD,SYMBOLSBOLD,SHAPESBOLD,MISCBOLD,VARIANTSBOLD,SIZE1],
-            offsetA: 0x1D400,
-            offsetG: 0x1D6A8,
-            bold: true,
-            remap: {0x2202: 0x1D6DB, 0x2207: 0x1D6C1}
-          },
-          "italic": {
-            fonts: [MAINITALIC,NORMALITALIC,SCRIPTITALIC,DOUBLESTRUCKITALIC,SANSSERIFITALIC,LATINITALIC,ALPHABETSITALIC,MARKSITALIC,MISCITALIC,VARIANTSITALIC,SIZE1],
-            offsetA: 0x1D434, offsetG: 0x1D6E2,
-            remap: {0x1D455: 0x210E, 0x2202: 0x1D715, 0x2207: 0x1D6FB},
-            italic: true
-          },
-          "bold-italic": {
-            fonts: [MAINBOLDITALIC,NORMALBOLDITALIC,SCRIPTBOLDITALIC,DOUBLESTRUCKBOLDITALIC,SANSSERIFBOLDITALIC,LATINBOLDITALIC,ALPHABETSBOLDITALIC,MARKSBOLDITALIC,SHAPESBOLDITALIC,MISCBOLDITALIC,VARIANTSBOLDITALIC,SIZE1],
-            offsetA: 0x1D434, offsetG: 0x1D71C,
-            remap: {0x1D455: 0x210E, 0x2202: 0x1D74F, 0x2207: 0x1D735},
-            bold: true, italic: true
-          },
+          "normal": {fonts: [MAIN,MONOSPACE,LATIN,ALPHABETS,MARKS,ARROWS,OPERATORS,SYMBOLS,SHAPES,MISC,VARIANTS,SIZE1]},
+          "bold": {fonts: [MAINBOLD,NORMALBOLD,FRAKTURBOLD,DOUBLESTRUCKBOLD,SANSSERIFBOLD,LATINBOLD,ALPHABETSBOLD,MARKSBOLD,ARROWSBOLD,OPERATORSBOLD,SYMBOLSBOLD,SHAPESBOLD,MISCBOLD,VARIANTSBOLD,SIZE1], bold:true
+},
+          "italic": {fonts: [MAINITALIC,NORMALITALIC,SCRIPTITALIC,DOUBLESTRUCKITALIC,SANSSERIFITALIC,LATINITALIC,ALPHABETSITALIC,MARKSITALIC,MISCITALIC,VARIANTSITALIC,SIZE1], italic:true},
+          "bold-italic": {fonts: [MAINBOLDITALIC,NORMALBOLDITALIC,SCRIPTBOLDITALIC,DOUBLESTRUCKBOLDITALIC,SANSSERIFBOLDITALIC,LATINBOLDITALIC,ALPHABETSBOLDITALIC,MARKSBOLDITALIC,SHAPESBOLDITALIC,MISCBOLDITALIC,VARIANTSBOLDITALIC,SIZE1], bold: true, italic:true},
           "double-struck": {
             fonts: [DOUBLESTRUCK],
             offsetA: 0x1D538,
@@ -187,57 +168,50 @@
             remap: {0x1D506: 0x212D, 0x1D50B: 0x210C, 0x1D50C: 0x2111, 0x1D515: 0x211C, 0x1D51D: 0x2128}
           },
           "bold-fraktur": {
-            fonts: [FRAKTURBOLD],
-            offsetA: 0x1D56C,
-            bold: true
+            fonts: [FRAKTURBOLD], bold:true,
+            offsetA: 0x1D56C
           },
           "script": {
-            fonts: [SCRIPTITALIC],
+            fonts: [SCRIPTITALIC], italic:true,
             offsetA: 0x1D49C,
-            italic: true,
             remap: {0x1D49D: 0x212C, 0x1D4A0: 0x2130, 0x1D4A1: 0x2131, 0x1D4A3: 0x210B, 0x1D4A4: 0x2110, 0x1D4A7: 0x2112, 0x1D4A8: 0x2133, 0x1D4AD: 0x211B, 0x1D4BA: 0x212F, 0x1D4BC: 0x210A, 0x1D4C4: 0x2134}
           },
           "bold-script": {
-            fonts: [SCRIPTBOLDITALIC],
-            offsetA: 0x1D4D0,
-            bold:true, italic: true
+            fonts: [SCRIPTBOLDITALIC], bold:true, italic:true,
+            offsetA: 0x1D4D0
           },
           "sans-serif": {
             fonts: [SANSSERIF],
             offsetA: 0x1D5A0,
             offsetN: 0x1D7E2,
-            offsetP: 0xE17D,
-            remap: {0x2202: 0xE17C}
+            offsetG: 0xE17D,
+            offsetE: 0xE17D
           },
           "bold-sans-serif": {
-            fonts: [SANSSERIFBOLD],
+            fonts: [SANSSERIFBOLD], bold:true,
             offsetA: 0x1D5D4,
             offsetN: 0x1D7EC,
-            offsetG: 0x1D756,
-            remap: {0x2202: 0x1D789, 0x2207: 0x1D76F}
+            offsetG: 0x1D756
           },
           "sans-serif-italic": {
              fonts: [SANSSERIFITALIC], italic: true,
              offsetA: 0x1D608,
              offsetN: 0xE1B4,
-             offsetP: 0xE1BF,
-             remap: {0x2202: 0xE1BE},
-             bold: true
+             offsetG: 0xE1BF,
+            offsetE: 0xE1BF
           },
           "sans-serif-bold-italic": {
-             fonts: [SANSSERIFBOLDITALIC],
+             fonts: [SANSSERIFBOLDITALIC], bold:true, italic: true,
              offsetA: 0x1D63C,
              offsetN: 0xE1F6,
-             offsetG: 0x1D790,
-             remap: {0x2202: 0x1D7C3, 0x2207: 0x1D7A9},
-             bold: true, italic: true
+             offsetG: 0x1D790
           },
           "monospace": {
              fonts: [MONOSPACE],
              offsetA: 0x1D670,
              offsetN: 0x1D7F6
           },
-          "-STIX-Web-variant": {remap: {0x2A87: 0xE010, 0x2A88: 0xE00F, 0x25B3: 0x25B5, 0x25BD: 0x25BF, 0x007C: [0x007C, MML.VARIANT.NORMAL]}, fonts: [VARIANTS,SHAPES,OPERATORS,MAIN,MONOSPACE,LATIN,ALPHABETS,MARKS,ARROWS,SYMBOLS,MISC,SIZE1]},
+        "-STIX-Web-variant": {remap: { 0x2A87: 0xE010, 0x2A88: 0xE00F, 0x25B3: 0x25B5, 0x25BD: 0x25BF }, fonts: [VARIANTS,SHAPES,OPERATORS,MAIN,MONOSPACE,LATIN,ALPHABETS,MARKS,ARROWS,SYMBOLS,MISC,SIZE1]},
           "-tex-caligraphic": {offsetA: 0xE22D, noLowerCase: 1, fonts: [VARIANTSITALIC,MAINITALIC,NORMALITALIC,SCRIPTITALIC,DOUBLESTRUCKITALIC,SANSSERIFITALIC,LATINITALIC,ALPHABETSITALIC,MARKSITALIC,MISCITALIC,SIZE1], italic: true},
           "-tex-oldstyle": {offsetN: 0xE261, remap: {0xE262: 0xE265, 0xE263: 0xE269, 0xE264: 0xE26D, 0xE265: 0xE271, 0xE266: 0xE275, 0xE267: 0xE279, 0xE268: 0xE27D, 0xE269: 0xE281, 0xE26A: 0xE285}, fonts: [VARIANTS,MAIN,MONOSPACE,LATIN,ALPHABETS,MARKS,ARROWS,OPERATORS,SYMBOLS,SHAPES,MISC,SIZE1]},
           "-tex-caligraphic-bold": {offsetA: 0xE247, noLowerCase: 1, fonts: [VARIANTSBOLDITALIC,MAINBOLDITALIC,NORMALBOLDITALIC,SCRIPTBOLDITALIC,DOUBLESTRUCKBOLDITALIC,SANSSERIFBOLDITALIC,LATINBOLDITALIC,ALPHABETSBOLDITALIC,MARKSBOLDITALIC,SHAPESBOLDITALIC,MISCBOLDITALIC,SIZE1], italic: true, bold: true},
@@ -251,38 +225,33 @@
         {name: "alpha", low: 0x61, high: 0x7A, offset: "A", add: 26},
         {name: "Alpha", low: 0x41, high: 0x5A, offset: "A"},
         {name: "number", low: 0x30, high: 0x39, offset: "N"},
+        {name: "greek-non-unicode", low: 0x03B1, high: 0x03C9, offset: "G", add: 25},
         {name: "greek", low: 0x03B1, high: 0x03C9, offset: "G", add: 26},
-        {name: "Greek", low: 0x0391, high: 0x03A9, offset: "G"},
-        {name: "vargreek", low: 0x03D1, high: 0x03F6, offset: "G", remapOnly: true,
-           remap: {0x03F5: 52, 0x03D1: 53, 0x03F0: 54, 0x03D5: 55, 0x03F1: 56, 0x03D6: 57, 0x03F4: 17}},
-        {name: "PUAgreek", low: 0x03B1, high: 0x03C9, offset: "P", add: 25},
-        {name: "PUAGreek", low: 0x0391, high: 0x03A9, offset: "P"}, 
-        {name: "varPUAgreek", low: 0x03D1, high: 0x03F6, offset: "P", remapOnly: true,
-          remap: {0x03F5: 50, 0x03D1: 51, 0x03D5: 52, 0x03F1: 53, 0x03D6: 54, 0x03F4: 17}}
+        {name: "Greek", low: 0x0391, high: 0x03F6, offset: "G",
+           remap: {0x03F5: 52, 0x03D1: 53, 0x03F0: 54, 0x03D5: 55, 0x03F1: 56, 0x03D6: 57, 0x03F4: 17}}
       ],
 
       RULECHAR: 0x23AF,
 
       REMAP: {
-        0xA: 0x20,
-        0x3008: 0x27E8,
-        0x3009: 0x27E9,
-        0x2758: 0x2223,
         0x02F3: 0x02DA,
         0x02F4: 0x02CA,
         0xFE37: 0x23DE,
-        0xFE38: 0x23DF
+        0xFE38: 0x23DF,
+        0x3008: 0x27E8,
+        0x3009: 0x27E9,
+        0x2758: 0x2223
       },
 
       REMAPACCENT: {
-        "\u007E": "\u0303",
-        "\u2192": "\u20D7",
-        "\u2190": "\u20D6",
-        "\u0060": "\u0300",
-        "\u005E": "\u0302",
-        "\u00B4": "\u0301",
-        "\u2032": "\u0301",
-        "\u2035": "\u0300"
+        "~": "̃",
+        "→": "⃗",
+        "←": "⃖",
+        "`": "̀",
+        "^": "̂",
+        "´": "́",
+        "′": "́",
+        "‵": "̀"
       },
 
       REMAPACCENTUNDER: {
@@ -431,7 +400,7 @@
         {
           dir: H,
           HW: [[0.786,MAIN]],
-          stretch: {left:[0x2190,MAIN], rep:ARROWREP}
+          stretch: {left:[0x2190,MAIN], rep:[0x23AF,SYMBOLS]}
         },
         0x2191:
         {
@@ -443,7 +412,7 @@
         {
           dir: H,
           HW: [[0.786,MAIN]],
-          stretch: {rep:ARROWREP, right:[0x2192,MAIN]}
+          stretch: {rep:[0x23AF,SYMBOLS], right:[0x2192,MAIN]}
         },
         0x2193:
         {
@@ -455,7 +424,7 @@
         {
           dir: H,
           HW: [[0.850,MAIN]],
-          stretch: {left:[0x2190,MAIN], rep:ARROWREP, right:[0x2192,MAIN]}
+          stretch: {left:[0x2190,MAIN], rep:[0x23AF,SYMBOLS], right:[0x2192,MAIN]}
         },
         0x2195:
         {
@@ -562,7 +531,7 @@
           HW: [[0.879,MAIN]],
           stretch: {ext:[0x2225,MAIN]}
         },
-        0x222B: EXTRAV,
+        0x222B: EXTRAH,
         0x222C: EXTRAV,
         0x222D: EXTRAV,
         0x222E: EXTRAV,
@@ -599,9 +568,9 @@
           HW: [[0.926,MAIN], [1.230,SIZE1], [1.350,SIZE1,1.098], [1.845,SIZE2], [2.460,SIZE3], [3.075,SIZE4]],
           stretch: {bot:[0xE009,SIZE5], ext:[0xE00A,SIZE5]}
         },
-        0x2312: {alias: 0x23DC, dir:H},
-        0x2322: {alias: 0x23DC, dir:H},
-        0x2323: {alias: 0x23DD, dir:H},
+        0x2312: {alias: 0x23DC, dir: H},
+        0x2322: {alias: 0x23DC, dir: H},
+        0x2323: {alias: 0x23DD, dir: H},
         0x2329: {alias: 0x27E8, dir: V},
         0x232A: {alias: 0x27E9, dir: V},
         0x23AA: EXTRAV,
@@ -614,13 +583,13 @@
         0x23B0:
         {
           dir: V,
-          HW: [[1.001,SIZE5,null,0xE03A]],
+          HW: [[1.001,SIZE5,null,0xE03D]],
           stretch: {top:[0xE00F,SIZE5], ext:[0xE00D,SIZE5], bot:[0xE010,SIZE5]}
         },
         0x23B1:
         {
           dir: V,
-          HW: [[1.001,SIZE5,null,0xE03B]],
+          HW: [[1.001,SIZE5,null,0xE03E]],
           stretch: {top:[0xE012,SIZE5], ext:[0xE00D,SIZE5], bot:[0xE00C,SIZE5]}
         },
         0x23B4: EXTRAH,
@@ -776,8 +745,7 @@
   MathJax.Hub.Register.LoadHook(HTMLCSS.fontDir+"/Main/Regular/Main.js",function () {
     HTMLCSS.FONTDATA.FONTS[MAIN][0x22EE][0] += 400;  // adjust height for \vdots
     HTMLCSS.FONTDATA.FONTS[MAIN][0x22F1][0] += 500;  // adjust height for \ddots
-    HTMLCSS.FONTDATA.FONTS[MAIN][0x2212][0] = HTMLCSS.FONTDATA.FONTS[MAIN][0x002B][0]; // - needs height and depth of +
-    HTMLCSS.FONTDATA.FONTS[MAIN][0x2212][1] = HTMLCSS.FONTDATA.FONTS[MAIN][0x002B][1]; // - needs height and depth of +
+    HTMLCSS.FONTDATA.FONTS[MAIN][0x2212][1] += 100;  // adjust depth for minus (arrow extender)
     HTMLCSS.FONTDATA.FONTS[MAIN][0x003D][1] += 100;  // adjust depth for = (double arrow extender)
   });
   MathJax.Hub.Register.LoadHook(HTMLCSS.fontDir+"/Size5/Regular/Main.js",function () {

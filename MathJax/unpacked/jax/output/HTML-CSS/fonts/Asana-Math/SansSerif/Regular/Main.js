@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Asana-Math/SansSerif/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,8 +20,9 @@
 MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['AsanaMathJax_SansSerif'] = {
   directory: 'SansSerif/Regular',
   family: 'AsanaMathJax_SansSerif',
-  testString: '\uD835\uDDA0\uD835\uDDA1\uD835\uDDA2\uD835\uDDA3\uD835\uDDA4\uD835\uDDA5\uD835\uDDA6\uD835\uDDA7\uD835\uDDA8\uD835\uDDA9\uD835\uDDAA\uD835\uDDAB\uD835\uDDAC\uD835\uDDAD\uD835\uDDAE',
+  testString: '\u00A0\uD835\uDDA0\uD835\uDDA1\uD835\uDDA2\uD835\uDDA3\uD835\uDDA4\uD835\uDDA5\uD835\uDDA6\uD835\uDDA7\uD835\uDDA8\uD835\uDDA9\uD835\uDDAA\uD835\uDDAB\uD835\uDDAC\uD835\uDDAD',
   0x20: [0,0,249,0,0],
+  0xA0: [0,0,333,0,0],
   0x1D5A0: [694,0,665,28,638],
   0x1D5A1: [694,0,665,97,610],
   0x1D5A2: [716,22,637,67,588],

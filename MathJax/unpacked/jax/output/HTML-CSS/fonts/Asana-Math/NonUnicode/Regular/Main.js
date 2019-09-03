@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Asana-Math/NonUnicode/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,8 +20,9 @@
 MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['AsanaMathJax_NonUnicode'] = {
   directory: 'NonUnicode/Regular',
   family: 'AsanaMathJax_NonUnicode',
-  testString: '\uE000\uE001\uE002\uE003\uE004\uE005\uE006\uE007\uE008\uE009\uE00A\uE00B\uE00C\uE00D\uE00E',
+  testString: '\u00A0\uE000\uE001\uE002\uE003\uE004\uE005\uE006\uE007\uE008\uE009\uE00A\uE00B\uE00C\uE00D',
   0x20: [0,0,249,0,0],
+  0xA0: [0,0,333,0,0],
   0xE000: [705,3,751,28,724],
   0xE001: [692,6,610,26,559],
   0xE002: [706,18,687,45,651],

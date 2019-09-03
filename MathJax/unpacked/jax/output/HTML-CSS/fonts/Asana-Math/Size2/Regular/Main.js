@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Asana-Math/Size2/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,15 +20,17 @@
 MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['AsanaMathJax_Size2'] = {
   directory: 'Size2/Regular',
   family: 'AsanaMathJax_Size2',
-  testString: '\u0302\u0303\u0305\u0306\u030C\u0332\u0333\u033F\u2016\u2044\u2045\u2046\u20D6\u20D7\u220F',
+  testString: '\u00A0\u0302\u0303\u0305\u0306\u030C\u0332\u0333\u033F\u2016\u2044\u2045\u2046\u20D6\u20D7',
   0x20: [0,0,249,0,0],
   0x28: [1266,775,427,84,388],
   0x29: [1266,775,427,40,344],
+  0x2F: [875,596,431,-119,433],
   0x5B: [1363,682,371,84,342],
   0x5D: [1363,682,371,84,342],
   0x7B: [1357,684,468,51,419],
   0x7C: [1048,507,258,86,173],
   0x7D: [1357,684,468,50,418],
+  0xA0: [0,0,333,0,0],
   0x302: [783,-627,633,0,633],
   0x303: [772,-642,1052,0,1053],
   0x305: [587,-542,674,0,675],

@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Gyre-Pagella/NonUnicode/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -1420,8 +1420,8 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['GyrePagellaMathJax_NonUnicode'] = 
   0xE572: [844,344,1368,80,1288],
   0xE573: [844,344,747,80,707],
   0xE574: [844,344,747,80,707],
-  0xE575: [844,344,765,80,725],
-  0xE576: [844,344,710,80,670],
+  0xE575: [844,344,716,80,676],
+  0xE576: [844,344,734,80,694],
   0xE577: [959,459,673,80,593],
   0xE578: [959,459,1017,80,937],
   0xE579: [959,459,1361,80,1281],
@@ -1431,8 +1431,8 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['GyrePagellaMathJax_NonUnicode'] = 
   0xE57D: [959,459,1414,80,1334],
   0xE57E: [959,459,767,80,727],
   0xE57F: [959,459,767,80,727],
-  0xE580: [959,459,782,80,742],
-  0xE581: [959,459,729,80,689],
+  0xE580: [959,459,735,80,695],
+  0xE581: [959,459,754,80,714],
   0xE582: [1097,597,693,80,613],
   0xE583: [1097,597,1051,80,971],
   0xE584: [1097,597,1409,80,1329],
@@ -1442,8 +1442,8 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['GyrePagellaMathJax_NonUnicode'] = 
   0xE588: [1097,597,1466,80,1386],
   0xE589: [1097,597,790,80,750],
   0xE58A: [1097,597,790,80,750],
-  0xE58B: [1097,597,802,80,762],
-  0xE58C: [1097,597,752,80,712],
+  0xE58B: [1097,597,758,80,718],
+  0xE58C: [1097,597,777,80,737],
   0xE58D: [1462,962,737,80,657],
   0xE58E: [1462,962,1124,80,1044],
   0xE58F: [1462,962,1511,80,1431],
@@ -1453,8 +1453,8 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['GyrePagellaMathJax_NonUnicode'] = 
   0xE593: [1462,962,1570,80,1490],
   0xE594: [1462,962,835,80,795],
   0xE595: [1462,962,835,80,795],
-  0xE596: [1462,962,841,80,801],
-  0xE597: [1462,962,796,80,756],
+  0xE596: [1462,962,802,80,762],
+  0xE597: [1462,962,821,80,781],
   0xE598: [1701,1201,760,80,680],
   0xE599: [1701,1201,1163,80,1083],
   0xE59A: [1701,1201,1566,80,1486],
@@ -1464,8 +1464,8 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['GyrePagellaMathJax_NonUnicode'] = 
   0xE59E: [1701,1201,1630,80,1550],
   0xE59F: [1701,1201,861,80,821],
   0xE5A0: [1701,1201,861,80,821],
-  0xE5A1: [1701,1201,863,80,823],
-  0xE5A2: [1701,1201,823,80,783]
+  0xE5A1: [1701,1201,829,80,789],
+  0xE5A2: [1701,1201,848,80,808]
 };
 
 MathJax.Callback.Queue(

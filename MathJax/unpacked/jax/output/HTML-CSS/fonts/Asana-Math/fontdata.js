@@ -4,7 +4,7 @@
  *  
  *  Initializes the HTML-CSS OutputJax to use the Asana-Math fonts
 
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 
 (function (HTMLCSS,MML,AJAX) {
 
-  var VERSION = "2.7.6";
+    var VERSION = "2.3";
 
   var ALPHABETS = "AsanaMathJax_Alphabets",
       ARROWS = "AsanaMathJax_Arrows",
@@ -141,7 +141,7 @@
              offsetA: 0x1D670,
              offsetN: 0x1D7F6
           },
-          "-Asana-Math-variant": {fonts: [MAIN,NORMAL,MONOSPACE,LATIN,ALPHABETS,MARKS,ARROWS,OPERATORS,SYMBOLS,SHAPES,MISC,VARIANTS,NONUNICODE,SIZE1]},
+        "-Asana-Math-variant": {fonts: [MAIN,NORMAL,MONOSPACE,LATIN,ALPHABETS,MARKS,ARROWS,OPERATORS,SYMBOLS,SHAPES,MISC,VARIANTS,NONUNICODE,SIZE1]},
           "-tex-caligraphic": {offsetA: 0xE20A, noLowerCase: 1, fonts: [VARIANTS,MAIN,NORMAL,MONOSPACE,LATIN,ALPHABETS,MARKS,ARROWS,OPERATORS,SYMBOLS,SHAPES,MISC,NONUNICODE,SIZE1], italic: true},
           "-tex-oldstyle": {offsetN: 0xE200, fonts: [VARIANTS,MAIN,NORMAL,MONOSPACE,LATIN,ALPHABETS,MARKS,ARROWS,OPERATORS,SYMBOLS,SHAPES,MISC,NONUNICODE,SIZE1]},
           "-tex-caligraphic-bold": {offsetA: 0xE224, noLowerCase: 1, fonts: [VARIANTS,MAIN,NORMAL,MONOSPACE,LATIN,ALPHABETS,MARKS,ARROWS,OPERATORS,SYMBOLS,SHAPES,MISC,NONUNICODE,SIZE1], italic: true, bold: true},
@@ -155,42 +155,42 @@
         {name: "alpha", low: 0x61, high: 0x7A, offset: "A", add: 26},
         {name: "Alpha", low: 0x41, high: 0x5A, offset: "A"},
         {name: "number", low: 0x30, high: 0x39, offset: "N"},
+        {name: "greek-non-unicode", low: 0x03B1, high: 0x03C9, offset: "G", add: 25},
         {name: "greek", low: 0x03B1, high: 0x03C9, offset: "G", add: 26},
         {name: "Greek", low: 0x0391, high: 0x03F6, offset: "G",
            remap: {0x03F5: 52, 0x03D1: 53, 0x03F0: 54, 0x03D5: 55, 0x03F1: 56, 0x03D6: 57, 0x03F4: 17}}
       ],
 
-      RULECHAR: 0x2212,
+      RULECHAR: 0x0305,
 
       REMAP: {
-        0xA: 0x20,
-        0x25C2: 0x25C0,
-        0x25C3: 0x25C1,
-        0xFE38: 0x23DF,
-        0x3008: 0x27E8,
-        0x3009: 0x27E9,
-        0x25AA: 0x25A0,
         0x00AF: 0x0304,
-        0x20F0: 0x002A,
-        0x2758: 0x2223,
+        0x02B9: 0x2032,
         0x03D2: 0x03A5,
+        0x20F0: 0x002A,
+        0x25AA: 0x25A0,
         0x25B4: 0x25B2,
         0x25B5: 0x25B3,
-        0xFE37: 0x23DE,
         0x25B8: 0x25B6,
-        0x02B9: 0x2032,
         0x25BE: 0x25BC,
-        0x25BF: 0x25BD
+        0x25BF: 0x25BD,
+        0x25C2: 0x25C0,
+        0x25C3: 0x25C1,
+        0x2758: 0x2223,
+        0x3008: 0x27E8,
+        0x3009: 0x27E9,
+        0xFE37: 0x23DE,
+        0xFE38: 0x23DF
       },
 
       REMAPACCENT: {
-        "\u007E": "\u0303",
-        "\u2192": "\u20D7",
-        "\u0060": "\u0300",
-        "\u005E": "\u0302",
-        "\u00B4": "\u0301",
-        "\u2032": "\u0301",
-        "\u2035": "\u0300"
+        "→": "⃗",
+        "′": "́",
+        "~": "̃",
+        "‵": "̀",
+        "^": "̂",
+        "`": "̀",
+        "´": "́"
       },
 
       REMAPACCENTUNDER: {
@@ -209,8 +209,12 @@
           HW: [[0.941,MAIN], [1.471,SIZE1], [2.041,SIZE2], [2.552,SIZE3], [2.615,SIZE3,1.025]],
           stretch: {bot:[0x23A0,SYMBOLS], ext:[0x239F,SYMBOLS], top:[0x239E,SYMBOLS]}
         },
-        0x2D: {alias: 0x2212, dir: H},
-        0x2F: {alias: 0x2044, dir: H},
+        0x2D: {alias: 0x305, dir: H},
+        0x2F:
+        {
+          dir: V,
+          HW: [[0.883,MAIN], [1.205,SIZE1], [1.471,SIZE2], [1.795,SIZE3], [2.189,SIZE4], [2.615,SIZE4,1.195]]
+        },
         0x3D:
         {
           dir: H,
@@ -255,9 +259,9 @@
           stretch: {bot:[0x23AD,SYMBOLS], ext:[0x23AA,SYMBOLS], mid:[0x23AC,SYMBOLS], top:[0x23AB,SYMBOLS]}
         },
         0x7E: {alias: 0x303, dir: H},
-        0xAF: {alias: 0x2212, dir: H},
+        0xAF: {alias: 0x305, dir: H},
         0x2C6: {alias: 0x302, dir: H},
-        0x2C9: {alias: 0x2212, dir: H},
+        0x2C9: {alias: 0x305, dir: H},
         0x2DC: {alias: 0x303, dir: H},
         0x302:
         {
@@ -267,7 +271,7 @@
         0x303:
         {
           dir: H,
-          HW: [[0.330,MAIN], [0.701,SIZE1], [1.053,SIZE2], [1.403,SIZE3], [1.865,SIZE4], [2.797,SIZE5]]
+          HW: [[0.430,MAIN], [0.701,SIZE1], [1.053,SIZE2], [1.403,SIZE3], [1.865,SIZE4], [2.797,SIZE5]]
         },
         0x305:
         {
@@ -289,19 +293,19 @@
         },
         0x333: EXTRAH,
         0x33F: EXTRAH,
-        0x2015: {alias: 0x2212, dir: H},
+        0x2015: {alias: 0x305, dir: H},
         0x2016:
         {
           dir: V,
           HW: [[0.885,MAIN], [1.275,SIZE1], [1.555,SIZE2], [1.897,SIZE3], [2.315,SIZE4]],
           stretch: {ext:[0xE005,SIZE6], top:[0xE005,SIZE6]}
         },
-        0x2017: {alias: 0x2212, dir: H},
-        0x203E: {alias: 0x2212, dir: H},
+        0x2017: {alias: 0x305, dir: H},
+        0x203E: {alias: 0x305, dir: H},
         0x2044:
         {
           dir: V,
-          HW: [[0.837,MAIN], [1.205,SIZE1], [1.471,SIZE2], [1.795,SIZE3], [2.189,SIZE4], [2.615,SIZE4,1.195]]
+          HW: [[0.837,MAIN], [1.205,SIZE1], [1.471,SIZE2], [1.795,SIZE3], [2.189,SIZE4]]
         },
         0x2045: EXTRAV,
         0x2046: EXTRAV,
@@ -406,10 +410,7 @@
         },
         0x2210: EXTRAV,
         0x2211: EXTRAV,
-        0x2212: {
-          dir: H, HW: [],
-          stretch: {rep:[0x2212,MAIN,0,0,0,-.23,-.23]}
-        },
+        0x2212: {alias: 0x305, dir: H},
         0x2215: {alias: 0x2044, dir: V},
         0x221A:
         {
@@ -467,15 +468,15 @@
           HW: [[0.885,MAIN], [1.470,SIZE1], [2.041,SIZE2], [2.552,SIZE3], [2.615,SIZE3,1.025]],
           stretch: {bot:[0x23A6,SYMBOLS], ext:[0x23A5,SYMBOLS]}
         },
-        0x2312: {alias: 0x23DC, dir:H},
-        0x2322: {alias: 0x23DC, dir:H},
-        0x2323: {alias: 0x23DD, dir:H},
+        0x2312: {alias: 0x23DC, dir: H},
+        0x2322: {alias: 0x23DC, dir: H},
+        0x2323: {alias: 0x23DD, dir: H},
         0x2329: {alias: 0x27E8, dir: V},
         0x232A: {alias: 0x27E9, dir: V},
         0x23AA:
         {
           dir: V,
-          HW: [[0.688,SYMBOLS]],
+          HW: [[0.326,SYMBOLS]],
           stretch: {ext:[0x23AA,SYMBOLS]}
         },
         0x23AF:
@@ -510,7 +511,7 @@
         },
         0x23E0: EXTRAH,
         0x23E1: EXTRAH,
-        0x2500: {alias: 0x2212, dir: H},
+        0x2500: {alias: 0x305, dir: H},
         0x2758: {alias: 0x2223, dir: V},
         0x27C5:
         {
@@ -596,10 +597,6 @@
       }
 
     }
-  });
-  MathJax.Hub.Register.LoadHook(HTMLCSS.fontDir+"/Main/Regular/Main.js",function () {
-    HTMLCSS.FONTDATA.FONTS[MAIN][0x2212][0] = HTMLCSS.FONTDATA.FONTS[MAIN][0x002B][0]; // - needs height and depth of +
-    HTMLCSS.FONTDATA.FONTS[MAIN][0x2212][1] = HTMLCSS.FONTDATA.FONTS[MAIN][0x002B][1]; // - needs height and depth of +
   });
   MathJax.Hub.Register.LoadHook(HTMLCSS.fontDir+"/Size6/Regular/Main.js",function () {
     var u;

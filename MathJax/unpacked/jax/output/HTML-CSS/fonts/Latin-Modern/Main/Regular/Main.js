@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Latin-Modern/Main/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -269,8 +269,8 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['LatinModernMathJax_Main'] = {
   0x21B1: [679,179,564,56,508],
   0x21B6: [562,-229,980,56,924],
   0x21B7: [562,-229,980,56,924],
-  0x21BA: [696,59,764,56,708],
-  0x21BB: [696,59,764,55,708],
+  0x21BA: [680,59,771,55,715],
+  0x21BB: [680,59,771,56,715],
   0x21BC: [503,-230,1000,50,950],
   0x21BD: [270,3,1012,56,956],
   0x21BE: [697,203,441,112,385],
@@ -309,7 +309,7 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['LatinModernMathJax_Main'] = {
   0x2208: [543,43,667,81,587],
   0x2209: [730,230,667,81,587],
   0x220B: [543,43,667,79,586],
-  0x220D: [443,-57,498,55,442],
+  0x220D: [447,-54,547,55,491],
   0x2212: [270,-230,778,56,722],
   0x2213: [584,83,778,56,722],
   0x2214: [785,83,778,56,722],

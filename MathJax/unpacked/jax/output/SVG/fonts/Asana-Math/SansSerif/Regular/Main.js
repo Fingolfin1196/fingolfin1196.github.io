@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/SVG/fonts/Asana-Math/SansSerif/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ MathJax.OutputJax['SVG'].FONTDATA.FONTS['AsanaMathJax_SansSerif'] = {
   family: 'AsanaMathJax_SansSerif',
   id: 'ASANAMATHSANSSERIF',
   0x20: [0,0,249,0,0,''],
+  0xA0: [0,0,333,0,0,''],
   0x1D5A0: [694,0,665,28,638,'377 694l261 -694h-92l-76 204h-291l-77 -204h-74l261 694h88zM448 260l-91 257c-23 66 -30 91 -32 105h-1c-7 -37 -38 -122 -59 -181l-65 -181h248'],
   0x1D5A1: [694,0,665,97,610,'97 694h237c142 0 249 -82 249 -174c0 -76 -75 -134 -166 -157c106 -17 193 -88 193 -175c0 -98 -105 -188 -249 -188h-264v694zM180 391h116c138 0 209 68 209 128c0 66 -88 119 -199 119h-126v-247zM180 56h153c108 0 196 58 196 133c0 80 -98 141 -204 141h-145v-274'],
   0x1D5A2: [716,22,637,67,588,'577 681l-15 -81c-42 27 -90 52 -169 52c-139 0 -237 -142 -237 -305c0 -153 89 -305 240 -305c69 0 114 10 186 61l6 -69c-71 -43 -110 -56 -193 -56c-195 0 -328 176 -328 369c0 196 135 369 327 369c66 0 120 -11 183 -35'],

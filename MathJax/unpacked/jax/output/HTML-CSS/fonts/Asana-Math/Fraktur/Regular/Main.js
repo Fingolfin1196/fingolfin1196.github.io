@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Asana-Math/Fraktur/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,8 +20,9 @@
 MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['AsanaMathJax_Fraktur'] = {
   directory: 'Fraktur/Regular',
   family: 'AsanaMathJax_Fraktur',
-  testString: '\u210C\u2128\u212D\uD835\uDD04\uD835\uDD05\uD835\uDD07\uD835\uDD08\uD835\uDD09\uD835\uDD0A\uD835\uDD0D\uD835\uDD0E\uD835\uDD0F\uD835\uDD10\uD835\uDD11\uD835\uDD12',
+  testString: '\u00A0\u210C\u2128\u212D\uD835\uDD04\uD835\uDD05\uD835\uDD07\uD835\uDD08\uD835\uDD09\uD835\uDD0A\uD835\uDD0D\uD835\uDD0E\uD835\uDD0F\uD835\uDD10\uD835\uDD11',
   0x20: [0,0,249,0,0],
+  0xA0: [0,0,333,0,0],
   0x210C: [719,166,697,29,657],
   0x2128: [709,171,697,-7,608],
   0x212D: [719,4,645,53,629],

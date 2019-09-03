@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/STIX-Web/Size5/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -109,11 +109,11 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['STIXMathJax_Size5'] = {
   0xE037: [405,-101,1033,229,805],
   0xE038: [405,-101,926,230,696],
   0xE039: [541,35,315,0,315],
-  0xE03A: [700,301,600,35,566],
-  0xE03B: [700,301,600,35,566],
-  0xE03C: [1066,79,688,294,574],
-  0xE03D: [610,25,688,294,394],
-  0xE03E: [1086,59,688,115,394]
+  0xE03A: [1066,79,688,294,574],
+  0xE03B: [610,25,688,294,394],
+  0xE03C: [1086,59,688,115,394],
+  0xE03D: [700,301,600,35,566],
+  0xE03E: [700,301,600,35,566]
 };
 
 MathJax.Callback.Queue(

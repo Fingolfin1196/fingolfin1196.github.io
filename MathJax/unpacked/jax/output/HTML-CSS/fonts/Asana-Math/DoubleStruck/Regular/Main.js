@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Asana-Math/DoubleStruck/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,8 +20,9 @@
 MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['AsanaMathJax_DoubleStruck'] = {
   directory: 'DoubleStruck/Regular',
   family: 'AsanaMathJax_DoubleStruck',
-  testString: '\u2102\u210D\u2115\u2119\u211A\u211D\u2124\u213C\u213D\u213E\u213F\u2140\u2145\u2146\u2147',
+  testString: '\u00A0\u2102\u210D\u2115\u2119\u211A\u211D\u2124\u213C\u213D\u213E\u213F\u2140\u2145\u2146',
   0x20: [0,0,249,0,0],
+  0xA0: [0,0,333,0,0],
   0x2102: [709,20,708,22,669],
   0x210D: [692,3,948,22,927],
   0x2115: [692,3,951,17,934],

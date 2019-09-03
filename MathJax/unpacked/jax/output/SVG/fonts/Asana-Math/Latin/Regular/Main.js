@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/SVG/fonts/Asana-Math/Latin/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ MathJax.OutputJax['SVG'].FONTDATA.FONTS['AsanaMathJax_Latin'] = {
   family: 'AsanaMathJax_Latin',
   id: 'ASANAMATHLATIN',
   0x20: [0,0,249,0,0,''],
+  0xA0: [0,0,333,0,0,''],
   0xA1: [469,225,277,81,197,'115 -225h-34v25c0 43 7 86 12 143l24 278v25l28 23l10 -5c0 -13 0 -15 2 -40l26 -305c2 -28 4 -56 7 -106zM138 469c31 0 59 -28 59 -59c0 -30 -28 -57 -60 -57c-29 0 -56 28 -56 58s27 58 57 58'],
   0xA2: [562,101,499,61,448,'347 411l-106 -353c30 -16 53 -22 85 -22c34 0 64 8 113 28l9 -11l-20 -33c-51 -24 -92 -34 -145 -34c-22 0 -37 1 -62 5l-28 -92h-41l32 104c-42 22 -62 39 -84 71c-25 37 -39 89 -39 148c0 95 34 160 102 194l80 40c18 9 44 14 82 14l27 92h40l-27 -92 c26 -1 53 -10 80 -26c-8 -49 -11 -84 -11 -130h-28l-9 66c-13 14 -25 21 -50 31zM208 84l101 335c-25 4 -32 5 -39 5c-76 0 -120 -64 -120 -173c0 -120 53 -162 58 -167'],
   0xA4: [531,-96,499,30,470,'77 531l48 -48c37 28 77 41 125 41s87 -13 125 -41l48 48l47 -47l-49 -49c30 -34 42 -70 42 -122c0 -50 -12 -85 -42 -123l49 -49l-45 -45l-48 48c-37 -30 -74 -42 -127 -42s-90 12 -127 42l-48 -48l-45 45l49 49c-30 38 -42 73 -42 123c0 52 12 88 42 122l-49 49z M253 465c-87 0 -157 -68 -157 -151c0 -85 69 -153 154 -153s154 68 154 152c0 82 -70 152 -151 152'],

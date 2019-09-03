@@ -2,7 +2,7 @@
  *
  *  MathJax/jax/output/HTML-CSS/fonts/Asana-Math/Operators/Regular/Main.js
  *  
- *  Copyright (c) 2013-2019 The MathJax Consortium
+ *  Copyright (c) 2013 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,8 +20,9 @@
 MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['AsanaMathJax_Operators'] = {
   directory: 'Operators/Regular',
   family: 'AsanaMathJax_Operators',
-  testString: '\u2206\u220A\u220C\u220E\u220F\u2210\u2211\u221B\u221C\u221F\u222C\u222D\u222E\u222F\u2230',
+  testString: '\u00A0\u2206\u220A\u220C\u220E\u220F\u2210\u2211\u221B\u221C\u221F\u222C\u222D\u222E\u222F',
   0x20: [0,0,249,0,0],
+  0xA0: [0,0,333,0,0],
   0x2206: [697,4,688,27,662],
   0x220A: [482,3,511,66,446],
   0x220C: [648,107,563,55,509],
@@ -59,9 +60,9 @@ MathJax.OutputJax['HTML-CSS'].FONTDATA.FONTS['AsanaMathJax_Operators'] = {
   0x2259: [646,-134,687,65,623],
   0x225A: [646,-134,687,65,623],
   0x225B: [652,-134,687,65,623],
-  0x225D: [658,-134,687,65,623],
-  0x225E: [632,-134,687,65,623],
-  0x225F: [751,-134,687,65,623],
+  0x225D: [797,-134,777,45,731],
+  0x225E: [675,-134,687,65,623],
+  0x225F: [780,-87,687,65,623],
   0x2262: [596,55,668,65,604],
   0x2263: [566,27,668,65,604],
   0x226D: [596,55,668,54,616],
