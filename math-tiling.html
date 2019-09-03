@@ -13,7 +13,7 @@
         MathJax.Hub.Config({
             extensions: ["tex2jax.js", "MathMenu.js", "MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
             jax: ["input/TeX", "output/SVG", "output/PreviewHTML"],
-            SVG: { font: "Latin-Modern" },
+            SVG: { font: "Gyre-Pagella" },
             tex2jax: {
                 inlineMath: [['$','$']],
                 displayMath: [['$$','$$']],
@@ -87,17 +87,24 @@
     <div class="maintext">
         <div class="par first">
             Here is an interesting small math problem that I spent some time thinking about a few days ago:
-            How can I partition my monitor <div class="italic">optimally</div> into a grid containing a user-defined
+            How can I partition my monitor <div class="italic">optimally</div> into a grid containing at least a given
             number of tiles?
         </div>
 
         <div class="par">
-            Before trying to find a good optimality condition, it makes sense to formulate this problem formally:<br>
+            The first things to formalise are the parameters of the problem and the conditions for valid solution:<br>
             Let $W, H \in \mathbb{N}$ be the height and width of the monitor and $T \in \mathbb{N}$ the minimum number
-            of tiles that our grid needs to contain.
+            of tiles that our grid needs to contain, that is, the parameters are $\left\langle W, H, T \right\rangle \in
+            \mathbb{N}^3$.
             A solution to the tiling problem is then a pair $\tau &coloneq; \left\langle w, h \right\rangle \in
-            \mathbb{N}^2$ for which
-            $w \cdot h \geq T$ holds.
+            \mathbb{N}^2$ for which $w \cdot h \geq T$ holds.
+            This formulation makes it quite clear that the problem exhibits an inherent symmetry: If $\left\langle
+            \alpha, \beta \right\rangle \in \mathbb{N}^2$ is a solution to the problem with the parameters $\left\langle
+            A, B, T \right\rangle \in \mathbb{N}^3$, $\left\langle \beta, \alpha \right\rangle$ is a solution to the
+            problem with the parameters $\left\langle B, A, T \right\rangle$.
+        </div>
+
+        <div class="par">
             This, however, can be simplified by noting that the minimum value of one of these variables can be
             calculated
             trivially from that of the other:

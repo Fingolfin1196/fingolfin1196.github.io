@@ -4,7 +4,7 @@
         MathJax.Hub.Config({
             extensions: ["tex2jax.js", "MathMenu.js", "MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
             jax: ["input/TeX", "output/SVG", "output/PreviewHTML"],
-            SVG: { font: "Latin-Modern" },
+            SVG: { font: "Gyre-Pagella" },
             tex2jax: {
                 inlineMath: [['$','$']],
                 displayMath: [['$$','$$']],
