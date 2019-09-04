@@ -32,6 +32,12 @@ h1 a {
     text-decoration: inherit;
 }
 
+h2 {
+    font-style: italic;
+    font-weight: 600;
+    padding: 0;
+}
+
 header.Header::after {
     border-bottom: 1px solid #eee;
     content: "";

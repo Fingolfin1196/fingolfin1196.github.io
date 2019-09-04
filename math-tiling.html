@@ -92,23 +92,39 @@
             number of tiles?
         </div>
 
+        <h2>Formalising the problem</h2>
         <div class="par">
-            The first things to formalise are the parameters of the problem and the conditions for valid solution:<br>
             Let $W, H \in \mathbb{N}$ be the height and width of the monitor and $T \in \mathbb{N}$ the minimum number
             of tiles that our grid needs to contain, that is, the parameters are $\left\langle W, H, T \right\rangle \in
             \mathbb{N}^3$.
             A solution to the tiling problem is then a pair $\tau &coloneq; \left\langle w, h \right\rangle \in
             \mathbb{N}^2$ for which $w \cdot h \geq T$ holds.
-            This formulation makes it quite clear that the problem exhibits an inherent symmetry: If $\left\langle
-            \alpha, \beta \right\rangle \in \mathbb{N}^2$ is a solution to the problem with the parameters $\left\langle
-            A, B, T \right\rangle \in \mathbb{N}^3$, $\left\langle \beta, \alpha \right\rangle$ is a solution to the
-            problem with the parameters $\left\langle B, A, T \right\rangle$.
+            The actual size of the tiles is then $\frac{W}{w} \times \frac{H}{h}$ when ignoring rounding errors, which I
+            have, since they are really insignificant in this case.
         </div>
 
         <div class="par">
-            This, however, can be simplified by noting that the minimum value of one of these variables can be
-            calculated
-            trivially from that of the other:
+            When trying to find a good optimality condition, I tried a few approaches before really thinking about the
+            question, so I can only invite the reader to do that, too.
+            If, for instance, we want to choose a tiling that maximises the space used by actual tiles, the trivial
+            solution $\tau = \left\langle 1, T \right\rangle$ is already optimal (if you ignore rounding when
+            calculating the tile sizes, which I do, since the error is insignificant in this case).<br>
+
+            After thinking about it for a little bit, I realised that the worst thing about small windows (if the small
+            size cannot be helped) is that all the UI elements around the main work area (e.g. window borders, toolbars,
+            scroll bars etc.) take up quite a bit of space, which means that any tiling with very wide or very tall
+            tiles will be unusable for large $T$.
+            Thus, the property that it makes the most sense is to maximise the smaller of the two tile dimensions, so
+            that the usable window space is distributed in a sensible manner.
+            This means maximising $\min \left\{\frac{H}{h}, \frac{W}{w}\right\}$, where the ideal tiling would be one
+            with square tiles, which actually makes a lot of sense, at least for non-creative tasks where there is no
+            intrinsic aspect ratio.
+        </div>
+
+        <div class="par">
+            With the problem fully formalised, we can think about simplifying it.
+            For instance, the minimum value of one of these variables can be calculated trivially from that of the
+            other:
             If, for instance, the value for $h$ is fixed, the lowest value for $w$ that fulfils the aforementioned
             condition is $w &coloneq; \left\lceil \frac{T}{h} \right\rceil$, since the following holds:
 
@@ -122,25 +138,6 @@
             Since $\left\lceil \frac{T}{h} \right\rceil$ is the smallest integer for which this inequality holds, it
             suffices to consider either $h$ or $w$ (just swap $h$ and $w$ above) as the variable and calculate the other
             as above.
-        </div>
-
-        <div class="par">
-            Now that the problem is formulated depending only on a single variable, we can consider the optimality
-            condition.
-            Here, I have tried various approaches before really thinking about the question, so I can only invite the
-            reader to think about the problem, too.
-            If, for instance, we want to choose a tiling that maximises the space used by actual tiles, the trivial
-            solution $\tau = \left\langle 1, T \right\rangle$ is already optimal (if you ignore rounding when
-            calculating the tile sizes, which I do, since the error is insignificant in this case).<br>
-
-            After thinking about it for a little bit, I realised that the worst thing about small windows (if the size
-            has to be low) is that the window borders, the toolbar, the scroll bar etc. take up quite a bit of space;
-            thus, any tiling in which the tiles are very wide or very tall will be unusable for large $T$.
-            As such, the thing that makes most sense is to maximise the smaller of the two dimensions and thus to
-            prevent the problems I have described.
-            Formally, this means maximising $\min \left\{\frac{H}{h}, \frac{W}{w}\right\}$, where the ideal would be a
-            tiling with square tiles, which actually makes a lot of sense, at least for non-creative tasks where the art
-            has an intrinsic aspect ratio.
         </div>
 
         <div class="par">
