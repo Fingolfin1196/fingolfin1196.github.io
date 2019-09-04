@@ -3,9 +3,9 @@
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
             extensions: ["tex2jax.js", "MathMenu.js", "MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
-            "HTML-CSS": { fonts: ["Gyre-Pagella"] },
+            "HTML-CSS": { fonts: ["Asana-Math"] },
             jax: ["input/TeX", "output/SVG", "output/HTML-CSS", "output/PreviewHTML"],
-            SVG: { font: "Gyre-Pagella" },
+            SVG: { font: "Asana-Math" },
             tex2jax: {
                 inlineMath: [['$','$']],
                 displayMath: [['$$','$$']],
@@ -15,5 +15,5 @@
                 extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]
             }
         });
-        </script>
+    </script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_SVG' async></script>
