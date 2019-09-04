@@ -39,8 +39,17 @@ h2 {
     padding: 12pt 0 4pt 0;
 }
 
+h2::after {
+    border-bottom: 1px solid #f0f0f0;
+    content: "";
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
 header.Header::after {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #ccc;
     content: "";
     display: block;
     margin: 0 auto;
@@ -163,7 +172,7 @@ div.last {
 }
 
 div.FooterWrapper::before {
-    border-top: 1px solid #eee;
+    border-top: 1px solid #ccc;
     content: "";
     display: block;
     margin: 0 auto;
