@@ -20,6 +20,7 @@ body {
 }
 
 h1 {
+    font-feature-settings: normal;
     font-style: italic;
     font-weight: 600;
     padding: 0 8pt;
@@ -87,6 +88,7 @@ nav.HeaderNavigation ul li {
 nav.HeaderNavigation ul li a {
     color: #000;
     display: block;
+    font-feature-settings: normal;
     font-style: italic;
     padding: 8pt;
     text-decoration: none;
@@ -149,6 +151,7 @@ div.maintext {
 
 div.italic {
     display: inline;
+    font-feature-settings: normal;
     font-style: italic;
 }
 
@@ -178,6 +181,7 @@ div.FooterWrapper::before {
 }
 
 div.Footer {
+    font-feature-settings: normal;
     font-style: italic;
     padding: 16pt;
     text-align: center;
