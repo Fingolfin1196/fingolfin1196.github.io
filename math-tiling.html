@@ -8,12 +8,13 @@
     <meta name="author" content="Kurt Böhm">
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <link rel="stylesheet" href="Style.css" />
-    <link rel="stylesheet" media="only screen and (max-width: 40em)" href="mobile.css" />
+    <link rel="stylesheet" media="only screen and (max-width: 40em)" href="Mobile.css" />
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
             extensions: ["tex2jax.js", "MathMenu.js", "MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
-            "HTML-CSS": { fonts: ["Garamond", "Gyre-Pagella"] },
-            jax: ["input/TeX", "output/HTML-CSS", "output/PreviewHTML"],
+            "HTML-CSS": { fonts: ["Gyre-Pagella"] },
+            jax: ["input/TeX", "output/SVG", "output/HTML-CSS", "output/PreviewHTML"],
+            SVG: { font: "Gyre-Pagella" },
             tex2jax: {
                 inlineMath: [['$','$']],
                 displayMath: [['$$','$$']],
@@ -24,7 +25,7 @@
             }
         });
         </script>
-    <script src='MathJax/MathJax.js?config=TeX-AMS_SVG' async></script></head>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_SVG' async></script></head>
 
 <body>
     <header class="Header">
