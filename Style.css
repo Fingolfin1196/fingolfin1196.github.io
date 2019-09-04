@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i,600,600i,700,700i&subset=greek,greek-ext,latin-ext');
-@import url("Fonts/Ysabeau/Ysabeau.css");
+@import url('Fonts/Ysabeau/Ysabeau.css');
+@import url('https://indestructibletype.com/fonts/Jost.css');
 
 /* @import url("Fonts/BonaNova/BonaNova.css"); */
 
@@ -13,7 +14,8 @@ html {
 
 body {
     background-color: #fff;
-    font-family: 'EB Garamond', serif;
+    font-family: 'Jost', serif;
+    font-feature-settings: "ss01";
     font-size: 14pt;
     margin: 0;
     border: 0;
@@ -33,8 +35,9 @@ h1 a {
 }
 
 h2 {
-    font-family: 'YsabeauSC', sans;
-    font-weight: 300;
+    font-feature-settings: normal;
+    font-style: italic;
+    font-weight: 200;
     margin: 0;
     padding: 12pt 0 4pt 0;
 }

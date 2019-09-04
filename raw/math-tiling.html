@@ -49,11 +49,17 @@
             intrinsic aspect ratio.
         </div>
 
+        <h2>Simplifying the Problem</h2>
+        <div class="par first">
+            This formulation makes it quite clear that the problem exhibits an inherent symmetry: If $\left\langle
+            \alpha, \beta \right\rangle \in \mathbb{N}^2$ is an optimal solution to the problem with the parameters
+            $\left\langle A, B, T \right\rangle \in \mathbb{N}^3$, $\left\langle \beta, \alpha \right\rangle$ is a
+            solution to the problem with the parameters $\left\langle B, A, T \right\rangle$.
+        </div>
         <div class="par">
-            With the problem fully formalised, we can think about simplifying it.
-            For instance, the minimum value of one of these variables can be calculated trivially from that of the
-            other:
-            If, for instance, the value for $h$ is fixed, the lowest value for $w$ that fulfils the aforementioned
+            As a first step, the minimum value of one of the solution components can be calculated trivially from that
+            of the other:
+            If we fix the value of $h$, the lowest value of $w$ that fulfils the aforementioned
             condition is $w &coloneq; \left\lceil \frac{T}{h} \right\rceil$, since the following holds:
 
             $$
