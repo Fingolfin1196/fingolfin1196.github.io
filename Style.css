@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i,600,600i,700,700i&subset=greek,greek-ext,latin-ext');
-@import url('Fonts/Ysabeau/Ysabeau.css');
-@import url('https://indestructibletype.com/fonts/Jost.css');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i,600,600i,700,700i&display=swap&subset=greek,greek-ext,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Cormorant:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap&subset=latin-ext');
+/* @import url("Fonts/Ysabeau/Ysabeau.css"); */
+
+/* @import url('https://indestructibletype.com/fonts/Jost.css'); */
 
 /* @import url("Fonts/BonaNova/BonaNova.css"); */
 
@@ -12,17 +14,16 @@ html {
 
 body {
     background-color: #fff;
-    font-family: 'Jost', serif;
-    font-feature-settings: "ss01";
+    font-family: 'EB Garamond', serif;
     font-size: 14pt;
     margin: 0;
     border: 0;
 }
 
 h1 {
-    font-feature-settings: normal;
+    font-family: 'Cormorant', serif;
     font-style: italic;
-    font-weight: 600;
+    font-weight: 700;
     padding: 0 8pt;
     text-align: center;
 }
@@ -34,9 +35,9 @@ h1 a {
 }
 
 h2 {
-    font-feature-settings: normal;
+    font-family: 'Cormorant', serif;
     font-style: italic;
-    font-weight: 200;
+    font-weight: 300;
     margin: 0;
     padding: 12pt 0 4pt 0;
 }
@@ -88,7 +89,7 @@ nav.HeaderNavigation ul li {
 nav.HeaderNavigation ul li a {
     color: #000;
     display: block;
-    font-feature-settings: normal;
+    font-family: 'Cormorant', serif;
     font-style: italic;
     padding: 8pt;
     text-decoration: none;
@@ -151,7 +152,6 @@ div.maintext {
 
 div.italic {
     display: inline;
-    font-feature-settings: normal;
     font-style: italic;
 }
 
@@ -181,7 +181,7 @@ div.FooterWrapper::before {
 }
 
 div.Footer {
-    font-feature-settings: normal;
+    font-family: 'Cormorant', serif;
     font-style: italic;
     padding: 16pt;
     text-align: center;
