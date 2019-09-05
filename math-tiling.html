@@ -96,30 +96,29 @@
         <h3>Formalising the Problem</h3>
         <div class="par first">
             Let $W, H \in \mathbb{N}$ be the height and width of the monitor and $T \in \mathbb{N}$ the minimum number
-            of tiles that our grid needs to contain, that is, the parameters are $\left\langle W, H, T \right\rangle \in
+            of tiles that the grid needs to contain, i.e. the parameters are $\left\langle W, H, T \right\rangle \in
             \mathbb{N}^3$.
             A solution to the tiling problem is then a pair $\tau &coloneq; \left\langle w, h \right\rangle \in
             \mathbb{N}^2$ for which $w \cdot h \geq T$ holds.
-            The actual size of the tiles is then $\frac{W}{w} \times \frac{H}{h}$ when ignoring rounding errors, which I
-            have, since they are really insignificant in this case.
+            The actual size of the resulting tiles is $\frac{W}{w} \times \frac{H}{h}$ when ignoring rounding errors,
+            which I have, since they are insignificant in this case.
         </div>
 
         <div class="par">
             When trying to find a good optimality condition, I tried a few approaches before really thinking about the
-            question, so I can only invite the reader to do that, too.
-            If, for instance, we want to choose a tiling that maximises the space used by actual tiles, the trivial
-            solution $\tau = \left\langle 1, T \right\rangle$ is already optimal (if you ignore rounding when
-            calculating the tile sizes, which I do, since the error is insignificant in this case).<br>
+            question — I can only invite the reader to think about this before continuing.
+            If, for instance, we choose tilings that maximise the space used by actual tiles, the trivial solution
+            $\tau = \left\langle 1, T \right\rangle$ is optimal.<br>
 
-            After thinking about it for a little bit, I realised that the worst thing about small windows (if the small
-            size cannot be helped) is that all the UI elements around the main work area (e.g. window borders, toolbars,
+            After thinking for a little bit, I realised that the worst thing about small windows (if the small size
+            cannot be helped) is that all the UI elements around the main work area (e.g. window borders, toolbars,
             scroll bars etc.) take up quite a bit of space, which means that any tiling with very wide or very tall
-            tiles will be unusable for large $T$.
-            Thus, the property that it makes the most sense is to maximise the smaller of the two tile dimensions, so
-            that the usable window space is distributed in a sensible manner.
+            tiles is unusable for large $T$.
+            Thus, the property that it makes the most sense to maximise is the smaller of the two tile dimensions so
+            that the usable window space is distributed in a usable manner.
             This means maximising $\min \left\{\frac{H}{h}, \frac{W}{w}\right\}$, where the ideal tiling would be one
-            with square tiles, which actually makes a lot of sense, at least for non-creative tasks where there is no
-            intrinsic aspect ratio.
+            with square tiles, which actually makes a lot of sense for non-creative tasks where there is no intrinsic
+            aspect ratio.
         </div>
 
         <h3>Simplifying the Problem</h3>
