@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i,600,600i,700,700i&display=swap&subset=greek,greek-ext,latin-ext');
+@import url('Fonts/EBGaramond/EBGaramond.css');
 @import url('Fonts/Cormorant/CormorantGaramond/CormorantGaramond.css');
 /* @import url("Fonts/Ysabeau/Ysabeau.css"); */
 
@@ -20,7 +20,6 @@ body {
 
 h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-feature-settings: "ss07";
     font-style: italic;
     font-weight: 700;
     padding: 0 8pt;
@@ -35,7 +34,6 @@ h1 a {
 
 h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-feature-settings: "ss07";
     font-style: italic;
     font-weight: 400;
     margin: 0;
