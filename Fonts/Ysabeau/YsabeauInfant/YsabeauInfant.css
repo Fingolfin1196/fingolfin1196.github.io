@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-Hairline.woff2') format('woff2'), url('YsabeauInfant-Hairline.woff') format('woff');
+    font-weight: 50;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-HairlineItalic.woff2') format('woff2'), url('YsabeauInfant-HairlineItalic.woff') format('woff');
+    font-weight: 50;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-Thin.woff2') format('woff2'), url('YsabeauInfant-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-ThinItalic.woff2') format('woff2'), url('YsabeauInfant-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-Extralight.woff2') format('woff2'), url('YsabeauInfant-Extralight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-ExtralightItalic.woff2') format('woff2'), url('YsabeauInfant-ExtralightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-Light.woff2') format('woff2'), url('YsabeauInfant-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-LightItalic.woff2') format('woff2'), url('YsabeauInfant-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-Semilight.woff2') format('woff2'), url('YsabeauInfant-Semilight.woff') format('woff');
+    font-weight: 350;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-SemilightItalic.woff2') format('woff2'), url('YsabeauInfant-SemilightItalic.woff') format('woff');
+    font-weight: 350;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-Regular.woff2') format('woff2'), url('YsabeauInfant-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-Italic.woff2') format('woff2'), url('YsabeauInfant-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-Medium.woff2') format('woff2'), url('YsabeauInfant-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-MediumItalic.woff2') format('woff2'), url('YsabeauInfant-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-Semibold.woff2') format('woff2'), url('YsabeauInfant-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-SemiboldItalic.woff2') format('woff2'), url('YsabeauInfant-SemiboldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-Bold.woff2') format('woff2'), url('YsabeauInfant-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauInfant';
+    src: url('YsabeauInfant-BoldItalic.woff2') format('woff2'), url('YsabeauInfant-BoldItalic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+}

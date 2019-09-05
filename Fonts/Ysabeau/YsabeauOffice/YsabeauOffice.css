@@ -1,0 +1,153 @@
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-Hairline.woff2') format('woff2'), url('YsabeauOffice-Hairline.woff') format('woff');
+    font-weight: 50;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-HairlineItalic.woff2') format('woff2'), url('YsabeauOffice-HairlineItalic.woff') format('woff');
+    font-weight: 50;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-Thin.woff2') format('woff2'), url('YsabeauOffice-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-ThinItalic.woff2') format('woff2'), url('YsabeauOffice-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-Extralight.woff2') format('woff2'), url('YsabeauOffice-Extralight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-ExtralightItalic.woff2') format('woff2'), url('YsabeauOffice-ExtralightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-Light.woff2') format('woff2'), url('YsabeauOffice-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-LightItalic.woff2') format('woff2'), url('YsabeauOffice-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-Semilight.woff2') format('woff2'), url('YsabeauOffice-Semilight.woff') format('woff');
+    font-weight: 350;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-SemilightItalic.woff2') format('woff2'), url('YsabeauOffice-SemilightItalic.woff') format('woff');
+    font-weight: 350;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-Regular.woff2') format('woff2'), url('YsabeauOffice-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-Italic.woff2') format('woff2'), url('YsabeauOffice-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-Medium.woff2') format('woff2'), url('YsabeauOffice-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-MediumItalic.woff2') format('woff2'), url('YsabeauOffice-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-Semibold.woff2') format('woff2'), url('YsabeauOffice-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-SemiboldItalic.woff2') format('woff2'), url('YsabeauOffice-SemiboldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-Bold.woff2') format('woff2'), url('YsabeauOffice-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-BoldItalic.woff2') format('woff2'), url('YsabeauOffice-BoldItalic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-Ultrabold.woff2') format('woff2'), url('YsabeauOffice-Ultrabold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-UltraboldItalic.woff2') format('woff2'), url('YsabeauOffice-UltraboldItalic.woff') format('woff');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-Heavy.woff2') format('woff2'), url('YsabeauOffice-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YsabeauOffice';
+    src: url('YsabeauOffice-Black.woff2') format('woff2'), url('YsabeauOffice-Black.woff') format('woff');
+    font-weight: 950;
+    font-style: normal;
+}
