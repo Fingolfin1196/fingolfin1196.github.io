@@ -34,13 +34,23 @@ h1 a {
 
 h2 {
     font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-feature-settings: "smcp";
+    margin: 0;
+    padding: 0 0 4pt 0;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18pt;
     font-style: italic;
     font-weight: 400;
     margin: 0;
     padding: 12pt 0 4pt 0;
 }
 
-h2::after {
+h3::after {
     border-bottom: 1px solid #f0f0f0;
     content: "";
     display: block;
@@ -145,7 +155,7 @@ a.HeaderGroup {
 }
 
 div.maintext {
-    padding: 16pt;
+    padding: 8pt 16pt 16pt 16pt;
 }
 
 div.italic {

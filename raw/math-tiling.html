@@ -15,13 +15,14 @@
     {{header}}
 
     <div class="maintext">
+        <h2>Tiling a Monitor</h2>
         <div class="par first">
             Here is an interesting small math problem that I spent some time thinking about a few days ago:
             How can I partition my monitor <div class="italic">optimally</div> into a grid containing at least a given
             number of tiles?
         </div>
 
-        <h2>Formalising the Problem</h2>
+        <h3>Formalising the Problem</h3>
         <div class="par first">
             Let $W, H \in \mathbb{N}$ be the height and width of the monitor and $T \in \mathbb{N}$ the minimum number
             of tiles that our grid needs to contain, that is, the parameters are $\left\langle W, H, T \right\rangle \in
@@ -50,7 +51,7 @@
             intrinsic aspect ratio.
         </div>
 
-        <h2>Simplifying the Problem</h2>
+        <h3>Simplifying the Problem</h3>
         <div class="par first">
             This formulation makes it quite clear that the problem exhibits an inherent symmetry: If $\left\langle
             \alpha, \beta \right\rangle \in \mathbb{N}^2$ is an optimal solution to the problem with the parameters
@@ -85,7 +86,7 @@
             $\left\langle w, h \right\rangle$.
         </div>
 
-        <h2>Solving the Problem</h2>
+        <h3>Solving the Problem</h3>
         <div class="par first">
             Having formulated this problem formally and in a compact manner, it remains to solve it.
             A very simple approach is to iterate over the values of $h$, which can be constrained to the finite set
