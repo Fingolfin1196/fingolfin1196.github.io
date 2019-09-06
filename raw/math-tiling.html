@@ -19,13 +19,17 @@
         <div class="par first">
             $
             \newcommand\coloneq{&coloneq;}
+            \newcommand\BbbN{\mathbb{N}}
+
             \newcommand\aequi{\Longleftrightarrow}
             \newcommand\implr{\Longrightarrow}
             \newcommand\impll{\Longleftarrow}
+
             \newcommand\braces[1]{\left\{#1\right\}}
             \newcommand\angled[1]{\left\langle #1\right\rangle}
+            \newcommand\ceil[1]{\left\lceil #1\right\rceil}
+
             \newcommand\fun[2]{#1\!\left(#2\right)}
-            \newcommand\BbbN{\mathbb{N}}
             \newcommand\bfrac[2]{#1 / #2}
             $
             Here is an interesting small math problem that I spent some time thinking about a few days ago:
@@ -37,7 +41,7 @@
         <div class="par first">
             Let $W, H \in \BbbN$ be the width and height of the monitor and $T \in \BbbN$ the minimum number
             of tiles that the grid needs to contain; I will notate an instance of this problem as $\fun{\Pi}{W, H, T}$.
-            A solution to the tiling problem is then a pair $\theta &coloneq; \angled{w, h} \in \BbbN^2$ for which $w \cdot h \geq T$ holds.
+            A solution to the tiling problem is then a pair $\theta \coloneq \angled{w, h} \in \BbbN^2$ for which $w \cdot h \geq T$ holds.
             The actual size of the resulting tiles is $\frac{W}{w} \times \frac{H}{h}$ when ignoring rounding errors,
             which I have, since they are insignificant in this case.
         </div>
@@ -54,7 +58,7 @@
             tiles is unusable for large $T$.
             Thus, the property that it makes the most sense to maximise is the smaller of the two tile dimensions so
             that the usable window space is distributed in a usable manner.
-            This means maximising $\fun{\mu}{h, w} &coloneq; \min\!\braces{\frac{H}{h}, \frac{W}{w}}$, where the ideal tiling would be one
+            This means maximising $\fun{\mu}{h, w} \coloneq \min\!\braces{\frac{H}{h}, \frac{W}{w}}$, where the ideal tiling would be one
             with square tiles, which actually makes a lot of sense for non-creative tasks where there is no intrinsic
             aspect ratio.
         </div>
@@ -63,7 +67,7 @@
         <div class="par first">
             The previous formulation makes it clear that the problem exhibits an inherent symmetry:
             If $\angled{\alpha, \beta} \in \BbbN^2$ is an optimal solution to $\fun{\Pi}{A, B, T}$ for $A, B \in \BbbN$, $\angled{\beta, \alpha}$ trivially is an optimal solution to $\fun{\Pi}{B, A, T}$.
-            It thus suffices to consider the simplified problem $\fun{\Sigma}{A, B, T}$ in which we additionally require that $A \geq B$; analogously to $\Pi$, a solution $\angled{\alpha, \beta} \in \BbbN^2$ has to fulfil $\alpha \cdot \beta \geq T$, its optimum being determined by the maximum of $\fun{\nu}{\alpha, \beta} &coloneq; \min\!\left\{\bfrac{A}{\alpha}, \bfrac{B}{\beta}\right\}$.<br>
+            It thus suffices to consider the simplified problem $\fun{\Sigma}{A, B, T}$ in which we additionally require that $A \geq B$; analogously to $\Pi$, a solution $\angled{\alpha, \beta} \in \BbbN^2$ has to fulfil $\alpha \cdot \beta \geq T$, its optimum being determined by the maximum of $\fun{\nu}{\alpha, \beta} \coloneq \min\!\left\{\bfrac{A}{\alpha}, \bfrac{B}{\beta}\right\}$.<br>
 
             An instance $\fun{\Pi}{W, H, T}$ can then easily be mapped to $\fun{\Sigma}{W, H, T}$ if $W \geq H$ (i.e. the monitor is used in its horizontal orientation), and its solution $\angled{\alpha, \beta}$ is also the optimal solution of $\fun{\Pi}{W, H, T}$.
             If $H \geq W$ (i.e. the monitor is vertically oriented), the problem can be mapped to $\fun{\Sigma}{H, W, T}$, after which the element of the latter's solution $\angled{\alpha, \beta}$ have to be flipped, i.e. $\angled{\beta, \alpha}$ is the optimal solution of $\fun{\Pi}{W, H, T}$.
@@ -86,31 +90,23 @@
             Since the condition $\alpha \cdot \beta \geq T$ also entails that both $\alpha$ and $\beta$ do not need to be larger than $T$ (since both are at least $1$), every optimal solution $\angled{\alpha, \beta}$ satisfies $\beta \leq \alpha \leq T$.
         </div>
         <div class="par">
-            Additionally, the minimum value of one of the solution components can be calculated trivially from that
-            of the other:
-            If we fix the value of $h$, the lowest value of $w$ that fulfils the aforementioned
-            condition is $w &coloneq; \left\lceil \frac{T}{h} \right\rceil$, since the following holds:
+            Additionally, the minimum value of $\alpha$ can be calculated trivially from that of $\beta$ through $\alpha \coloneq \left\lceil \frac{T}{\beta} \right\rceil$ (this also works the other way around, but this way will prove more useful later on), since the following holds:
 
             $$
-            w \cdot h
-            = \left\lceil \frac{T}{h} \right\rceil \cdot h
-            \geq \frac{T}{h} \cdot h
+            \alpha \cdot \beta
+            = \ceil{\frac{T}{\beta}} \cdot \beta
+            \geq \frac{T\beta}{\beta}
             = T
             $$
 
-            Since $\left\lceil \frac{T}{h} \right\rceil$ is the smallest integer for which this inequality holds, it
-            suffices to consider either $h$ or $w$ (just swap $h$ and $w$ above) as the variable and calculate the other
-            as above.
+            Since $\left\lceil \frac{T}{\beta} \right\rceil$ is the smallest integer for the utilised inequality holds, it suffices to consider $\beta$ as the variable and calculate $\alpha$ as above.
         </div>
 
         <div class="par">
-            Having considered these things, the problem can be formulated as follows, where $w &coloneq; \left\lceil
-            \frac{T}{h} \right\rceil$ is used as a shorthand:
+            Having considered these things, the problem can be formulated as follows, where $\alpha \coloneq \ceil{\frac{T}{h}}$ is used as shorthand:
             <div class="par center">
-                Find an $h \in \BbbN$ such that $\min \left\{\frac{H}{h}, \frac{W}{w}\right\}$ is maximised.
+                Find a $\beta \in \braces{1, \dots, T}$ such that $\min \left\{\frac{A}{\alpha}, \frac{B}{\beta}\right\}$ is maximised.
             </div>
-            Here, $h$ and $w$ can be swapped at every occurrence again without changing the actual solution
-            $\left\langle w, h \right\rangle$.
         </div>
 
         <h3>Solving the Problem</h3>
