@@ -9,6 +9,7 @@
 html {
     height: 100vh;
     overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
     -webkit-text-size-adjust: none;
 }
 
@@ -22,6 +23,7 @@ body {
     height: 100vh;
     margin: 0;
     overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 h1 {
