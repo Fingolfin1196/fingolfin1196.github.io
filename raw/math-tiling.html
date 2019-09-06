@@ -17,7 +17,14 @@
     <div class="maintext">
         <h2>Tiling a Monitor</h2>
         <div class="par first">
-            $
+            Here is an interesting small math problem that I spent some time thinking about a few days ago:
+            How can I partition my monitor <div class="italic">optimally</div> into a grid containing at least a given
+            number of tiles?
+        </div>
+
+        <h3>Formalising the Problem</h3>
+        <div class="par first">
+            Let $
             \newcommand\coloneq{&coloneq;}
             \newcommand\eqcolon{&eqcolon;}
             \newcommand\BbbN{\mathbb{N}}
@@ -34,15 +41,7 @@
 
             \newcommand\fun[2]{#1\!\left(#2\right)}
             \newcommand\bfrac[2]{#1 / #2}
-            $
-            Here is an interesting small math problem that I spent some time thinking about a few days ago:
-            How can I partition my monitor <div class="italic">optimally</div> into a grid containing at least a given
-            number of tiles?
-        </div>
-
-        <h3>Formalising the Problem</h3>
-        <div class="par first">
-            Let $W, H \in \BbbN$ be the width and height of the monitor and $T \in \BbbN$ the minimum number
+            W, H \in \BbbN$ be the width and height of the monitor and $T \in \BbbN$ the minimum number
             of tiles that the grid needs to contain; I will notate an instance of this problem as $\fun{\Pi}{W, H, T}$.
             A solution to the tiling problem is then a pair $\theta \coloneq \angled{w, h} \in \BbbN^2$ for which $w \cdot h \geq T$ holds.
             The actual size of the resulting tiles is $\frac{W}{w} \times \frac{H}{h}$ when ignoring rounding errors,
