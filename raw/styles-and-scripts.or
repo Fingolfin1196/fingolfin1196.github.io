@@ -1,2 +1,2 @@
     <link rel="stylesheet" href="Style.css" />
-    <link rel="stylesheet" media="only screen and (max-width: 50em)" href="Mobile.css" />
+    <link rel="stylesheet" media="only screen and (max-width: 60em)" href="Mobile.css" />
