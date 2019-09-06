@@ -8,19 +8,20 @@
 
 html {
     height: 100vh;
+    overflow: hidden;
     -webkit-text-size-adjust: none;
 }
 
 body {
     background-color: #fff;
     border: 0;
+    display: flex;
+    flex-direction: column;
     font-family: 'EB Garamond', serif;
     font-size: 14pt;
     height: 100vh;
     margin: 0;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
 }
 
 h1 {
