@@ -36,10 +36,15 @@ h2 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 28pt;
     font-weight: 400;
-    font-feature-settings: "smcp";
+    font-feature-settings: "smcp", "ss01";
     margin: 0;
     padding: 0 0 12pt 0;
     text-align: center;
+}
+
+h2 div.NoCall {
+    display: inline;
+    font-feature-settings: "smcp";
 }
 
 h3 {
