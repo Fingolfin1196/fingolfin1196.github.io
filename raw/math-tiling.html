@@ -14,168 +14,166 @@
 <body>
     {{header}}
 
-    <div class="BodyWrapper">
-        <div class="maintext">
-            <h2>Tiling <div class="NoCall">a</div> Monitor</h2>
-            <div class="par first">
-                Here is an interesting small math problem that I spent some time thinking about a few days ago:
-                How can I partition my monitor <div class="italic">optimally</div> into a grid containing at least a
-                given number of tiles?
-            </div>
+    <div class="maintext">
+        <h2>Tiling <div class="NoCall">a</div> Monitor</h2>
+        <div class="par first">
+            Here is an interesting small math problem that I spent some time thinking about a few days ago:
+            How can I partition my monitor <div class="italic">optimally</div> into a grid containing at least a
+            given number of tiles?
+        </div>
 
-            <h3>Formalising the Problem</h3>
-            <div class="par first">
-                Let $
-                \newcommand\coloneq{&coloneq;}
-                \newcommand\eqcolon{&eqcolon;}
-                \newcommand\BbbN{\mathbb{N}}
-                \newcommand\BbbR{\mathbb{R}}
+        <h3>Formalising the Problem</h3>
+        <div class="par first">
+            Let $
+            \newcommand\coloneq{&coloneq;}
+            \newcommand\eqcolon{&eqcolon;}
+            \newcommand\BbbN{\mathbb{N}}
+            \newcommand\BbbR{\mathbb{R}}
 
-                \newcommand\aequi{\Longleftrightarrow}
-                \newcommand\implr{\Longrightarrow}
-                \newcommand\impll{\Longleftarrow}
+            \newcommand\aequi{\Longleftrightarrow}
+            \newcommand\implr{\Longrightarrow}
+            \newcommand\impll{\Longleftarrow}
 
-                \newcommand\braces[1]{\left\{#1\right\}}
-                \newcommand\angled[1]{\left\langle #1\right\rangle}
-                \newcommand\ceil[1]{\left\lceil #1\right\rceil}
-                \newcommand\floor[1]{\left\lfloor #1\right\rfloor}
+            \newcommand\braces[1]{\left\{#1\right\}}
+            \newcommand\angled[1]{\left\langle #1\right\rangle}
+            \newcommand\ceil[1]{\left\lceil #1\right\rceil}
+            \newcommand\floor[1]{\left\lfloor #1\right\rfloor}
 
-                \newcommand\fun[2]{#1\!\left(#2\right)}
-                \newcommand\bfrac[2]{#1 / #2}
-                W, H \in \BbbN$ be the width and height of the monitor and $T \in \BbbN$ the minimum number
-                of tiles that the grid needs to contain; I will notate an instance of this problem as $\fun{\Pi}{W, H, T}$.
-                A solution to the tiling problem is then a pair $\theta \coloneq \angled{w, h} \in \BbbN^2$ for which $w \cdot h \geq T$ holds.
-                The actual size of the resulting tiles is $\frac{W}{w} \times \frac{H}{h}$ when ignoring rounding,
-                which I have, since a difference of less than a pixel is insignificant.
-            </div>
+            \newcommand\fun[2]{#1\!\left(#2\right)}
+            \newcommand\bfrac[2]{#1 / #2}
+            W, H \in \BbbN$ be the width and height of the monitor and $T \in \BbbN$ the minimum number
+            of tiles that the grid needs to contain; I will notate an instance of this problem as $\fun{\Pi}{W, H, T}$.
+            A solution to the tiling problem is then a pair $\theta \coloneq \angled{w, h} \in \BbbN^2$ for which $w \cdot h \geq T$ holds.
+            The actual size of the resulting tiles is $\frac{W}{w} \times \frac{H}{h}$ when ignoring rounding,
+            which I have, since a difference of less than a pixel is insignificant.
+        </div>
 
-            <div class="par">
-                When trying to find a good optimality condition, I tried a few approaches before really thinking about the
-                question — I can only invite the reader to think about this before continuing.
-                If, for instance, we choose tilings that maximise the space used by actual tiles, the trivial solution
-                $\theta = \angled{1, T}$ is optimal.<br>
+        <div class="par">
+            When trying to find a good optimality condition, I tried a few approaches before really thinking about the
+            question — I can only invite the reader to think about this before continuing.
+            If, for instance, we choose tilings that maximise the space used by actual tiles, the trivial solution
+            $\theta = \angled{1, T}$ is optimal.<br>
 
-                After thinking for a little bit, I realised that the worst thing about small windows (if the small size
-                cannot be helped) is that all the UI elements around the main work area (e.g. window borders, toolbars,
-                scroll bars etc.) take up quite a bit of space, which means that any tiling with very wide or very tall
-                tiles is unusable for large $T$.
-                Thus, the property that it makes the most sense to maximise is the smaller of the two tile dimensions so
-                that the usable window space is distributed in a usable manner.
-                This means maximising $\fun{\mu}{w, h} \coloneq \min\!\braces{\frac{W}{w}, \frac{H}{h}}$, where the ideal tiling would be one
-                with square tiles, which actually makes a lot of sense for non-creative tasks where there is no intrinsic
-                aspect ratio.
-            </div>
+            After thinking for a little bit, I realised that the worst thing about small windows (if the small size
+            cannot be helped) is that all the UI elements around the main work area (e.g. window borders, toolbars,
+            scroll bars etc.) take up quite a bit of space, which means that any tiling with very wide or very tall
+            tiles is unusable for large $T$.
+            Thus, the property that it makes the most sense to maximise is the smaller of the two tile dimensions so
+            that the usable window space is distributed in a usable manner.
+            This means maximising $\fun{\mu}{w, h} \coloneq \min\!\braces{\frac{W}{w}, \frac{H}{h}}$, where the ideal tiling would be one
+            with square tiles, which actually makes a lot of sense for non-creative tasks where there is no intrinsic
+            aspect ratio.
+        </div>
 
-            <h3>Simplifying the Problem</h3>
-            <div class="par first">
-                The previous formulation makes it clear that the problem exhibits an inherent symmetry:
-                If $\angled{\alpha, \beta} \in \BbbN^2$ is an optimal solution to $\fun{\Pi}{A, B, T}$ for $A, B \in \BbbN$, $\angled{\beta, \alpha}$ trivially is an optimal solution to $\fun{\Pi}{B, A, T}$.
-                It thus suffices to consider the simplified problem $\fun{\Sigma}{A, B, T}$ in which we additionally require that $A \geq B$; analogously to $\Pi$, a solution $\angled{\alpha, \beta} \in \BbbN^2$ has to fulfil $\alpha \cdot \beta \geq T$, its optimum being determined by the maximum of $\fun{\nu}{\alpha, \beta} \coloneq \min\!\left\{\bfrac{A}{\alpha}, \bfrac{B}{\beta}\right\}$.<br>
+        <h3>Simplifying the Problem</h3>
+        <div class="par first">
+            The previous formulation makes it clear that the problem exhibits an inherent symmetry:
+            If $\angled{\alpha, \beta} \in \BbbN^2$ is an optimal solution to $\fun{\Pi}{A, B, T}$ for $A, B \in \BbbN$, $\angled{\beta, \alpha}$ trivially is an optimal solution to $\fun{\Pi}{B, A, T}$.
+            It thus suffices to consider the simplified problem $\fun{\Sigma}{A, B, T}$ in which we additionally require that $A \geq B$; analogously to $\Pi$, a solution $\angled{\alpha, \beta} \in \BbbN^2$ has to fulfil $\alpha \cdot \beta \geq T$, its optimum being determined by the maximum of $\fun{\nu}{\alpha, \beta} \coloneq \min\!\left\{\bfrac{A}{\alpha}, \bfrac{B}{\beta}\right\}$.<br>
 
-                An instance $\fun{\Pi}{W, H, T}$ can then easily be mapped to $\fun{\Sigma}{W, H, T}$ if $W \geq H$ (i.e. the monitor is used in its horizontal orientation), and its solution $\angled{\alpha, \beta}$ is also the optimal solution of $\fun{\Pi}{W, H, T}$.
-                If $H \geq W$ (i.e. the monitor is vertically oriented), the problem can be mapped to $\fun{\Sigma}{H, W, T}$, after which the element of the latter's solution $\angled{\alpha, \beta}$ have to be flipped, i.e. $\angled{\beta, \alpha}$ is the optimal solution of $\fun{\Pi}{W, H, T}$.
-            </div>
-            <div class="par">
-                The restriction $A \geq B$ entails that there is always an optimal solution $\angled{\alpha, \beta}$ in which $\alpha \geq \beta$; assuming the opposite, i.e. $\alpha &lt; \beta$, we can show that $\fun{\nu}{\alpha, \beta} \leq \fun{\nu}{\beta, \alpha}$:
+            An instance $\fun{\Pi}{W, H, T}$ can then easily be mapped to $\fun{\Sigma}{W, H, T}$ if $W \geq H$ (i.e. the monitor is used in its horizontal orientation), and its solution $\angled{\alpha, \beta}$ is also the optimal solution of $\fun{\Pi}{W, H, T}$.
+            If $H \geq W$ (i.e. the monitor is vertically oriented), the problem can be mapped to $\fun{\Sigma}{H, W, T}$, after which the element of the latter's solution $\angled{\alpha, \beta}$ have to be flipped, i.e. $\angled{\beta, \alpha}$ is the optimal solution of $\fun{\Pi}{W, H, T}$.
+        </div>
+        <div class="par">
+            The restriction $A \geq B$ entails that there is always an optimal solution $\angled{\alpha, \beta}$ in which $\alpha \geq \beta$; assuming the opposite, i.e. $\alpha &lt; \beta$, we can show that $\fun{\nu}{\alpha, \beta} \leq \fun{\nu}{\beta, \alpha}$:
 
-                $$
-                A \geq B
-                \aequi \frac{A}{\alpha} \geq \frac{B}{\alpha} > \frac{B}{\beta}
-                \implr \frac{B}{\beta} = \min\!\braces{\frac{A}{\alpha}, \frac{B}{\beta}} = \fun{\nu}{\alpha,\beta}\\
-                \frac{B}{\beta} \leq \fun{\nu}{\beta, \alpha} = \min\!\braces{\frac{A}{\beta}, \frac{B}{\alpha}}
-                \aequi \frac{B}{\beta} \leq \frac{A}{\beta} \text{ and } \frac{B}{\beta} \leq \frac{B}{\alpha}\\
-                \frac{B}{\beta} \leq \frac{A}{\beta}
-                \aequi B \leq A \text{, }
-                \frac{B}{\beta} \leq \frac{B}{\alpha}
-                \aequi \alpha \leq \beta \text{ per assumption}
-                $$
+            $$
+            A \geq B
+            \aequi \frac{A}{\alpha} \geq \frac{B}{\alpha} > \frac{B}{\beta}
+            \implr \frac{B}{\beta} = \min\!\braces{\frac{A}{\alpha}, \frac{B}{\beta}} = \fun{\nu}{\alpha,\beta}\\
+            \frac{B}{\beta} \leq \fun{\nu}{\beta, \alpha} = \min\!\braces{\frac{A}{\beta}, \frac{B}{\alpha}}
+            \aequi \frac{B}{\beta} \leq \frac{A}{\beta} \text{ and } \frac{B}{\beta} \leq \frac{B}{\alpha}\\
+            \frac{B}{\beta} \leq \frac{A}{\beta}
+            \aequi B \leq A \text{, }
+            \frac{B}{\beta} \leq \frac{B}{\alpha}
+            \aequi \alpha \leq \beta \text{ per assumption}
+            $$
 
-                Since the condition $\alpha \cdot \beta \geq T$ also entails that both $\alpha$ and $\beta$ do not need to be larger than $T$ (since both are at least $1$), every optimal solution $\angled{\alpha, \beta}$ satisfies $\beta \leq \alpha \leq T$.
-            </div>
-            <div class="par">
-                Additionally, the minimum value of $\alpha$ can be calculated trivially from that of $\beta$ through $\alpha \coloneq \left\lceil \frac{T}{\beta} \right\rceil$ (this also works the other way around, but this way will prove more useful later on), since the following holds:
+            Since the condition $\alpha \cdot \beta \geq T$ also entails that both $\alpha$ and $\beta$ do not need to be larger than $T$ (since both are at least $1$), every optimal solution $\angled{\alpha, \beta}$ satisfies $\beta \leq \alpha \leq T$.
+        </div>
+        <div class="par">
+            Additionally, the minimum value of $\alpha$ can be calculated trivially from that of $\beta$ through $\alpha \coloneq \left\lceil \frac{T}{\beta} \right\rceil$ (this also works the other way around, but this way will prove more useful later on), since the following holds:
 
-                $$
-                \alpha \cdot \beta
-                = \ceil{\frac{T}{\beta}} \cdot \beta
-                \geq \frac{T\beta}{\beta}
-                = T
-                $$
+            $$
+            \alpha \cdot \beta
+            = \ceil{\frac{T}{\beta}} \cdot \beta
+            \geq \frac{T\beta}{\beta}
+            = T
+            $$
 
-                Since $\left\lceil \frac{T}{\beta} \right\rceil$ is the smallest integer for the utilised inequality holds, it suffices to consider $\beta$ as the variable and calculate $\alpha$ as above.
-            </div>
+            Since $\left\lceil \frac{T}{\beta} \right\rceil$ is the smallest integer for the utilised inequality holds, it suffices to consider $\beta$ as the variable and calculate $\alpha$ as above.
+        </div>
 
-            <div class="par">
-                Having considered these things, the problem can be formulated as follows, where $\alpha \coloneq \ceil{\frac{T}{h}}$ is used as shorthand:
-                <div class="par center">
-                    Find a $\beta \in \braces{1, \dots, T}$ such that $\min\!\braces{\frac{A}{\alpha}, \frac{B}{\beta}}$ is maximised.
-                </div>
-            </div>
-
-            <h3>Solving the Problem</h3>
-            <div class="par first">
-                Having formulated this problem formally and in a compact manner, it remains to solve it.
-                A very simple approach is to iterate over the $T$ possible values of $\beta$ and choose that with the lowest value $\nu$, which would not be much work for a modern computer, even for a $T$ in the hundreds.
-                If there is a simple, constant-time algorithm for solving this problem, however, it is unnecessary work, and I would not want to waste processor time because of laziness.
-                To actually calculate the solution, we first need to consider that $\frac{B}{\beta}$ is monotonically decreasing and $\frac{A}{\alpha}$ monotonically increasing.
-                If $\beta$ is relaxed to a real number $\beta_{\BbbR}$ (and we set $\alpha_{\BbbR} \coloneq \ceil{\frac{T}{\beta_{\BbbR}}}$), an optimal solution thus lies at the intersection of the function graphs, i.e. at the solution of the equation $\frac{B}{\beta_{\BbbR}} = \frac{A}{\alpha_{\BbbR}}$.
-                Because of the aforementioned properties, the best integer solution can be found either by rounding
-                downwards (which is the last $\beta$ with $\frac{A}{\alpha} = \fun{\nu}{\alpha, \beta}$) or upwards (which is the first $\beta$ with $\frac{B}{\beta} = \fun{\nu}{\alpha, \beta}$), which is why I will consider the relaxed formulation in the following paragraph.
-            </div>
-            <div class="par">
-                The equation $\frac{B}{\beta_{\BbbR}} = \frac{A}{\alpha_{\BbbR}}$ might seem easy to solve at first glance, but the definition of $\alpha_{\BbbR}$ contains $\beta_{\BbbR}$ within the ceiling function, which makes solving the equation for $\beta_{\BbbR}$ harder.
-                However, since for all $\lambda \in \BbbR_+$ the inequalities $\lambda \leq \ceil{\lambda} &lt; \lambda + 1$ hold <div class="italic">per definitionem</div>, the following two inequalities can be formulated, where the second is the solution of a quadratic equation where only the larger one of the solutions makes sense:
-                $$
-                \frac{B}{\beta_{\BbbR}}
-                = \frac{A}{\alpha_{\BbbR}}
-                = \frac{A}{\ceil{\frac{T}{\beta_{\BbbR}}}}
-                \leq \frac{A\beta_{\BbbR}}{T}
-                \implr \beta_{\BbbR}
-                \geq \sqrt{\frac{B T}{A}}
-                \eqcolon \beta_{\BbbR}^- \\
-
-                \frac{B}{\beta_{\BbbR}}
-                = \frac{A}{\alpha_{\BbbR}}
-                = \frac{A}{\ceil{\frac{T}{\beta_{\BbbR}}}}
-                > \frac{A}{\frac{T}{\beta_{\BbbR}} + 1}
-                = \frac{A \beta_{\BbbR}}{T + \beta_{\BbbR}}
-                \implr A \beta_{\BbbR}^2 - B\beta_{\BbbR}
-                &lt; B T
-                \implr \beta_{\BbbR}
-                &lt; \frac{B}{2 A} + \sqrt{\frac{B^2}{4 A^2} + \frac{B T}{A}}
-                \eqcolon \beta_{\BbbR}^+
-                $$
-                Thus $\beta_{\BbbR} \in \left[\beta_{\BbbR}^-,\beta_{\BbbR}^+\right)$ holds and, through rounding, $\beta \in \left\{ \left\lfloor \beta_{\BbbR}^-
-                \right\rfloor, \dots, \left\lceil \beta_{\BbbR}^+ - 1 \right\rceil \right\}$.
-                This is a much smaller set of solutions that we could already iterate over, but which can be further simplified by considering $\beta_{\BbbR}^+ - \beta_{\BbbR}^-$, where the subadditivity of the square root — that is, $\sqrt{\lambda + \kappa} \leq \sqrt{\lambda} + \sqrt{\kappa}$ for $\lambda, \kappa \in \mathbb{R}_+$ — is used:
-                $$
-                \beta_{\BbbR}^+
-                = \frac{B}{2A} + \sqrt{\frac{B^2}{2 A^2} + \frac{BT}{A}}
-                \leq \frac{B}{2A} + \sqrt{\frac{B^2}{2 A^2}} + \sqrt{\frac{BT}{A}}
-                = \frac{B}{A} + \sqrt{\frac{BT}{A}} \\
-                \beta_{\BbbR}^+ - \beta_{\BbbR}^-
-                \leq \frac{B}{A} + \sqrt{\frac{BT}{A}} - \sqrt{\frac{B T}{A}}
-                = \frac{B}{A}
-                $$
-                Thus, if $\frac{B}{A} \leq 1 \aequi B \leq A$, which is one of the aforementioned requirements and is thus true, the relation $\beta_{\BbbR}^+ - \beta_{\BbbR}^- \leq 1 \implr \beta_{\BbbR}^+ \leq \beta_{\BbbR}^- + 1$
-                holds, which means that $\beta \in \braces{\floor{\beta_{\BbbR}^-}, \dots, \ceil{\beta_{\BbbR}^- + 1 -
-                1}} = \braces{\floor{\beta_{\BbbR}^-},\ceil{\beta_{\BbbR}^-}}$, which is a superset of the previously defined solution set.
-            </div>
-
-            <h3>The Conclusion</h3>
-            <div class="par first">
-                It is quite easy to find the optimal number of rows $h$ and columns $w$ when tiling a monitor with width $W$ and height $H$ displaying a given number of windows $T$:
-                If $H > W$, check which $h \in \braces{\floor{\sqrt{\frac{H T}{W}}}, \ceil{\sqrt{\frac{H T}{W}}}}$ has the larger value $\fun{\mu}{w,h} = \min\!\braces{\frac{W}{w}, \frac{H}{h}}$ with $w = \ceil{\frac{T}{h}}$.
-                Otherwise, check which $w \in \braces{\floor{\sqrt{\frac{W T}{H}}},\ceil{\sqrt{\frac{W T}{H}}}}$ has the larger value $\fun{\mu}{w,h}$ with $h = \ceil{\frac{T}{w}}$.
-                The complexity of these operations is constant and the calculations are, apart from the square root,
-                all very basic, which makes this calculation very simple.
-            </div>
-            <div class="par">
-                On the whole, I hope you have found this as interesting as I have — a small math problem with a nice
-                solution and some real-life applications that can be simplified to the point that it can be solved very easily.
+        <div class="par">
+            Having considered these things, the problem can be formulated as follows, where $\alpha \coloneq \ceil{\frac{T}{h}}$ is used as shorthand:
+            <div class="par center">
+                Find a $\beta \in \braces{1, \dots, T}$ such that $\min\!\braces{\frac{A}{\alpha}, \frac{B}{\beta}}$ is maximised.
             </div>
         </div>
 
-        {{footer}}
+        <h3>Solving the Problem</h3>
+        <div class="par first">
+            Having formulated this problem formally and in a compact manner, it remains to solve it.
+            A very simple approach is to iterate over the $T$ possible values of $\beta$ and choose that with the lowest value $\nu$, which would not be much work for a modern computer, even for a $T$ in the hundreds.
+            If there is a simple, constant-time algorithm for solving this problem, however, it is unnecessary work, and I would not want to waste processor time because of laziness.
+            To actually calculate the solution, we first need to consider that $\frac{B}{\beta}$ is monotonically decreasing and $\frac{A}{\alpha}$ monotonically increasing.
+            If $\beta$ is relaxed to a real number $\beta_{\BbbR}$ (and we set $\alpha_{\BbbR} \coloneq \ceil{\frac{T}{\beta_{\BbbR}}}$), an optimal solution thus lies at the intersection of the function graphs, i.e. at the solution of the equation $\frac{B}{\beta_{\BbbR}} = \frac{A}{\alpha_{\BbbR}}$.
+            Because of the aforementioned properties, the best integer solution can be found either by rounding
+            downwards (which is the last $\beta$ with $\frac{A}{\alpha} = \fun{\nu}{\alpha, \beta}$) or upwards (which is the first $\beta$ with $\frac{B}{\beta} = \fun{\nu}{\alpha, \beta}$), which is why I will consider the relaxed formulation in the following paragraph.
+        </div>
+        <div class="par">
+            The equation $\frac{B}{\beta_{\BbbR}} = \frac{A}{\alpha_{\BbbR}}$ might seem easy to solve at first glance, but the definition of $\alpha_{\BbbR}$ contains $\beta_{\BbbR}$ within the ceiling function, which makes solving the equation for $\beta_{\BbbR}$ harder.
+            However, since for all $\lambda \in \BbbR_+$ the inequalities $\lambda \leq \ceil{\lambda} &lt; \lambda + 1$ hold <div class="italic">per definitionem</div>, the following two inequalities can be formulated, where the second is the solution of a quadratic equation where only the larger one of the solutions makes sense:
+            $$
+            \frac{B}{\beta_{\BbbR}}
+            = \frac{A}{\alpha_{\BbbR}}
+            = \frac{A}{\ceil{\frac{T}{\beta_{\BbbR}}}}
+            \leq \frac{A\beta_{\BbbR}}{T}
+            \implr \beta_{\BbbR}
+            \geq \sqrt{\frac{B T}{A}}
+            \eqcolon \beta_{\BbbR}^- \\
+
+            \frac{B}{\beta_{\BbbR}}
+            = \frac{A}{\alpha_{\BbbR}}
+            = \frac{A}{\ceil{\frac{T}{\beta_{\BbbR}}}}
+            > \frac{A}{\frac{T}{\beta_{\BbbR}} + 1}
+            = \frac{A \beta_{\BbbR}}{T + \beta_{\BbbR}}
+            \implr A \beta_{\BbbR}^2 - B\beta_{\BbbR}
+            &lt; B T
+            \implr \beta_{\BbbR}
+            &lt; \frac{B}{2 A} + \sqrt{\frac{B^2}{4 A^2} + \frac{B T}{A}}
+            \eqcolon \beta_{\BbbR}^+
+            $$
+            Thus $\beta_{\BbbR} \in \left[\beta_{\BbbR}^-,\beta_{\BbbR}^+\right)$ holds and, through rounding, $\beta \in \left\{ \left\lfloor \beta_{\BbbR}^-
+            \right\rfloor, \dots, \left\lceil \beta_{\BbbR}^+ - 1 \right\rceil \right\}$.
+            This is a much smaller set of solutions that we could already iterate over, but which can be further simplified by considering $\beta_{\BbbR}^+ - \beta_{\BbbR}^-$, where the subadditivity of the square root — that is, $\sqrt{\lambda + \kappa} \leq \sqrt{\lambda} + \sqrt{\kappa}$ for $\lambda, \kappa \in \mathbb{R}_+$ — is used:
+            $$
+            \beta_{\BbbR}^+
+            = \frac{B}{2A} + \sqrt{\frac{B^2}{2 A^2} + \frac{BT}{A}}
+            \leq \frac{B}{2A} + \sqrt{\frac{B^2}{2 A^2}} + \sqrt{\frac{BT}{A}}
+            = \frac{B}{A} + \sqrt{\frac{BT}{A}} \\
+            \beta_{\BbbR}^+ - \beta_{\BbbR}^-
+            \leq \frac{B}{A} + \sqrt{\frac{BT}{A}} - \sqrt{\frac{B T}{A}}
+            = \frac{B}{A}
+            $$
+            Thus, if $\frac{B}{A} \leq 1 \aequi B \leq A$, which is one of the aforementioned requirements and is thus true, the relation $\beta_{\BbbR}^+ - \beta_{\BbbR}^- \leq 1 \implr \beta_{\BbbR}^+ \leq \beta_{\BbbR}^- + 1$
+            holds, which means that $\beta \in \braces{\floor{\beta_{\BbbR}^-}, \dots, \ceil{\beta_{\BbbR}^- + 1 -
+            1}} = \braces{\floor{\beta_{\BbbR}^-},\ceil{\beta_{\BbbR}^-}}$, which is a superset of the previously defined solution set.
+        </div>
+
+        <h3>The Conclusion</h3>
+        <div class="par first">
+            It is quite easy to find the optimal number of rows $h$ and columns $w$ when tiling a monitor with width $W$ and height $H$ displaying a given number of windows $T$:
+            If $H > W$, check which $h \in \braces{\floor{\sqrt{\frac{H T}{W}}}, \ceil{\sqrt{\frac{H T}{W}}}}$ has the larger value $\fun{\mu}{w,h} = \min\!\braces{\frac{W}{w}, \frac{H}{h}}$ with $w = \ceil{\frac{T}{h}}$.
+            Otherwise, check which $w \in \braces{\floor{\sqrt{\frac{W T}{H}}},\ceil{\sqrt{\frac{W T}{H}}}}$ has the larger value $\fun{\mu}{w,h}$ with $h = \ceil{\frac{T}{w}}$.
+            The complexity of these operations is constant and the calculations are, apart from the square root,
+            all very basic, which makes this calculation very simple.
+        </div>
+        <div class="par">
+            On the whole, I hope you have found this as interesting as I have — a small math problem with a nice
+            solution and some real-life applications that can be simplified to the point that it can be solved very easily.
+        </div>
     </div>
+
+    {{footer}}
 </body>
