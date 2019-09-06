@@ -7,15 +7,20 @@
 /* @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&subset=latin-ext'); */
 
 html {
+    height: 100%;
     -webkit-text-size-adjust: none;
 }
 
 body {
     background-color: #fff;
+    border: 0;
     font-family: 'EB Garamond', serif;
     font-size: 14pt;
+    height: 100%;
     margin: 0;
-    border: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -158,6 +163,11 @@ nav.HeaderNavigation ul ul ul {
 
 a.HeaderGroup {
     font-weight: 700;
+}
+
+div.BodyWrapper {
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
 div.maintext {
