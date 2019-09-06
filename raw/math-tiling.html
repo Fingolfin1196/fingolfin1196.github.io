@@ -19,7 +19,9 @@
         <div class="par first">
             $
             \newcommand\coloneq{&coloneq;}
+            \newcommand\eqcolon{&eqcolon;}
             \newcommand\BbbN{\mathbb{N}}
+            \newcommand\BbbR{\mathbb{R}}
 
             \newcommand\aequi{\Longleftrightarrow}
             \newcommand\implr{\Longrightarrow}
@@ -28,6 +30,7 @@
             \newcommand\braces[1]{\left\{#1\right\}}
             \newcommand\angled[1]{\left\langle #1\right\rangle}
             \newcommand\ceil[1]{\left\lceil #1\right\rceil}
+            \newcommand\floor[1]{\left\lfloor #1\right\rfloor}
 
             \newcommand\fun[2]{#1\!\left(#2\right)}
             \newcommand\bfrac[2]{#1 / #2}
@@ -58,7 +61,7 @@
             tiles is unusable for large $T$.
             Thus, the property that it makes the most sense to maximise is the smaller of the two tile dimensions so
             that the usable window space is distributed in a usable manner.
-            This means maximising $\fun{\mu}{h, w} \coloneq \min\!\braces{\frac{H}{h}, \frac{W}{w}}$, where the ideal tiling would be one
+            This means maximising $\fun{\mu}{w, h} \coloneq \min\!\braces{\frac{W}{w}, \frac{H}{h}}$, where the ideal tiling would be one
             with square tiles, which actually makes a lot of sense for non-creative tasks where there is no intrinsic
             aspect ratio.
         </div>
@@ -105,91 +108,72 @@
         <div class="par">
             Having considered these things, the problem can be formulated as follows, where $\alpha \coloneq \ceil{\frac{T}{h}}$ is used as shorthand:
             <div class="par center">
-                Find a $\beta \in \braces{1, \dots, T}$ such that $\min \left\{\frac{A}{\alpha}, \frac{B}{\beta}\right\}$ is maximised.
+                Find a $\beta \in \braces{1, \dots, T}$ such that $\min\!\braces{\frac{A}{\alpha}, \frac{B}{\beta}}$ is maximised.
             </div>
         </div>
 
         <h3>Solving the Problem</h3>
         <div class="par first">
             Having formulated this problem formally and in a compact manner, it remains to solve it.
-            A very simple approach is to iterate over the values of $h$, which can be constrained to the finite set
-            $\left\{ 1, \dots, T \right\}$ with $T$ elements and choose the best $h$, which would not be much work for a
-            modern computer, even for a $T$ in the hundreds.
-            If there is a simple, constant-time algorithm for solving this problem, however, it is unnecessary work, and
-            wasting processor time because of laziness is something I cannot get behind.
-            To actually calculate the solution, we first need to consider that $\frac{H}{h}$ is monotonically decreasing
-            and $\frac{W}{w}$ monotonically increasing.
-            If $h$ is relaxed to a real number $h_R$ (and setting $w_R &coloneq; \left\lceil
-            \frac{T}{h_R} \right\rceil$), an optimal solution thus lies at
-            the intersection of the function graphs, i.e. at the solution of the equation $\frac{H}{h_R} =
-            \frac{W}{w_R}$.
+            A very simple approach is to iterate over the $T$ possible values of $\beta$ and choose that with the lowest value $\nu$, which would not be much work for a modern computer, even for a $T$ in the hundreds.
+            If there is a simple, constant-time algorithm for solving this problem, however, it is unnecessary work, and I would not want to waste processor time because of laziness.
+            To actually calculate the solution, we first need to consider that $\frac{B}{\beta}$ is monotonically decreasing and $\frac{A}{\alpha}$ monotonically increasing.
+            If $\beta$ is relaxed to a real number $\beta_{\BbbR}$ (and we set $\alpha_{\BbbR} \coloneq \ceil{\frac{T}{\beta_{\BbbR}}}$), an optimal solution thus lies at the intersection of the function graphs, i.e. at the solution of the equation $\frac{B}{\beta_{\BbbR}} = \frac{A}{\alpha_{\BbbR}}$.
             Because of the aforementioned properties, the best integer solution can be found either by rounding
-            downwards (which is the maximum of $\frac{H}{h}$) or upwards (which is the maximum of $\frac{W}{w}$), which
-            is why I will consider the real case in the following paragraph.
+            downwards (which is the last $\beta$ with $\frac{A}{\alpha} = \fun{\nu}{\alpha, \beta}$) or upwards (which is the first $\beta$ with $\frac{B}{\beta} = \fun{\nu}{\alpha, \beta}$), which is why I will consider the relaxed formulation in the following paragraph.
         </div>
         <div class="par">
-            The equation $\frac{H}{h_R} = \frac{W}{w_R}$ seems easy to solve at first glance, the definition of $w_R$
-            contains $h_R$ within the ceiling function, which makes solving the equation for $h$ harder.
-            However, since for all $\lambda \in \mathbb{R}_+$ the inequalities $\lambda \leq \left\lceil
-            \lambda \right\rceil &lt; \lambda + 1$ hold <div class="italic">per definitionem</div>, the following to
-            inequalities can be formulated, where the second is the solution of a quadratic equation where only the
-            larger of the solution makes sense:
+            The equation $\frac{B}{\beta_{\BbbR}} = \frac{A}{\alpha_{\BbbR}}$ might seem easy to solve at first glance, but the definition of $\alpha_{\BbbR}$ contains $\beta_{\BbbR}$ within the ceiling function, which makes solving the equation for $\beta_{\BbbR}$ harder.
+            However, since for all $\lambda \in \BbbR_+$ the inequalities $\lambda \leq \ceil{\lambda} &lt; \lambda + 1$ hold <div class="italic">per definitionem</div>, the following two inequalities can be formulated, where the second is the solution of a quadratic equation where only the larger one of the solutions makes sense:
             $$
-            \frac{H}{h_R}
-            = \frac{W}{w_R}
-            = \frac{W}{\left\lceil \frac{T}{h_R} \right\rceil}
-            \leq \frac{W\cdot h_R}{T}
-            \Longleftrightarrow h_R
-            \geq \sqrt{\frac{H T}{W}}
-            &eqcolon; h_r^- \\
+            \frac{B}{\beta_{\BbbR}}
+            = \frac{A}{\alpha_{\BbbR}}
+            = \frac{A}{\ceil{\frac{T}{\beta_{\BbbR}}}}
+            \leq \frac{A\beta_{\BbbR}}{T}
+            \implr \beta_{\BbbR}
+            \geq \sqrt{\frac{B T}{A}}
+            \eqcolon \beta_{\BbbR}^- \\
 
-            \frac{H}{h_R}
-            = \frac{W}{w_R}
-            = \frac{W}{\left\lceil \frac{T}{h_R} \right\rceil}
-            > \frac{W}{\frac{T}{h_R} + 1}
-            = \frac{W \cdot h_R}{T + h_R}
-            \Longleftrightarrow \left( W \cdot h_R - H \right) h_R
-            &lt; H \cdot T
-            \Longleftrightarrow h_R
-            &lt; \frac{H}{2 W} + \sqrt{\frac{H^2}{4 W^2} + \frac{H T}{W}}
-            &eqcolon; h_r^+
+            \frac{B}{\beta_{\BbbR}}
+            = \frac{A}{\alpha_{\BbbR}}
+            = \frac{A}{\ceil{\frac{T}{\beta_{\BbbR}}}}
+            > \frac{A}{\frac{T}{\beta_{\BbbR}} + 1}
+            = \frac{A \beta_{\BbbR}}{T + \beta_{\BbbR}}
+            \implr A \beta_{\BbbR}^2 - B\beta_{\BbbR}
+            &lt; B T
+            \implr \beta_{\BbbR}
+            &lt; \frac{B}{2 A} + \sqrt{\frac{B^2}{4 A^2} + \frac{B T}{A}}
+            \eqcolon \beta_{\BbbR}^+
             $$
-            Thus $h_R \in \left[h_r^-,h_r^+\right)$ holds and, through rounding, $h \in \left\{ \left\lfloor h_r^-
-            \right\rfloor, \dots, \left\lceil h_r^+ - 1 \right\rceil \right\}$.
-            This would already be a smaller set to iterate through, but we can further simplify this by considering
-            $h_r^+ - h_r^-$, where the subadditivity of the square root — that is, $\sqrt{a + b} \leq \sqrt{a} +
-            \sqrt{b}$ for $a, b \in \mathbb{R}_+$ — is used:
+            Thus $\beta_{\BbbR} \in \left[\beta_{\BbbR}^-,\beta_{\BbbR}^+\right)$ holds and, through rounding, $\beta \in \left\{ \left\lfloor \beta_{\BbbR}^-
+            \right\rfloor, \dots, \left\lceil \beta_{\BbbR}^+ - 1 \right\rceil \right\}$.
+            This is a set of solutions that we could already iterate over, but we can further simplify the solution set by considering $\beta_{\BbbR}^+ - \beta_{\BbbR}^-$, where the subadditivity of the square root — that is, $\sqrt{\lambda + \kappa} \leq \sqrt{\lambda} + \sqrt{\kappa}$ for $\lambda, \kappa \in \mathbb{R}_+$ — is used:
             $$
-            h_r^+
-            = \frac{H}{2W} + \sqrt{\frac{H^2}{2 W^2} + \frac{HT}{W}}
-            \leq \frac{H}{2W} + \sqrt{\frac{H^2}{2 W^2}} + \sqrt{\frac{HT}{W}}
-            = \frac{H}{W} + \sqrt{\frac{HT}{W}} \\
-            h_r^+ - h_r^-
-            \leq \frac{H}{W} + \sqrt{\frac{HT}{W}} - \sqrt{\frac{H T}{W}}
-            = \frac{H}{W}
+            \beta_{\BbbR}^+
+            = \frac{B}{2A} + \sqrt{\frac{B^2}{2 A^2} + \frac{BT}{A}}
+            \leq \frac{B}{2A} + \sqrt{\frac{B^2}{2 A^2}} + \sqrt{\frac{BT}{A}}
+            = \frac{B}{A} + \sqrt{\frac{BT}{A}} \\
+            \beta_{\BbbR}^+ - \beta_{\BbbR}^-
+            \leq \frac{B}{A} + \sqrt{\frac{BT}{A}} - \sqrt{\frac{B T}{A}}
+            = \frac{B}{A}
             $$
-            Thus, if $\frac{H}{W} \leq 1$, the relation $h_r^+ - h_r^- \leq 1 \Longleftrightarrow h_r^+ \leq h_r^- + 1$
-            holds, which means that $h \in \left\{ \left\lfloor h_r^- \right\rfloor, \dots, \left\lceil h_r^- + 1 -
-            1 \right\rceil \right\} = \left\{ \left\lfloor h_r^- \right\rfloor,\left\lceil h_r^- \right\rceil \right\}$,
-            which is a superset of the previously defined set.
-            This works for displays that are horizontally oriented, but the solution for vertically oriented displays is
-            simple: swap $H$ and $W$ as well as $h$ and $w$ in the previous discussion, which yields the analogous
-            solution set for $w$.
+            Thus, if $\frac{B}{A} \leq 1 \aequi B \leq A$, which is one of the aforementioned requirements and is thus true, the relation $\beta_{\BbbR}^+ - \beta_{\BbbR}^- \leq 1 \implr \beta_{\BbbR}^+ \leq \beta_{\BbbR}^- + 1$
+            holds, which means that $\beta \in \braces{\floor{\beta_{\BbbR}^-}, \dots, \ceil{\beta_{\BbbR}^- + 1 -
+            1}} = \braces{\floor{\beta_{\BbbR}^-},\ceil{\beta_{\BbbR}^-}}$, which is a superset of the previously defined solution set.
         </div>
-        <div class=par>
-            In conclusion, it is quite easy to find the optimal number of rows $h$ and columns $w$ when tiling a monitor
-            with width $W$ and height $H$ displaying a given number of windows $T$: If $H > W$, check both $h \in
-            \left\{ \sqrt{\frac{H T}{W}}, \sqrt{\frac{H T}{W}} + 1 \right\}$ with $w = \left\lceil \frac{T}{h}
-            \right\rceil$ for which one has the larger value $\min \left\{\frac{H}{h}, \frac{W}{w}\right\}$,
-            otherwise check both $w \in \left\{ \sqrt{\frac{W T}{H}}, \sqrt{\frac{W T}{H}} + 1 \right\}$ with $h =
-            \left\lceil \frac{T}{w} \right\rceil$ for which one has the larger value $\min \left\{\frac{H}{h},
-            \frac{W}{w}\right\}$.
-            The complexity of this operation is constant and the calculations are, apart from the single square root,
-            all very basic.
+
+        <h3>The Conclusion</h3>
+        <div class="par first">
+            It is quite easy to find the optimal number of rows $h$ and columns $w$ when tiling a monitor with width $W$ and height $H$ displaying a given number of windows $T$:
+            If $H > W$, check which $h \in \braces{\floor{\sqrt{\frac{H T}{W}}}, \ceil{\sqrt{\frac{H T}{W}}}}$ with $w = \ceil{\frac{T}{h}}$ has the larger value $\fun{\mu}{w,h} = \min\!\braces{\frac{W}{w}, \frac{H}{h}}$.
+            Otherwise, check which $w \in \braces{\floor{\sqrt{\frac{W T}{H}}},\ceil{\sqrt{\frac{W T}{H}}}}$ with $h =
+            \ceil{\frac{T}{w}}$ has the larger value $\fun{\mu}{w,h}$.
+            The complexity of these operation is constant and the calculations are, apart from the square root,
+            all very basic, which makes this calculation very simple.
         </div>
         <div class="par">
             On the whole, I hope you have found this as interesting as I have — a small math problem with a nice
-            solution and some real-life applications.
+            solution and some real-life applications that can be simplified to the point that it can be solved very easily.
         </div>
     </div>
 
