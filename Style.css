@@ -84,7 +84,7 @@ header.Header::after {
 nav.HeaderNavigation {
     align-items: center;
     display: flex;
-    padding: 0 2ch;
+    padding: 0 16pt;
     white-space: nowrap;
 }
 
