@@ -7,25 +7,16 @@
 /* @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&subset=latin-ext'); */
 
 html {
-    height: 100%;
-    overflow-y: hidden;
+    height: 100vh;
     -webkit-text-size-adjust: none;
 }
 
 body {
     background-color: #fff;
     border: 0;
-    display: flex;
-    flex-direction: column;
     font-family: 'EB Garamond', serif;
     font-size: 14pt;
-    height: 100%;
     margin: 0;
-    overflow-y: hidden;
-}
-
-body, html {
-    position: fixed;
 }
 
 h1 {
@@ -75,6 +66,13 @@ h3::after {
     width: 100%;
 }
 
+header.Header {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
 header.Header::after {
     border-bottom: 1px solid #ccc;
     content: "";
@@ -92,7 +90,6 @@ nav.HeaderNavigation {
 }
 
 nav.HeaderNavigation div.HeaderSpace {
-    flex-grow: 1;
     margin: 0;
     padding: 0;
 }
@@ -102,7 +99,7 @@ nav.HeaderNavigation ul {
     margin: 0;
     padding: 0;
     text-align: center;
-    z-index: 3;
+    z-index: 4;
 }
 
 nav.HeaderNavigation ul li {
@@ -148,7 +145,7 @@ nav.HeaderNavigation ul ul, nav.HeaderNavigation ul ul ul {
     -o-transition: opacity 0.1s linear, visibility 0.1s linear;
     transition: opacity 0.1s linear, visibility 0.1s linear;
     visibility: hidden;
-    z-index: 2;
+    z-index: 3;
 }
 
 nav.HeaderNavigation ul ul ul li {
@@ -163,7 +160,7 @@ nav.HeaderNavigation ul ul ul {
     left: 0;
     min-width: 100%;
     top: 100%;
-    z-index: 1;
+    z-index: 2;
 }
 
 a.HeaderGroup {
@@ -171,7 +168,6 @@ a.HeaderGroup {
 }
 
 div.BodyWrapper {
-    flex-grow: 1;
     overflow-y: auto;
 }
 
