@@ -164,9 +164,8 @@
         <h3>The Conclusion</h3>
         <div class="par first">
             It is quite easy to find the optimal number of rows $h$ and columns $w$ when tiling a monitor with width $W$ and height $H$ displaying a given number of windows $T$:
-            If $H > W$, check which $h \in \braces{\floor{\sqrt{\frac{H T}{W}}}, \ceil{\sqrt{\frac{H T}{W}}}}$ with $w = \ceil{\frac{T}{h}}$ has the larger value $\fun{\mu}{w,h} = \min\!\braces{\frac{W}{w}, \frac{H}{h}}$.
-            Otherwise, check which $w \in \braces{\floor{\sqrt{\frac{W T}{H}}},\ceil{\sqrt{\frac{W T}{H}}}}$ with $h =
-            \ceil{\frac{T}{w}}$ has the larger value $\fun{\mu}{w,h}$.
+            If $H > W$, check which $h \in \braces{\floor{\sqrt{\frac{H T}{W}}}, \ceil{\sqrt{\frac{H T}{W}}}}$ has the larger value $\fun{\mu}{w,h} = \min\!\braces{\frac{W}{w}, \frac{H}{h}}$ with $w = \ceil{\frac{T}{h}}$.
+            Otherwise, check which $w \in \braces{\floor{\sqrt{\frac{W T}{H}}},\ceil{\sqrt{\frac{W T}{H}}}}$ has the larger value $\fun{\mu}{w,h}$ with $h = \ceil{\frac{T}{w}}$.
             The complexity of these operation is constant and the calculations are, apart from the square root,
             all very basic, which makes this calculation very simple.
         </div>
