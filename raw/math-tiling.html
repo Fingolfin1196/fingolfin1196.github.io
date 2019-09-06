@@ -24,9 +24,9 @@
 
         <h3>Formalising the Problem</h3>
         <div class="par first">
-            Let $W, H \in \mathbb{N}$ be the height and width of the monitor and $T \in \mathbb{N}$ the minimum number
-            of tiles that the grid needs to contain, i.e. the parameters are $\left\langle W, H, T \right\rangle \in
-            \mathbb{N}^3$.
+            Let $W, H \in \mathbb{N}$ be the width and height of the monitor and $T \in \mathbb{N}$ the minimum number
+            of tiles that the grid needs to contain; I will notate an instance of this problem as $\Pi\!\left( W, H, T
+            \right)$.
             A solution to the tiling problem is then a pair $\tau &coloneq; \left\langle w, h \right\rangle \in
             \mathbb{N}^2$ for which $w \cdot h \geq T$ holds.
             The actual size of the resulting tiles is $\frac{W}{w} \times \frac{H}{h}$ when ignoring rounding errors,
@@ -52,10 +52,8 @@
 
         <h3>Simplifying the Problem</h3>
         <div class="par first">
-            This formulation makes it quite clear that the problem exhibits an inherent symmetry: If $\left\langle
-            \alpha, \beta \right\rangle \in \mathbb{N}^2$ is an optimal solution to the problem with the parameters
-            $\left\langle A, B, T \right\rangle \in \mathbb{N}^3$, $\left\langle \beta, \alpha \right\rangle$ is a
-            solution to the problem with the parameters $\left\langle B, A, T \right\rangle$.
+            The previous formulation makes it clear that the problem exhibits an inherent symmetry:
+            If $\left\langle \alpha, \beta \right\rangle \in \mathbb{N}^2$ is an optimal solution to $\Pi\!\left( A, B, T \right)$, $\left\langle \beta, \alpha \right\rangle$ is an optimal solution to $\Pi\!\left( B, A, T \right)$.
         </div>
         <div class="par">
             As a first step, the minimum value of one of the solution components can be calculated trivially from that
