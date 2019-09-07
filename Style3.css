@@ -16,11 +16,6 @@ nav.HeaderNavigation {
     padding: 0;
 }
 
-nav.HeaderNavigation ul li {
-    display: block;
-    position: relative;
-}
-
 nav.HeaderNavigation div.HeaderSpace {
     margin: 0;
     padding: 0;
@@ -71,4 +66,18 @@ nav.HeaderNavigation div.HeaderMenu a.HeaderMenuLink:hover {
 nav.HeaderNavigation ul.HeaderCats {
     display: none;
     width: 100%;
+}
+
+nav.HeaderNavigation ul li {
+    display: block;
+    padding: 0 16pt;
+    position: relative;
+}
+
+nav.HeaderNavigation ul ul li {
+    padding: 0 8pt;
+}
+
+nav.HeaderNavigation ul ul ul li {
+    padding: 0;
 }
