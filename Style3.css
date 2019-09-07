@@ -16,11 +16,7 @@ nav.HeaderNavigation {
     padding: 0;
 }
 
-nav.HeaderNavigation ul.HeaderCatsWide {
-    display: none;
-}
-
-nav.HeaderNavigation ul.HeaderCatsTall li {
+nav.HeaderNavigation ul li {
     display: block;
     position: relative;
 }
@@ -52,10 +48,6 @@ nav.HeaderNavigation div.HeaderMenu a.HeaderMenuLink:hover {
     color: #000;
 }
 
-nav.HeaderNavigation ul {
+nav.HeaderNavigation ul.HeaderCats {
     display: none;
-    /* -webkit-transition: opacity 0.1s linear, visibility 0.1s linear;
-    -moz-transition: opacity 0.1s linear, visibility 0.1s linear;
-    -o-transition: opacity 0.1s linear, visibility 0.1s linear;
-    transition: opacity 0.1s linear, visibility 0.1s linear; */
 }
