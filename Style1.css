@@ -104,6 +104,7 @@ nav.HeaderNavigation ul {
     padding: 0;
     text-align: center;
     z-index: 4;
+    text-align: left;
 }
 
 nav.HeaderNavigation ul li {

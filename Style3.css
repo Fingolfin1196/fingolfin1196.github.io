@@ -43,8 +43,13 @@ nav.HeaderNavigation div.HeaderMenu::before {
 }
 
 nav.HeaderNavigation ul ul, nav.HeaderNavigation ul ul ul {
+    box-shadow: none;
     display: none;
+    opacity: 1;
+    margin: 0;
     position: relative;
+    visibility: visible;
+    width: 100%;
 }
 
 nav.HeaderNavigation div.HeaderMenu a.HeaderMenuLink {
@@ -65,9 +70,5 @@ nav.HeaderNavigation div.HeaderMenu a.HeaderMenuLink:hover {
 
 nav.HeaderNavigation ul.HeaderCats {
     display: none;
-}
-
-nav.HeaderNavigation ul ul ul {
-    left: 100%;
-    top: 0;
+    width: 100%;
 }

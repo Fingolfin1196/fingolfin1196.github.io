@@ -37,7 +37,8 @@
                 <a class="HeaderMenuLink" href="javascript:void(0);" onclick="showHeaderCatsTall()">Menu</a>
             </div>
             <ul class="HeaderCats" id="HeaderCats">
-                <li><a class="HeaderGroup" href="#">Research</a>
+                <li id="HeaderListResearch"><a class="HeaderGroup" href="#"
+                        onclick="showHeaderGroup('HeaderListResearch')">Research</a>
                     <ul>
                         <li><a class="HeaderGroup" href="#">Computing</a>
                             <ul>
@@ -45,7 +46,8 @@
                                 <li><a class="HeaderTitle" href="#">DrivePlayer</a></li>
                             </ul>
                         </li>
-                        <li><a class="HeaderGroup" href="#">Mathematics</a>
+                        <li id="HeaderGroupMath"><a class="HeaderGroup" href="#"
+                                onclick="showHeaderGroup('HeaderGroupMath')">Mathematics</a>
                             <ul>
                                 <li><a href="math-tiling.html">Tiling a Monitor</a></li>
                             </ul>
@@ -70,6 +72,19 @@
                 x.style.display = "none";
             } else {
                 x.style.display = "block";
+            }
+        }
+
+        function showHeaderGroup(id) {
+            var headerGroup = document.getElementById(id);
+            for (var i = 0; i < headerGroup.children.length; i++) {
+                if (headerGroup.children[i].tagName === "UL") {
+                    if (headerGroup.children[i].style.display === "block") {
+                        headerGroup.children[i].style.display = "none";
+                    } else {
+                        headerGroup.children[i].style.display = "block";
+                    }
+                }
             }
         }
     </script>
