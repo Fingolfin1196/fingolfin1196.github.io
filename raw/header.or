@@ -2,7 +2,35 @@
         <nav class="HeaderNavigation">
             <h1><a href="index.html">Kurt’s Odds and Ends</a></h1>
             <div class="HeaderSpace"></div>
-            <ul>
+            <div class="HeaderMenu">
+                <a class="HeaderMenuLink" href="javascript:void(0);" onclick="showHeaderCatsTall()">Menu</a>
+                <ul class="HeaderCatsTall" id="HeaderCatsTall">
+                    <li><a class="HeaderGroup" href="#">Research</a>
+                        <ul>
+                            <li><a class="HeaderGroup" href="#">Computing</a>
+                                <ul>
+                                    <li><a class="HeaderTitle" href="#">FilterGraph</a></li>
+                                    <li><a class="HeaderTitle" href="#">DrivePlayer</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="HeaderGroup" href="#">Mathematics</a>
+                                <ul>
+                                    <li><a href="math-tiling.html">Tiling a Monitor</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="HeaderGroup" href="#">Art & Media</a>
+                        <ul>
+                            <li><a href="#">Music</a></li>
+                            <li><a href="#">Film</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">About Me</a></li>
+                    <li><a href="#">About My Page</a></li>
+                </ul>
+            </div>
+            <ul class="HeaderCatsWide">
                 <li><a class="HeaderGroup" href="#">Research</a>
                     <ul>
                         <li><a class="HeaderGroup" href="#">Computing</a>
@@ -29,3 +57,13 @@
             </ul>
         </nav>
     </header>
+    <script>
+        function showHeaderCatsTall() {
+            var x = document.getElementById("HeaderCatsTall");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>

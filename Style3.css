@@ -1,5 +1,4 @@
 h1 {
-    background-color: aquamarine;
     padding: 0;
     margin: 4pt;
 }
@@ -17,7 +16,46 @@ nav.HeaderNavigation {
     padding: 0;
 }
 
+nav.HeaderNavigation ul.HeaderCatsWide {
+    display: none;
+}
+
+nav.HeaderNavigation ul.HeaderCatsTall li {
+    display: block;
+    position: relative;
+}
+
 nav.HeaderNavigation div.HeaderSpace {
     margin: 0;
     padding: 0;
+}
+
+nav.HeaderNavigation div.HeaderMenu {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+nav.HeaderNavigation div.HeaderMenu a.HeaderMenuLink {
+    color: #000;
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-feature-settings: "smcp";
+    font-weight: 700;
+    padding: 8pt;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav.HeaderNavigation div.HeaderMenu a.HeaderMenuLink:hover {
+    background: #eee;
+    color: #000;
+}
+
+nav.HeaderNavigation ul {
+    display: none;
+    /* -webkit-transition: opacity 0.1s linear, visibility 0.1s linear;
+    -moz-transition: opacity 0.1s linear, visibility 0.1s linear;
+    -o-transition: opacity 0.1s linear, visibility 0.1s linear;
+    transition: opacity 0.1s linear, visibility 0.1s linear; */
 }
