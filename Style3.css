@@ -1,0 +1,23 @@
+h1 {
+    background-color: aquamarine;
+    padding: 0;
+    margin: 4pt;
+}
+
+header.Header {
+    background-color: #fff;
+    position: sticky;
+    padding: 0;
+    top: 0;
+    z-index: 1;
+}
+
+nav.HeaderNavigation {
+    flex-direction: column;
+    padding: 0;
+}
+
+nav.HeaderNavigation div.HeaderSpace {
+    margin: 0;
+    padding: 0;
+}
