@@ -30,6 +30,21 @@ nav.HeaderNavigation div.HeaderMenu {
     display: block;
     margin: 0;
     padding: 0;
+    width: 100%;
+}
+
+nav.HeaderNavigation div.HeaderMenu::before {
+    border-top: 1px solid #ccc;
+    content: "";
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: calc(100% - 32pt);
+}
+
+nav.HeaderNavigation ul ul, nav.HeaderNavigation ul ul ul {
+    display: none;
+    position: relative;
 }
 
 nav.HeaderNavigation div.HeaderMenu a.HeaderMenuLink {
