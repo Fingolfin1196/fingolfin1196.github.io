@@ -9,7 +9,8 @@
                 <li id="HeaderListResearch"><a class="HeaderGroup" href="#"
                         onclick="showHeaderGroup('HeaderListResearch')">Research</a>
                     <ul>
-                        <li><a class="HeaderGroup" href="#">Computing</a>
+                        <li id="HeaderGroupComputing"><a class="HeaderGroup" href="#"
+                                onclick="showHeaderGroup('HeaderGroupComputing')">Computing</a>
                             <ul>
                                 <li><a class="HeaderTitle" href="#">FilterGraph</a></li>
                                 <li><a class="HeaderTitle" href="#">DrivePlayer</a></li>
@@ -23,7 +24,8 @@
                         </li>
                     </ul>
                 </li>
-                <li><a class="HeaderGroup" href="#">Art & Media</a>
+                <li id="HeaderListArtMedia"><a class="HeaderGroup" href="#"
+                        onclick="showHeaderGroup('HeaderListArtMedia')">Art & Media</a>
                     <ul>
                         <li><a href="#">Music</a></li>
                         <li><a href="#">Film</a></li>
