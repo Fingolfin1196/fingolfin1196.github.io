@@ -78,15 +78,21 @@
             The restriction $A \geq B$ entails that there is always an optimal solution $\angled{\alpha, \beta}$ in which $\alpha \geq \beta$; assuming the opposite, i.e. $\alpha &lt; \beta$, we can show that $\fun{\nu}{\alpha, \beta} \leq \fun{\nu}{\beta, \alpha}$:
 
             $$
-            A \geq B
+            \begin{align}
+            A \geq {} & B
             \aequi \frac{A}{\alpha} \geq \frac{B}{\alpha} > \frac{B}{\beta}
             \implr \frac{B}{\beta} = \min\!\braces{\frac{A}{\alpha}, \frac{B}{\beta}} = \fun{\nu}{\alpha,\beta}\\
-            \frac{B}{\beta} \leq \fun{\nu}{\beta, \alpha} = \min\!\braces{\frac{A}{\beta}, \frac{B}{\alpha}}
-            \aequi \frac{B}{\beta} \leq \frac{A}{\beta} \text{ and } \frac{B}{\beta} \leq \frac{B}{\alpha}\\
-            \frac{B}{\beta} \leq \frac{A}{\beta}
+            \frac{B}{\beta}
+            \leq {} & \fun{\nu}{\beta, \alpha}
+            = \min\!\braces{\frac{A}{\beta}, \frac{B}{\alpha}}
+            \aequi \frac{B}{\beta}
+            \leq \frac{A}{\beta} \text{ and } \frac{B}{\beta} \leq \frac{B}{\alpha}\\
+            \frac{B}{\beta}
+            \leq {} & \frac{A}{\beta}
             \aequi B \leq A \text{, }
             \frac{B}{\beta} \leq \frac{B}{\alpha}
             \aequi \alpha \leq \beta \text{ per assumption}
+            \end{align}
             $$
 
             Since the condition $\alpha \cdot \beta \geq T$ also entails that both $\alpha$ and $\beta$ do not need to be larger than $T$ (since both are at least $1$), every optimal solution $\angled{\alpha, \beta}$ satisfies $\beta \leq \alpha \leq T$.
