@@ -1,9 +1,9 @@
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
             extensions: ["tex2jax.js", "MathMenu.js", "MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
-            "HTML-CSS": { fonts: ["Asana-Math"] },
+            "HTML-CSS": { fonts: ["Gyre-Pagella"] },
             jax: ["input/TeX", "output/SVG", "output/HTML-CSS", "output/PreviewHTML"],
-            SVG: { font: "Asana-Math" },
+            SVG: { font: "Gyre-Pagella" },
             tex2jax: {
                 inlineMath: [['$','$']],
                 displayMath: [['$$','$$']],
