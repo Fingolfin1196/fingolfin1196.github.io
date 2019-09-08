@@ -43,6 +43,10 @@ nav.HeaderNavigation ul.HeaderCats {
     width: 100%;
 }
 
+nav.HeaderNavigation ul {
+    text-align: left;
+}
+
 nav.HeaderNavigation ul li {
     display: block;
     padding: 0 16pt;

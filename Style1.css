@@ -104,7 +104,6 @@ nav.HeaderNavigation ul {
     padding: 0;
     text-align: center;
     z-index: 4;
-    text-align: left;
 }
 
 nav.HeaderNavigation ul li {
@@ -214,8 +213,8 @@ div.Footer {
 }
 
 div.MathJax_SVG_Display {
+    height: auto;
     overflow-x: scroll;
-    overflow-y: hidden;
     text-align: center;
     width: 100%;
 }
