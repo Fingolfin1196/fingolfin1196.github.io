@@ -5,20 +5,20 @@
             <div class="HeaderMenu">
                 <a class="HeaderMenuLink" href="javascript:void(0);" onclick="showHeaderCatsTall()">Menu</a>
             </div>
-            <ul class="HeaderCats" id="HeaderCats">
+            <ul class="HeaderCats narrowNone" id="HeaderCats">
                 <li id="HeaderListResearch"><a class="HeaderGroup" href="#"
                         onclick="showHeaderGroup('HeaderListResearch')">Research</a>
-                    <ul>
+                    <ul class="narrowNone">
                         <li id="HeaderGroupComputing"><a class="HeaderGroup" href="#"
                                 onclick="showHeaderGroup('HeaderGroupComputing')">Computing</a>
-                            <ul>
+                            <ul class="narrowNone">
                                 <li><a class="HeaderTitle" href="#">FilterGraph</a></li>
                                 <li><a class="HeaderTitle" href="#">DrivePlayer</a></li>
                             </ul>
                         </li>
                         <li id="HeaderGroupMath"><a class="HeaderGroup" href="#"
                                 onclick="showHeaderGroup('HeaderGroupMath')">Mathematics</a>
-                            <ul>
+                            <ul class="narrowNone">
                                 <li><a href="math-tiling.html">Tiling a Monitor</a></li>
                             </ul>
                         </li>
@@ -26,7 +26,7 @@
                 </li>
                 <li id="HeaderListArtMedia"><a class="HeaderGroup" href="#"
                         onclick="showHeaderGroup('HeaderListArtMedia')">Art & Media</a>
-                    <ul>
+                    <ul class="narrowNone">
                         <li><a href="#">Music</a></li>
                         <li><a href="#">Film</a></li>
                     </ul>
@@ -38,23 +38,17 @@
     </header>
     <script>
         function showHeaderCatsTall() {
-            var x = document.getElementById("HeaderCats");
-            if (x.style.display === "block") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "block";
-            }
+            var headerCats = document.getElementById("HeaderCats");
+            headerCats.classList.toggle("narrowBlock");
+            headerCats.classList.toggle("narrowNone");
         }
 
         function showHeaderGroup(id) {
             var headerGroup = document.getElementById(id);
             for (var i = 0; i < headerGroup.children.length; i++) {
                 if (headerGroup.children[i].tagName === "UL") {
-                    if (headerGroup.children[i].style.display === "block") {
-                        headerGroup.children[i].style.display = "none";
-                    } else {
-                        headerGroup.children[i].style.display = "block";
-                    }
+                    headerGroup.children[i].classList.toggle("narrowBlock");
+                    headerGroup.children[i].classList.toggle("narrowNone");
                 }
             }
         }
