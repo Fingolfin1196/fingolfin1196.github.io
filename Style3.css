@@ -25,7 +25,7 @@ nav.HeaderNavigation div.HeaderMenu {
     display: block;
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: calc(100% - 32pt);
 }
 
 nav.HeaderNavigation div.HeaderMenu::before {
@@ -34,7 +34,7 @@ nav.HeaderNavigation div.HeaderMenu::before {
     display: block;
     margin: 0 auto;
     padding: 0;
-    width: calc(100% - 32pt);
+    width: 100%;
 }
 
 nav.HeaderNavigation ul ul, nav.HeaderNavigation ul ul ul {
