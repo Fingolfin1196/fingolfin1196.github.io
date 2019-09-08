@@ -215,7 +215,7 @@ div.Footer {
 div.MathJax_SVG_Display {
     background-color: aquamarine;
     height: auto;
-    overflow-x: scroll;
+    overflow-x: auto;
     padding: 2pt 0;
     text-align: center;
     width: 100%;
