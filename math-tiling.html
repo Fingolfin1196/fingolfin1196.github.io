@@ -219,8 +219,7 @@
             \eqcolon \beta_{\BbbR}^+
             \end{align}
             $$
-            Thus $\beta_{\BbbR} \in \left[\beta_{\BbbR}^-,\beta_{\BbbR}^+\right)$ holds and, through rounding, $\beta \in \left\{ \left\lfloor \beta_{\BbbR}^-
-            \right\rfloor, \dots, \left\lceil \beta_{\BbbR}^+ - 1 \right\rceil \right\}$.
+            Thus $\beta_{\BbbR} \in \left[\beta_{\BbbR}^-,\beta_{\BbbR}^+\right)$ holds and, through rounding, $\beta \in \braces{\floor{\beta_{\BbbR}^-}, \dots, \ceil{\beta_{\BbbR}^+ - 1}}$.
             This is a much smaller set of solutions that we could already iterate over, but which can be further simplified by considering $\beta_{\BbbR}^+ - \beta_{\BbbR}^-$, where the subadditivity of the square root — that is, $\sqrt{\lambda + \kappa} \leq \sqrt{\lambda} + \sqrt{\kappa}$ for $\lambda, \kappa \in \mathbb{R}_+$ — is used:
             $$
             \begin{align}
@@ -234,9 +233,14 @@
             = \frac{B}{A}
             \end{align}
             $$
-            Thus, if $\bfrac{B}{A} \leq 1 \aequi B \leq A$, which is one of the aforementioned requirements and is thus true, the relation $\beta_{\BbbR}^+ - \beta_{\BbbR}^- \leq 1 \implr \beta_{\BbbR}^+ \leq \beta_{\BbbR}^- + 1$
-            holds, which means that $\beta \in \braces{\floor{\beta_{\BbbR}^-}, \dots, \ceil{\beta_{\BbbR}^- + 1 -
-            1}} = \braces{\floor{\beta_{\BbbR}^-},\ceil{\beta_{\BbbR}^-}}$, which is a superset of the previously defined solution set.
+            Thus, if $\bfrac{B}{A} \leq 1 \aequi B \leq A$, which is one of the aforementioned requirements, the relation $\beta_{\BbbR}^+ - \beta_{\BbbR}^- \leq 1 \implr \beta_{\BbbR}^+ \leq \beta_{\BbbR}^- + 1$ holds, which means that we can simplify the solution set:
+            $$
+            \beta
+            \in \braces{\floor{\beta_{\BbbR}^-}, \dots, \ceil{\beta_{\BbbR}^+ - 1}}
+            \subseteq \braces{\floor{\beta_{\BbbR}^-}, \dots, \ceil{\beta_{\BbbR}^- + 1 - 1}}
+            = \braces{\floor{\beta_{\BbbR}^-}, \ceil{\beta_{\BbbR}^-}}
+            $$
+            Thus there are only at most two candidates for the optimum value of $\beta$ that both depend on $\beta_{\BbbR}^-$, which is the easier to calculate.
         </div>
 
         <h3>The Conclusion</h3>
