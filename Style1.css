@@ -42,7 +42,7 @@ h2 {
     text-align: center;
 }
 
-h2 div.NoCall {
+h2 span.NoCall {
     display: inline;
     font-feature-settings: "smcp";
 }
@@ -175,7 +175,7 @@ div.maintext {
     padding: 16pt;
 }
 
-div.italic {
+span.italic {
     display: inline;
     font-style: italic;
 }
