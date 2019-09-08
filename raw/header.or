@@ -6,17 +6,17 @@
                 <a class="HeaderMenuLink" href="javascript:void(0);" onclick="showHeaderCatsTall()">Menu</a>
             </div>
             <ul class="HeaderCats narrowNone" id="HeaderCats">
-                <li id="HeaderListResearch"><a class="HeaderGroup" href="#"
+                <li id="HeaderListResearch"><a class="HeaderGroup" href="javascript:void(0);"
                         onclick="showHeaderGroup('HeaderListResearch')">Research</a>
                     <ul class="narrowNone">
-                        <li id="HeaderGroupComputing"><a class="HeaderGroup" href="#"
+                        <li id="HeaderGroupComputing"><a class="HeaderGroup" href="javascript:void(0);"
                                 onclick="showHeaderGroup('HeaderGroupComputing')">Computing</a>
                             <ul class="narrowNone">
-                                <li><a class="HeaderTitle" href="#">FilterGraph</a></li>
-                                <li><a class="HeaderTitle" href="#">DrivePlayer</a></li>
+                                <li><a class="HeaderTitle" href="javascript:void(0);">FilterGraph</a></li>
+                                <li><a class="HeaderTitle" href="javascript:void(0);">DrivePlayer</a></li>
                             </ul>
                         </li>
-                        <li id="HeaderGroupMath"><a class="HeaderGroup" href="#"
+                        <li id="HeaderGroupMath"><a class="HeaderGroup" href="javascript:void(0);"
                                 onclick="showHeaderGroup('HeaderGroupMath')">Mathematics</a>
                             <ul class="narrowNone">
                                 <li><a href="math-tiling.html">Tiling a Monitor</a></li>
@@ -24,15 +24,15 @@
                         </li>
                     </ul>
                 </li>
-                <li id="HeaderListArtMedia"><a class="HeaderGroup" href="#"
+                <li id="HeaderListArtMedia"><a class="HeaderGroup" href="javascript:void(0);"
                         onclick="showHeaderGroup('HeaderListArtMedia')">Art & Media</a>
                     <ul class="narrowNone">
-                        <li><a href="#">Music</a></li>
-                        <li><a href="#">Film</a></li>
+                        <li><a href="javascript:void(0);">Music</a></li>
+                        <li><a href="javascript:void(0);">Film</a></li>
                     </ul>
                 </li>
-                <li><a href="#">About Me</a></li>
-                <li><a href="#">About My Page</a></li>
+                <li><a href="javascript:void(0);">About Me</a></li>
+                <li><a href="javascript:void(0);">About My Page</a></li>
             </ul>
         </nav>
     </header>
