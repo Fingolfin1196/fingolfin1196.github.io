@@ -68,7 +68,7 @@
         <div class="par first">
             The previous formulation makes it clear that the problem exhibits an inherent symmetry:
             If $\angled{\alpha, \beta} \in \BbbN^2$ is an optimal solution to $\fun{\Pi}{A, B, T}$ for $A, B \in \BbbN$, $\angled{\beta, \alpha}$ trivially is an optimal solution to $\fun{\Pi}{B, A, T}$.
-            It thus suffices to consider the simplified problem $\fun{\Sigma}{A, B, T}$ in which we additionally require that $A \geq B$; analogously to $\Pi$, a solution $\angled{\alpha, \beta} \in \BbbN^2$ has to fulfil $\alpha \cdot \beta \geq T$, its optimum being determined by the maximum of $\fun{\nu}{\alpha, \beta} \coloneq \min\!\left\{\bfrac{A}{\alpha}, \bfrac{B}{\beta}\right\}$.<br>
+            It thus suffices to consider the simplified problem $\fun{\Sigma}{A, B, T}$ in which we additionally require that $A \geq B$; analogously to $\Pi$, a solution $\angled{\alpha, \beta} \in \BbbN^2$ has to fulfil $\alpha \cdot \beta \geq T$, its optimum being determined by the maximum of $\fun{\nu}{\alpha, \beta} \coloneq \min\!\braces{\bfrac{A}{\alpha}, \bfrac{B}{\beta}}$.<br>
 
             An instance $\fun{\Pi}{W, H, T}$ can then easily be mapped to $\fun{\Sigma}{W, H, T}$ if $W \geq H$ (i.e. the monitor is used in its horizontal orientation), and its solution $\angled{\alpha, \beta}$ is also the optimal solution of $\fun{\Pi}{W, H, T}$.
             If $H \geq W$ (i.e. the monitor is vertically oriented), the problem can be mapped to $\fun{\Sigma}{H, W, T}$, after which the element of the latter's solution $\angled{\alpha, \beta}$ have to be flipped, i.e. $\angled{\beta, \alpha}$ is the optimal solution of $\fun{\Pi}{W, H, T}$.
@@ -97,7 +97,7 @@
             Since the condition $\alpha \cdot \beta \geq T$ also entails that both $\alpha$ and $\beta$ do not need to be larger than $T$ (since both are at least $1$), every optimal solution $\angled{\alpha, \beta}$ satisfies $\beta \leq \alpha \leq T$.
         </div>
         <div class="par">
-            Additionally, the minimum value of $\alpha$ can be calculated trivially from that of $\beta$ through $\alpha \coloneq \left\lceil \bfrac{T}{\beta} \right\rceil$ (this also works the other way around, but this way will prove more useful later on), since the following holds:
+            Additionally, the minimum value of $\alpha$ can be calculated trivially from that of $\beta$ through $\alpha \coloneq \ceil{\bfrac{T}{\beta}}$ (this also works the other way around, but this way will prove more useful later on), since the following holds:
 
             $$
             \alpha \cdot \beta
@@ -106,7 +106,7 @@
             = T
             $$
 
-            Since $\left\lceil \bfrac{T}{\beta} \right\rceil$ is the smallest integer for the utilised inequality holds, it suffices to consider $\beta$ as the variable and calculate $\alpha$ as above.
+            Since $\ceil{\bfrac{T}{\beta}}$ is the smallest integer for the utilised inequality holds, it suffices to consider $\beta$ as the variable and calculate $\alpha$ as above.
         </div>
 
         <div class="par">
@@ -149,7 +149,7 @@
             \end{align}
             $$
             Thus $\beta_{\BbbR} \in \left[\beta_{\BbbR}^-,\beta_{\BbbR}^+\right)$ holds and, through rounding, $\beta \in \braces{\floor{\beta_{\BbbR}^-}, \dots, \ceil{\beta_{\BbbR}^+ - 1}}$.
-            This is a much smaller set of solutions that we could already iterate over, but which can be further simplified by considering $\beta_{\BbbR}^+ - \beta_{\BbbR}^-$, where the subadditivity of the square root — that is, $\sqrt{\lambda + \kappa} \leq \sqrt{\lambda} + \sqrt{\kappa}$ for $\lambda, \kappa \in \mathbb{R}_+$ — is used:
+            This is a much smaller set of solutions that we could already iterate over, but which can be further simplified by considering $\beta_{\BbbR}^+ - \beta_{\BbbR}^-$, where the subadditivity of the square root — that is, $\sqrt{\lambda + \kappa} \leq \sqrt{\lambda} + \sqrt{\kappa}$ for $\lambda, \kappa \in \BbbR_+$ — is used:
             $$
             \begin{align}
             & \beta_{\BbbR}^+
