@@ -6,21 +6,20 @@ body {
     background-color: red;
     list-style-type: none;
     margin: 0;
-    padding: 0;
-    width: 100%;
+    padding: 1em;
 }
 
 #sortable li {
     background-color: blue;
-    margin: 0 3px 3px 3px;
-    padding: 0.4em;
-    padding-left: 1.5em;
-    font-size: 1.4em;
-    height: 18px;
+    display: inline;
+    margin: 0;
+    padding: 1em;
 }
 
 #sortable li span {
     background-color: green;
-    position: absolute;
-    margin-left: -1.3em;
+}
+
+#text {
+  background-color: honeydew;
 }
