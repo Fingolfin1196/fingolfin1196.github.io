@@ -1,0 +1,70 @@
+nav.HeaderNavigation div.HeaderMenu {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: calc(100% - 32pt);
+}
+
+nav.HeaderNavigation div.HeaderMenu::before {
+    border-top: 1px solid #ccc;
+    content: "";
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+nav.HeaderNavigation ul ul, nav.HeaderNavigation ul ul ul {
+    box-shadow: none;
+    opacity: 1;
+    margin: 0;
+    position: relative;
+    visibility: visible;
+    width: 100%;
+}
+
+nav.HeaderNavigation div.HeaderMenu a.HeaderMenuLink {
+    color: #000;
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-feature-settings: "smcp";
+    font-weight: 700;
+    padding: 8pt;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav.HeaderNavigation div.HeaderMenu a.HeaderMenuLink:hover {
+    background: #eee;
+    color: #000;
+}
+
+nav.HeaderNavigation ul.HeaderCats {
+    width: 100%;
+}
+
+nav.HeaderNavigation ul {
+    text-align: left;
+}
+
+nav.HeaderNavigation ul li {
+    display: block;
+    padding: 0 16pt;
+    position: relative;
+}
+
+nav.HeaderNavigation ul ul li {
+    padding: 0 8pt;
+}
+
+nav.HeaderNavigation ul ul ul li {
+    padding: 0;
+}
+
+.narrowNone {
+    display: none;
+}
+
+.narrowBlock {
+    display: block;
+}

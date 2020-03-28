@@ -1,0 +1,221 @@
+@import url('Fonts/EBGaramond/EBGaramond.css');
+@import url('Fonts/Cormorant/CormorantGaramond/CormorantGaramond.css');
+/* @import url("Fonts/Ysabeau/Ysabeau.css"); */
+
+/* @import url('https://indestructibletype.com/fonts/Jost.css'); */
+
+/* @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&subset=latin-ext'); */
+
+html {
+    -webkit-text-size-adjust: none;
+}
+
+body {
+    background-color: #fff;
+    border: 0;
+    font-family: 'EB Garamond', serif;
+    font-size: 14pt;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    padding: 0 8pt;
+    text-align: center;
+}
+
+h1 a {
+    color: inherit;
+    font: inherit;
+    text-decoration: inherit;
+}
+
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28pt;
+    font-weight: 400;
+    font-feature-settings: "smcp", "ss01";
+    margin: 0;
+    padding: 0 0 12pt 0;
+    text-align: center;
+}
+
+h2 span.NoCall {
+    display: inline;
+    font-feature-settings: "smcp";
+}
+
+h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18pt;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0;
+    padding: 12pt 0 4pt 0;
+}
+
+h3::after {
+    border-bottom: 1px solid #f0f0f0;
+    content: "";
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+header.Header {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+header.Header::after {
+    border-bottom: 1px solid #ccc;
+    content: "";
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: calc(100% - 32pt);
+}
+
+nav.HeaderNavigation {
+    align-items: center;
+    display: flex;
+    padding: 0 16pt;
+    white-space: nowrap;
+}
+
+nav.HeaderNavigation div.HeaderSpace {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+}
+
+nav.HeaderNavigation div.HeaderMenu {
+    display: none;
+}
+
+nav.HeaderNavigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    z-index: 4;
+}
+
+nav.HeaderNavigation ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav.HeaderNavigation ul li a {
+    color: #000;
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    padding: 8pt;
+    text-decoration: none;
+    -webkit-transition: color 0.1s linear, background 0.1s linear;
+    -moz-transition: color 0.1s linear, background 0.1s linear;
+    -o-transition: color 0.1s linear, background 0.1s linear;
+    transition: color 0.1s linear, background 0.1s linear;
+}
+
+nav.HeaderNavigation ul li a:hover {
+    background: #eee;
+    color: #000;
+}
+
+nav.HeaderNavigation ul li:hover>a {
+    background: #eee;
+}
+
+nav.HeaderNavigation ul li:hover>ul {
+    opacity: 1;
+    visibility: visible;
+}
+
+nav.HeaderNavigation ul ul, nav.HeaderNavigation ul ul ul {
+    background: #fff;
+    box-shadow: 0px 1px 2px #0004;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    -webkit-transition: opacity 0.1s linear, visibility 0.1s linear;
+    -moz-transition: opacity 0.1s linear, visibility 0.1s linear;
+    -o-transition: opacity 0.1s linear, visibility 0.1s linear;
+    transition: opacity 0.1s linear, visibility 0.1s linear;
+    visibility: hidden;
+    z-index: 3;
+}
+
+nav.HeaderNavigation ul ul ul li {
+    display: unset;
+}
+
+nav.HeaderNavigation ul ul {
+    min-width: 100%;
+}
+
+nav.HeaderNavigation ul ul ul {
+    left: 0;
+    min-width: 100%;
+    top: 100%;
+    z-index: 2;
+}
+
+a.HeaderGroup {
+    font-weight: 700;
+}
+
+div.maintext {
+    padding: 16pt;
+}
+
+span.italic {
+    display: inline;
+    font-style: italic;
+}
+
+div.center {
+    text-align: center;
+}
+
+div.par {
+    padding: 4pt 0;
+}
+
+div.first {
+    padding: 0 0 4pt 0;
+}
+
+div.last {
+    padding: 4pt 0 0 0;
+}
+
+div.FooterWrapper::before {
+    border-top: 1px solid #ccc;
+    content: "";
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: calc(100% - 32pt);
+}
+
+div.Footer {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    padding: 16pt;
+    text-align: center;
+}
+
+div.MathJax_SVG_Display {
+    height: auto;
+    overflow-x: auto;
+    padding: 2pt 0;
+    text-align: center;
+    width: 100%;
+}

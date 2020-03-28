@@ -1,18 +1,3 @@
-    <link rel="stylesheet" href="Style.css" />
-    <link rel="stylesheet" media="only screen and (max-width: 40em)" href="mobile.css" />
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            extensions: ["tex2jax.js", "MathMenu.js", "MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
-            jax: ["input/TeX", "output/SVG", "output/PreviewHTML"],
-            SVG: { font: "Gyre-Pagella" },
-            tex2jax: {
-                inlineMath: [['$','$']],
-                displayMath: [['$$','$$']],
-                processEscapes: true
-            },
-            TeX: {
-                extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]
-            }
-        });
-        </script>
-    <script src='MathJax/MathJax.js?config=TeX-AMS_SVG' async></script>
+    <link rel="stylesheet" href="Style1.css" />
+    <link rel="stylesheet" media="only screen and (max-width: 45em)" href="Style2.css" />
+    <link rel="stylesheet" media="only screen and (max-width: 27.5em)" href="Style3.css" />

@@ -6,103 +6,78 @@
     <title>Kurt’s Odds and Ends</title>
     <meta name="description" content="My Homepage">
     <meta name="author" content="Kurt Böhm">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0">
-    <link rel="stylesheet" href="Style.css" />
-    <link rel="stylesheet" media="only screen and (max-width: 40em)" href="mobile.css" />
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            extensions: ["tex2jax.js", "MathMenu.js", "MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
-            jax: ["input/TeX", "output/SVG", "output/PreviewHTML"],
-            SVG: { font: "Gyre-Pagella" },
-            tex2jax: {
-                inlineMath: [['$','$']],
-                displayMath: [['$$','$$']],
-                processEscapes: true
-            },
-            TeX: {
-                extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]
-            }
-        });
-        </script>
-    <script src='MathJax/MathJax.js?config=TeX-AMS_SVG' async></script></head>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="Style1.css" />
+    <link rel="stylesheet" media="only screen and (max-width: 45em)" href="Style2.css" />
+    <link rel="stylesheet" media="only screen and (max-width: 27.5em)" href="Style3.css" />
+</head>
 
 <body>
     <header class="Header">
         <nav class="HeaderNavigation">
             <h1><a href="index.html">Kurt’s Odds and Ends</a></h1>
             <div class="HeaderSpace"></div>
-            <ul>
-                <li><a class="HeaderGroup" href="#">Research</a>
-                    <ul>
-                        <li><a class="HeaderGroup" href="#">Computing</a>
-                            <ul>
-                                <li><a class="HeaderTitle" href="#">FilterGraph</a></li>
-                                <li><a class="HeaderTitle" href="#">DrivePlayer</a></li>
+            <div class="HeaderMenu">
+                <a class="HeaderMenuLink" href="javascript:void(0);" onclick="showHeaderCatsTall()">Menu</a>
+            </div>
+            <ul class="HeaderCats narrowNone" id="HeaderCats">
+                <li id="HeaderListResearch"><a class="HeaderGroup" href="javascript:void(0);"
+                        onclick="showHeaderGroup('HeaderListResearch')">Research</a>
+                    <ul class="narrowNone">
+                        <li id="HeaderGroupComputing"><a class="HeaderGroup" href="javascript:void(0);"
+                                onclick="showHeaderGroup('HeaderGroupComputing')">Computing</a>
+                            <ul class="narrowNone">
+                                <li><a class="HeaderTitle" href="javascript:void(0);">FilterGraph</a></li>
+                                <li><a class="HeaderTitle" href="javascript:void(0);">DrivePlayer</a></li>
                             </ul>
                         </li>
-                        <li><a class="HeaderGroup" href="#">Mathematics</a>
-                            <ul>
+                        <li id="HeaderGroupMath"><a class="HeaderGroup" href="javascript:void(0);"
+                                onclick="showHeaderGroup('HeaderGroupMath')">Mathematics</a>
+                            <ul class="narrowNone">
                                 <li><a href="math-tiling.html">Tiling a Monitor</a></li>
                             </ul>
                         </li>
                     </ul>
                 </li>
-                <li><a class="HeaderGroup" href="#">Art & Media</a>
-                    <ul>
-                        <li><a href="#">Music</a></li>
-                        <li><a href="#">Film</a></li>
+                <li id="HeaderListArtMedia"><a class="HeaderGroup" href="javascript:void(0);"
+                        onclick="showHeaderGroup('HeaderListArtMedia')">Art & Media</a>
+                    <ul class="narrowNone">
+                        <li><a href="javascript:void(0);">Music</a></li>
+                        <li><a href="javascript:void(0);">Film</a></li>
                     </ul>
                 </li>
-                <li><a href="#">About Me</a></li>
-                <li><a href="#">About My Page</a></li>
+                <li><a href="javascript:void(0);">About Me</a></li>
+                <li><a href="javascript:void(0);">About My Page</a></li>
             </ul>
         </nav>
     </header>
+    <script>
+        function showHeaderCatsTall() {
+            var headerCats = document.getElementById("HeaderCats");
+            headerCats.classList.toggle("narrowBlock");
+            headerCats.classList.toggle("narrowNone");
+        }
 
-    <!--
-    <div class=iconheader>
-        <div class="icontext">
-            <a class="ico" href="#"><img src="graphics/logo.svg" /></a>
-            <div class="iconinfo">Home</div>
-        </div>
-        <div class="emptli"></div>
-        <div class="icontext">
-            <a class="ico" href="#"><img src="graphics/edu.svg" /></a>
-            <div class="iconinfo">Sciences</div>
-        </div>
-        <div class="icontext">
-            <a class="ico" href="#"><img src="graphics/art.svg" /></a>
-            <div class="iconinfo">Art & Media</div>
-        </div>
-        <div class="icontext">
-            <a class="ico" href="#"><img src="graphics/person.svg" /></a>
-            <div class="iconinfo">Personal</div>
-        </div>
-        <div class="icontext">
-            <a class="ico" href="#"><img src="graphics/info.svg" /></a>
-            <div class="iconinfo">Page Information</div>
-        </div>
-    </div>
-    -->
+        function showHeaderGroup(id) {
+            var headerGroup = document.getElementById(id);
+            for (var i = 0; i < headerGroup.children.length; i++) {
+                if (headerGroup.children[i].tagName === "UL") {
+                    headerGroup.children[i].classList.toggle("narrowBlock");
+                    headerGroup.children[i].classList.toggle("narrowNone");
+                }
+            }
+        }
+    </script>
     <div class="maintext">
-        <!-- <h1>Kurt’s Odds and Ends</h1> -->
-
         Hello, this is my homepage! It’s still in the works, so hopefully it works!<br>
-
-        <!-- This page uses <a href="https://github.com/CatharsisFonts/Ysabeau">Ysabeau</a> for the title and
-        <a href="http://www.latofonts.com/">Lato</a> for the text, two great fonts that
-        are licensed under the <a href="http://scripts.sil.org/OFL">SIL Open Font License</a>.-->
-
-        <!-- This page uses <a href="https://github.com/CatharsisFonts/Ysabeau">Ysabeau</a> (licensed under the
-        <a href="http://scripts.sil.org/OFL">SIL Open Font License</a>) and
-        <a href="http://bonanova.wtf/">Bona Nova</a> for the text (the license for which can be found
-        <a href="Fonts/BonaNova/Licences.pdf">here</a>). -->
     </div>
 
-    <div class="FooterWrapper">
-        <div class="Footer">
-            This page uses the excellent <a href="https://github.com/octaviopardo/EBGaramond12">EB Garamond</a>
-            (licensed under the <a href="http://scripts.sil.org/OFL">SIL Open Font License</a>) as its main font.
-        </div>
+<div class="FooterWrapper">
+    <div class="Footer">
+        This page uses the excellent <a href="https://github.com/octaviopardo/EBGaramond12">EB Garamond</a> as its main
+        font and the equally great <a href="https://github.com/CatharsisFonts/Cormorant">Cormorant</a> for the header,
+        footer and titles (both licensed under the <a href="http://scripts.sil.org/OFL">SIL Open Font License</a>).
+        <!-- This page uses the excellent <a href="https://indestructibletype.com/Jost.html">Jost*</a> (licensed under
+             the <a href="http://scripts.sil.org/OFL">SIL Open Font License</a>) as its main font.-->
     </div>
-</body>
+</div></body>

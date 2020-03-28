@@ -6,13 +6,15 @@
     <title>Tiling a Monitor — Kurt’s Odds and Ends</title>
     <meta name="description" content="Tiling a Monitor">
     <meta name="author" content="Kurt Böhm">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0">
-    <link rel="stylesheet" href="Style.css" />
-    <link rel="stylesheet" media="only screen and (max-width: 40em)" href="mobile.css" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="Style1.css" />
+    <link rel="stylesheet" media="only screen and (max-width: 45em)" href="Style2.css" />
+    <link rel="stylesheet" media="only screen and (max-width: 27.5em)" href="Style3.css" />
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
             extensions: ["tex2jax.js", "MathMenu.js", "MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
-            jax: ["input/TeX", "output/SVG", "output/PreviewHTML"],
+            "HTML-CSS": { fonts: ["Gyre-Pagella"] },
+            jax: ["input/TeX", "output/SVG", "output/HTML-CSS", "output/PreviewHTML"],
             SVG: { font: "Gyre-Pagella" },
             tex2jax: {
                 inlineMath: [['$','$']],
@@ -23,222 +25,244 @@
                 extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]
             }
         });
-        </script>
-    <script src='MathJax/MathJax.js?config=TeX-AMS_SVG' async></script></head>
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_SVG' async></script></head>
 
 <body>
     <header class="Header">
         <nav class="HeaderNavigation">
             <h1><a href="index.html">Kurt’s Odds and Ends</a></h1>
             <div class="HeaderSpace"></div>
-            <ul>
-                <li><a class="HeaderGroup" href="#">Research</a>
-                    <ul>
-                        <li><a class="HeaderGroup" href="#">Computing</a>
-                            <ul>
-                                <li><a class="HeaderTitle" href="#">FilterGraph</a></li>
-                                <li><a class="HeaderTitle" href="#">DrivePlayer</a></li>
+            <div class="HeaderMenu">
+                <a class="HeaderMenuLink" href="javascript:void(0);" onclick="showHeaderCatsTall()">Menu</a>
+            </div>
+            <ul class="HeaderCats narrowNone" id="HeaderCats">
+                <li id="HeaderListResearch"><a class="HeaderGroup" href="javascript:void(0);"
+                        onclick="showHeaderGroup('HeaderListResearch')">Research</a>
+                    <ul class="narrowNone">
+                        <li id="HeaderGroupComputing"><a class="HeaderGroup" href="javascript:void(0);"
+                                onclick="showHeaderGroup('HeaderGroupComputing')">Computing</a>
+                            <ul class="narrowNone">
+                                <li><a class="HeaderTitle" href="javascript:void(0);">FilterGraph</a></li>
+                                <li><a class="HeaderTitle" href="javascript:void(0);">DrivePlayer</a></li>
                             </ul>
                         </li>
-                        <li><a class="HeaderGroup" href="#">Mathematics</a>
-                            <ul>
+                        <li id="HeaderGroupMath"><a class="HeaderGroup" href="javascript:void(0);"
+                                onclick="showHeaderGroup('HeaderGroupMath')">Mathematics</a>
+                            <ul class="narrowNone">
                                 <li><a href="math-tiling.html">Tiling a Monitor</a></li>
                             </ul>
                         </li>
                     </ul>
                 </li>
-                <li><a class="HeaderGroup" href="#">Art & Media</a>
-                    <ul>
-                        <li><a href="#">Music</a></li>
-                        <li><a href="#">Film</a></li>
+                <li id="HeaderListArtMedia"><a class="HeaderGroup" href="javascript:void(0);"
+                        onclick="showHeaderGroup('HeaderListArtMedia')">Art & Media</a>
+                    <ul class="narrowNone">
+                        <li><a href="javascript:void(0);">Music</a></li>
+                        <li><a href="javascript:void(0);">Film</a></li>
                     </ul>
                 </li>
-                <li><a href="#">About Me</a></li>
-                <li><a href="#">About My Page</a></li>
+                <li><a href="javascript:void(0);">About Me</a></li>
+                <li><a href="javascript:void(0);">About My Page</a></li>
             </ul>
         </nav>
     </header>
+    <script>
+        function showHeaderCatsTall() {
+            var headerCats = document.getElementById("HeaderCats");
+            headerCats.classList.toggle("narrowBlock");
+            headerCats.classList.toggle("narrowNone");
+        }
 
-    <!--
-    <div class=iconheader>
-        <div class="icontext">
-            <a class="ico" href="#"><img src="graphics/logo.svg" /></a>
-            <div class="iconinfo">Home</div>
-        </div>
-        <div class="emptli"></div>
-        <div class="icontext">
-            <a class="ico" href="#"><img src="graphics/edu.svg" /></a>
-            <div class="iconinfo">Sciences</div>
-        </div>
-        <div class="icontext">
-            <a class="ico" href="#"><img src="graphics/art.svg" /></a>
-            <div class="iconinfo">Art & Media</div>
-        </div>
-        <div class="icontext">
-            <a class="ico" href="#"><img src="graphics/person.svg" /></a>
-            <div class="iconinfo">Personal</div>
-        </div>
-        <div class="icontext">
-            <a class="ico" href="#"><img src="graphics/info.svg" /></a>
-            <div class="iconinfo">Page Information</div>
-        </div>
-    </div>
-    -->
+        function showHeaderGroup(id) {
+            var headerGroup = document.getElementById(id);
+            for (var i = 0; i < headerGroup.children.length; i++) {
+                if (headerGroup.children[i].tagName === "UL") {
+                    headerGroup.children[i].classList.toggle("narrowBlock");
+                    headerGroup.children[i].classList.toggle("narrowNone");
+                }
+            }
+        }
+    </script>
     <div class="maintext">
+        <h2>Tiling <span class="NoCall">a</span> Monitor</h2>
         <div class="par first">
-            Here is an interesting small math problem that I spent some time thinking about a few days ago:
-            How can I partition my monitor <div class="italic">optimally</div> into a grid containing at least a given
-            number of tiles?
+            Here is an interesting small math problem that I spent some time thinking about a few days ago: How can I
+            partition my monitor <span class="italic">optimally</span> into a grid containing at least a given number of
+            tiles?
+        </div>
+
+        <h3>Formalising the Problem</h3>
+        <div class="par first">
+            Let $
+            \newcommand\coloneq{&coloneq;}
+            \newcommand\eqcolon{&eqcolon;}
+            \newcommand\BbbN{\mathbb{N}}
+            \newcommand\BbbR{\mathbb{R}}
+
+            \newcommand\aequi{\Longleftrightarrow}
+            \newcommand\implr{\Longrightarrow}
+            \newcommand\impll{\Longleftarrow}
+
+            \newcommand\braces[1]{\left\{#1\right\}}
+            \newcommand\angled[1]{\left\langle #1\right\rangle}
+            \newcommand\ceil[1]{\left\lceil #1\right\rceil}
+            \newcommand\floor[1]{\left\lfloor #1\right\rfloor}
+
+            \newcommand\fun[2]{#1\!\left(#2\right)}
+            \newcommand\bfrac[2]{#1 / #2}
+            \fun{\Pi}{W, H, T}$ be an instance of this tiling problem, with $W, H \in \BbbN$ being the width and height of the monitor and $T \in \BbbN$ the minimum number of tiles that the grid needs to contain.
+            A solution to this problem is then a pair $\theta \coloneq \angled{w, h} \in \BbbN^2$ for which $w \cdot h \geq T$ holds.
+            The actual size of the resulting tiles is $\bfrac{W}{w} \times \bfrac{H}{h}$ when ignoring rounding,
+            which I do, since a difference of less than a pixel is insignificant.
         </div>
 
         <div class="par">
-            The first things to formalise are the parameters of the problem and the conditions for valid solution:<br>
-            Let $W, H \in \mathbb{N}$ be the height and width of the monitor and $T \in \mathbb{N}$ the minimum number
-            of tiles that our grid needs to contain, that is, the parameters are $\left\langle W, H, T \right\rangle \in
-            \mathbb{N}^3$.
-            A solution to the tiling problem is then a pair $\tau &coloneq; \left\langle w, h \right\rangle \in
-            \mathbb{N}^2$ for which $w \cdot h \geq T$ holds.
-            This formulation makes it quite clear that the problem exhibits an inherent symmetry: If $\left\langle
-            \alpha, \beta \right\rangle \in \mathbb{N}^2$ is a solution to the problem with the parameters $\left\langle
-            A, B, T \right\rangle \in \mathbb{N}^3$, $\left\langle \beta, \alpha \right\rangle$ is a solution to the
-            problem with the parameters $\left\langle B, A, T \right\rangle$.
+            When trying to find a good optimality condition, I tried a few approaches before really thinking about the
+            question — I can only invite the reader to think about it before continuing, too, because some of the conditions that seem quite trivial have undesirable side-effects.
+            If, for instance, we choose tilings that maximise the space used by actual tiles, the trivial solution
+            $\theta = \angled{1, T}$ is optimal.<br>
+
+            After thinking for a little bit, I realised that the worst thing about small windows (if the small size
+            cannot be helped) is that all the UI elements around the main work area (e.g. window borders, toolbars,
+            scroll bars etc.) take up quite a bit of space, which means that any tiling with very wide or very tall
+            tiles is unusable for large $T$.
+            Thus, the property that it makes the most sense to maximise is the smaller of the two tile dimensions so
+            that the usable window space is distributed in a usable manner.
+            This means maximising $\fun{\mu}{w, h} \coloneq \min\!\braces{\bfrac{W}{w}, \bfrac{H}{h}}$, where the ideal tiling would be one
+            with square tiles, which actually makes a lot of sense for non-creative tasks where there is no intrinsic
+            aspect ratio.
         </div>
 
+        <h3>Simplifying the Problem</h3>
+        <div class="par first">
+            The previous formulation makes it clear that the problem exhibits an inherent symmetry:
+            If $\angled{\alpha, \beta} \in \BbbN^2$ is an optimal solution to $\fun{\Pi}{A, B, T}$ for $A, B \in \BbbN$, $\angled{\beta, \alpha}$ trivially is an optimal solution to $\fun{\Pi}{B, A, T}$.
+            It thus suffices to consider the simplified problem $\fun{\Sigma}{A, B, T}$ in which we additionally require that $A \geq B$; analogously to $\Pi$, a solution $\angled{\alpha, \beta} \in \BbbN^2$ has to fulfil $\alpha \cdot \beta \geq T$, its optimum being determined by the maximum of $\fun{\nu}{\alpha, \beta} \coloneq \min\!\braces{\bfrac{A}{\alpha}, \bfrac{B}{\beta}}$.<br>
+
+            An instance $\fun{\Pi}{W, H, T}$ can then easily be mapped to $\fun{\Sigma}{W, H, T}$ if $W \geq H$ (i.e. the monitor is used in its horizontal orientation), and its solution $\angled{\alpha, \beta}$ is also the optimal solution of $\fun{\Pi}{W, H, T}$.
+            If $H \geq W$ (i.e. the monitor is vertically oriented), the problem can be mapped to $\fun{\Sigma}{H, W, T}$, after which the element of the latter's solution $\angled{\alpha, \beta}$ have to be flipped, i.e. $\angled{\beta, \alpha}$ is the optimal solution of $\fun{\Pi}{W, H, T}$.
+        </div>
         <div class="par">
-            This, however, can be simplified by noting that the minimum value of one of these variables can be
-            calculated
-            trivially from that of the other:
-            If, for instance, the value for $h$ is fixed, the lowest value for $w$ that fulfils the aforementioned
-            condition is $w &coloneq; \left\lceil \frac{T}{h} \right\rceil$, since the following holds:
+            The restriction $A \geq B$ entails that there is always an optimal solution $\angled{\alpha, \beta}$ in which $\alpha \geq \beta$; assuming the opposite, i.e. $\alpha &lt; \beta$, we can show that $\fun{\nu}{\alpha, \beta} \leq \fun{\nu}{\beta, \alpha}$:
 
             $$
-            w \cdot h
-            = \left\lceil \frac{T}{h} \right\rceil \cdot h
-            \geq \frac{T}{h} \cdot h
+            \begin{align}
+            A \geq {} & B
+            \aequi \frac{A}{\alpha} \geq \frac{B}{\alpha} > \frac{B}{\beta}
+            \implr \frac{B}{\beta} = \min\!\braces{\frac{A}{\alpha}, \frac{B}{\beta}} = \fun{\nu}{\alpha,\beta}\\
+            \frac{B}{\beta}
+            \leq {} & \fun{\nu}{\beta, \alpha}
+            = \min\!\braces{\frac{A}{\beta}, \frac{B}{\alpha}}
+            \aequi \frac{B}{\beta}
+            \leq \frac{A}{\beta} \text{ and } \frac{B}{\beta} \leq \frac{B}{\alpha}\\
+            \frac{B}{\beta}
+            \leq {} & \frac{A}{\beta}
+            \aequi B \leq A \text{, }
+            \frac{B}{\beta} \leq \frac{B}{\alpha}
+            \aequi \alpha \leq \beta \text{ per assumption}
+            \end{align}
+            $$
+
+            Since the condition $\alpha \cdot \beta \geq T$ also entails that both $\alpha$ and $\beta$ do not need to be larger than $T$ (since both are at least $1$), every optimal solution $\angled{\alpha, \beta}$ satisfies $\beta \leq \alpha \leq T$.
+        </div>
+        <div class="par">
+            Additionally, the minimum value of $\alpha$ can be calculated trivially from that of $\beta$ through $\alpha \coloneq \ceil{\bfrac{T}{\beta}}$ (this also works the other way around, but this way will prove more useful later on), since the following holds:
+
+            $$
+            \alpha \cdot \beta
+            = \ceil{\frac{T}{\beta}} \cdot \beta
+            \geq \frac{T\beta}{\beta}
             = T
             $$
 
-            Since $\left\lceil \frac{T}{h} \right\rceil$ is the smallest integer for which this inequality holds, it
-            suffices to consider either $h$ or $w$ (just swap $h$ and $w$ above) as the variable and calculate the other
-            as above.
+            Since $\ceil{\bfrac{T}{\beta}}$ is the smallest integer for the utilised inequality holds, it suffices to consider $\beta$ as the variable and calculate $\alpha$ as above.
         </div>
 
         <div class="par">
-            Now that the problem is formulated depending only on a single variable, we can consider the optimality
-            condition.
-            Here, I have tried various approaches before really thinking about the question, so I can only invite the
-            reader to think about the problem, too.
-            If, for instance, we want to choose a tiling that maximises the space used by actual tiles, the trivial
-            solution $\tau = \left\langle 1, T \right\rangle$ is already optimal (if you ignore rounding when
-            calculating the tile sizes, which I do, since the error is insignificant in this case).<br>
-
-            After thinking about it for a little bit, I realised that the worst thing about small windows (if the size
-            has to be low) is that the window borders, the toolbar, the scroll bar etc. take up quite a bit of space;
-            thus, any tiling in which the tiles are very wide or very tall will be unusable for large $T$.
-            As such, the thing that makes most sense is to maximise the smaller of the two dimensions and thus to
-            prevent the problems I have described.
-            Formally, this means maximising $\min \left\{\frac{H}{h}, \frac{W}{w}\right\}$, where the ideal would be a
-            tiling with square tiles, which actually makes a lot of sense, at least for non-creative tasks where the art
-            has an intrinsic aspect ratio.
-        </div>
-
-        <div class="par">
-            Having considered these things, the problem can be formulated as follows, where $w &coloneq; \left\lceil
-            \frac{T}{h} \right\rceil$ is used as a shorthand:
+            Having considered these things, the problem can be formulated as follows, where $\alpha \coloneq \ceil{\bfrac{T}{h}}$ is used as shorthand:
             <div class="par center">
-                Find an $h \in \mathbb{N}$ such that $\min \left\{\frac{H}{h}, \frac{W}{w}\right\}$ is maximised.
+                Find a $\beta \in \braces{1, \dots, T}$ such that $\min\!\braces{\bfrac{A}{\alpha}, \bfrac{B}{\beta}}$ is maximised.
             </div>
-            Here, $h$ and $w$ can be swapped at every occurrence again without changing the actual solution
-            $\left\langle w, h \right\rangle$.
         </div>
 
-        <div class="par">
-            Having formulated this problem formally and in a compact manner, it reamins to solve it.
-            A very simple approach is to iterate over the values of $h$, which can be constrained to the finite set
-            $\left\{ 1, \dots, T \right\}$ with $T$ elements and choose the best $h$, which would not be much work for a
-            modern computer, even for a $T$ in the hundreds.
-            If there is a simple, constant-time algorithm for solving this problem, however, it is unnecessary work, and
-            wasting processor time because of laziness is something I cannot get behind.
-            To actually calculate the solution, we first need to consider that $\frac{H}{h}$ is monotonically decreasing
-            and $\frac{W}{w}$ monotonically increasing.
-            If $h$ is relaxed to a real number $h_R$ (and setting $w_R &coloneq; \left\lceil
-            \frac{T}{h_R} \right\rceil$), an optimal solution thus lies at
-            the intersection of the function graphs, i.e. at the solution of the equation $\frac{H}{h_R} =
-            \frac{W}{w_R}$.
+        <h3>Solving the Problem</h3>
+        <div class="par first">
+            Having formulated this problem formally and in a compact manner, it remains to solve it.
+            A very simple approach is to iterate over the $T$ possible values of $\beta$ and choose that with the lowest value $\nu$, which would not be much work for a modern computer, even for a $T$ in the hundreds.
+            If there is a simple, constant-time algorithm for solving this problem, however, it is unnecessary work, and I would not want to waste processor time because of laziness.
+            To actually calculate the solution, we first need to consider that $\bfrac{B}{\beta}$ is monotonically decreasing and $\bfrac{A}{\alpha}$ monotonically increasing.
+            If $\beta$ is relaxed to a real number $\beta_{\BbbR}$ (and we set $\alpha_{\BbbR} \coloneq \ceil{\bfrac{T}{\beta_{\BbbR}}}$), an optimal solution thus lies at the intersection of the function graphs, i.e. at the solution of the equation $\bfrac{B}{\beta_{\BbbR}} = \bfrac{A}{\alpha_{\BbbR}}$.
             Because of the aforementioned properties, the best integer solution can be found either by rounding
-            downwards (which is the maximum of $\frac{H}{h}$) or upwards (which is the maximum of $\frac{W}{w}$), which
-            is why I will consider the real case in the following paragraph.
+            downwards (which is the last $\beta$ with $\bfrac{A}{\alpha} = \fun{\nu}{\alpha, \beta}$) or upwards (which is the first $\beta$ with $\bfrac{B}{\beta} = \fun{\nu}{\alpha, \beta}$), which is why I will consider the relaxed formulation in the following paragraph.
         </div>
         <div class="par">
-            The equation $\frac{H}{h_R} = \frac{W}{w_R}$ seems easy to solve at first glance, the definition of $w_R$
-            contains $h_R$ within the ceiling function, which makes solving the equation for $h$ harder.
-            However, since for all $\lambda \in \mathbb{R}_+$ the inequalities $\lambda \leq \left\lceil
-            \lambda \right\rceil &lt; \lambda + 1$ hold <div class="italic">per definitionem</div>, the following to
-            inequalities can be formulated, where the second is the solution of a quadratic equation where only the
-            larger of the solution makes sense:
+            The equation $\bfrac{B}{\beta_{\BbbR}} = \bfrac{A}{\alpha_{\BbbR}}$ might seem easy to solve at first glance, but the definition of $\alpha_{\BbbR}$ contains $\beta_{\BbbR}$ within the ceiling function, which makes solving the equation for $\beta_{\BbbR}$ harder.
+            However, since for all $\lambda \in \BbbR_+$ the inequalities $\lambda \leq \ceil{\lambda} &lt; \lambda + 1$ hold <span class="italic">per definitionem</span>, the following two inequalities can be formulated, where the second is the solution of a quadratic equation where only the larger one of the solutions makes sense:
             $$
-            \frac{H}{h_R}
-            = \frac{W}{w_R}
-            = \frac{W}{\left\lceil \frac{T}{h_R} \right\rceil}
-            \leq \frac{W\cdot h_R}{T}
-            \Longleftrightarrow h_R
-            \geq \sqrt{\frac{H T}{W}}
-            &eqcolon; h_r^- \\
+            \begin{align}
+            \frac{B}{\beta_{\BbbR}}
+            = \frac{A}{\alpha_{\BbbR}}
+            = \frac{A}{\ceil{\frac{T}{\beta_{\BbbR}}}}
+            \leq{} & \frac{A\beta_{\BbbR}}{T}
+            \implr \beta_{\BbbR}
+            \geq \sqrt{\frac{B T}{A}}
+            \eqcolon \beta_{\BbbR}^- \\
 
-            \frac{H}{h_R}
-            = \frac{W}{w_R}
-            = \frac{W}{\left\lceil \frac{T}{h_R} \right\rceil}
-            > \frac{W}{\frac{T}{h_R} + 1}
-            = \frac{W \cdot h_R}{T + h_R}
-            \Longleftrightarrow \left( W \cdot h_R - H \right) h_R
-            &lt; H \cdot T
-            \Longleftrightarrow h_R
-            &lt; \frac{H}{2 W} + \sqrt{\frac{H^2}{4 W^2} + \frac{H T}{W}}
-            &eqcolon; h_r^+
+            >{} & \frac{A}{\frac{T}{\beta_{\BbbR}} + 1}
+            = \frac{A \beta_{\BbbR}}{T + \beta_{\BbbR}}
+            \implr A \beta_{\BbbR}^2 - B\beta_{\BbbR}
+            &lt; B T
+            \implr \beta_{\BbbR}
+            &lt; \frac{B}{2 A} + \sqrt{\frac{B^2}{4 A^2} + \frac{B T}{A}}
+            \eqcolon \beta_{\BbbR}^+
+            \end{align}
             $$
-            Thus $h_R \in \left[h_r^-,h_r^+\right)$ holds and, through rounding, $h \in \left\{ \left\lfloor h_r^-
-            \right\rfloor, \dots, \left\lceil h_r^+ - 1 \right\rceil \right\}$.
-            This would already be a smaller set to iterate through, but we can further simplify this by considering
-            $h_r^+ - h_r^-$, where the subadditivity of the square root — that is, $\sqrt{a + b} \leq \sqrt{a} +
-            \sqrt{b}$ for $a, b \in \mathbb{R}_+$ — is used:
+            Thus $\beta_{\BbbR} \in \left[\beta_{\BbbR}^-,\beta_{\BbbR}^+\right)$ holds and, through rounding, $\beta \in \braces{\floor{\beta_{\BbbR}^-}, \dots, \ceil{\beta_{\BbbR}^+ - 1}}$.
+            This is a much smaller set of solutions that we could already iterate over, but which can be further simplified by considering $\beta_{\BbbR}^+ - \beta_{\BbbR}^-$, where the subadditivity of the square root — that is, $\sqrt{\lambda + \kappa} \leq \sqrt{\lambda} + \sqrt{\kappa}$ for $\lambda, \kappa \in \BbbR_+$ — is used:
             $$
-            h_r^+
-            = \frac{H}{2W} + \sqrt{\frac{H^2}{2 W^2} + \frac{HT}{W}}
-            \leq \frac{H}{2W} + \sqrt{\frac{H^2}{2 W^2}} + \sqrt{\frac{HT}{W}}
-            = \frac{H}{W} + \sqrt{\frac{HT}{W}} \\
-            h_r^+ - h_r^-
-            \leq \frac{H}{W} + \sqrt{\frac{HT}{W}} - \sqrt{\frac{H T}{W}}
-            = \frac{H}{W}
+            \begin{align}
+            & \beta_{\BbbR}^+
+            = \frac{B}{2A} + \sqrt{\frac{B^2}{2 A^2} + \frac{BT}{A}}
+            \leq \frac{B}{2A} + \sqrt{\frac{B^2}{2 A^2}} + \sqrt{\frac{BT}{A}}
+            = \frac{B}{A} + \sqrt{\frac{BT}{A}} \\
+
+            \implr{} & \beta_{\BbbR}^+ - \beta_{\BbbR}^-
+            \leq \frac{B}{A} + \sqrt{\frac{BT}{A}} - \sqrt{\frac{B T}{A}}
+            = \frac{B}{A}
+            \end{align}
             $$
-            Thus, if $\frac{H}{W} \leq 1$, the relation $h_r^+ - h_r^- \leq 1 \Longleftrightarrow h_r^+ \leq h_r^- + 1$
-            holds, which means that $h \in \left\{ \left\lfloor h_r^- \right\rfloor, \dots, \left\lceil h_r^- + 1 -
-            1 \right\rceil \right\} = \left\{ \left\lfloor h_r^- \right\rfloor,\left\lceil h_r^- \right\rceil \right\}$,
-            which is a superset of the previously defined set.
-            This works for displays that are horizontally oriented, but the solution for vertically oriented displays is
-            simple: swap $H$ and $W$ as well as $h$ and $w$ in the previous discussion, which yields the analogous
-            solution set for $w$.
+            Thus, if $\bfrac{B}{A} \leq 1 \aequi B \leq A$, which is one of the aforementioned requirements, the relation $\beta_{\BbbR}^+ - \beta_{\BbbR}^- \leq 1 \implr \beta_{\BbbR}^+ \leq \beta_{\BbbR}^- + 1$ holds, which means that we can simplify the solution set:
+            $$
+            \beta
+            \in \braces{\floor{\beta_{\BbbR}^-}, \dots, \ceil{\beta_{\BbbR}^+ - 1}}
+            \subseteq \braces{\floor{\beta_{\BbbR}^-}, \dots, \ceil{\beta_{\BbbR}^- + 1 - 1}}
+            = \braces{\floor{\beta_{\BbbR}^-}, \ceil{\beta_{\BbbR}^-}}
+            $$
+            Thus there are only at most two candidates for the optimum value of $\beta$ that both depend on $\beta_{\BbbR}^-$, which is the easier to calculate.
         </div>
-        <div class=par>
-            In conclusion, it is quite easy to find the optimal number of rows $h$ and columns $w$ when tiling a monitor
-            with width $W$ and height $H$ displaying a given number of windows $T$: If $H > W$, check both $h \in
-            \left\{ \sqrt{\frac{H T}{W}}, \sqrt{\frac{H T}{W}} + 1 \right\}$ with $w = \left\lceil \frac{T}{h}
-            \right\rceil$ for which one has the larger value $\min \left\{\frac{H}{h}, \frac{W}{w}\right\}$,
-            otherwise check both $w \in \left\{ \sqrt{\frac{W T}{H}}, \sqrt{\frac{W T}{H}} + 1 \right\}$ with $h =
-            \left\lceil \frac{T}{w} \right\rceil$ for which one has the larger value $\min \left\{\frac{H}{h},
-            \frac{W}{w}\right\}$.
-            The complexity of this operation is constant and the calculations are, apart from the single square root,
-            all very basic.
+
+        <h3>The Conclusion</h3>
+        <div class="par first">
+            It is quite easy to find the optimal number of rows $h$ and columns $w$ when tiling a monitor with width $W$ and height $H$ displaying a given number of windows $T$:
+            If $H > W$, check which $h \in \braces{\floor{\sigma}, \ceil{\sigma}}$ with $\sigma \coloneq \sqrt{\bfrac{H T}{W}}$ has the larger value $\fun{\mu}{w,h} = \min\!\braces{\bfrac{W}{w}, \bfrac{H}{h}}$ with $w = \ceil{\bfrac{T}{h}}$.<br>
+
+            Otherwise, check which $w \in \braces{\floor{\sigma},\ceil{\sigma}}$ with $\sigma \coloneq \sqrt{\bfrac{W T}{H}}$ has the larger value $\fun{\mu}{w,h}$ with $h = \ceil{\bfrac{T}{w}}$.
+            The complexity of these operations is constant and the calculations are, apart from the square root,
+            all very basic, which makes this calculation very simple.
         </div>
         <div class="par">
             On the whole, I hope you have found this as interesting as I have — a small math problem with a nice
-            solution and some real-life applications.
+            solution and some real-life applications that can be simplified to the point that it can be solved very easily.
         </div>
     </div>
 
-    <div class="FooterWrapper">
-        <div class="Footer">
-            This page uses the excellent <a href="https://github.com/octaviopardo/EBGaramond12">EB Garamond</a>
-            (licensed under the <a href="http://scripts.sil.org/OFL">SIL Open Font License</a>) as its main font.
-        </div>
+<div class="FooterWrapper">
+    <div class="Footer">
+        This page uses the excellent <a href="https://github.com/octaviopardo/EBGaramond12">EB Garamond</a> as its main
+        font and the equally great <a href="https://github.com/CatharsisFonts/Cormorant">Cormorant</a> for the header,
+        footer and titles (both licensed under the <a href="http://scripts.sil.org/OFL">SIL Open Font License</a>).
+        <!-- This page uses the excellent <a href="https://indestructibletype.com/Jost.html">Jost*</a> (licensed under
+             the <a href="http://scripts.sil.org/OFL">SIL Open Font License</a>) as its main font.-->
     </div>
-</body>
+</div></body>
